@@ -145,6 +145,7 @@ section{padding:6rem 6vw;}
 .pkg-filter{padding:0.52rem 1.2rem;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;border:none;background:transparent;color:var(--muted);font-family:var(--ff-body);transition:background .2s,color .2s;}
 .pkg-filter.active{background:var(--blue-deep);color:var(--white);}
 .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.pkg-img{width:100%;height:180px;background-size:cover!important;background-position:center!important;}
 .pkg-card{border:1px solid rgba(11,31,58,0.09);background:var(--white);transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
 .pkg-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
 .pkg-card:hover::after{transform:scaleX(1);}
@@ -363,7 +364,7 @@ footer ul li a:hover{color:var(--gold);}
   </div>
   <div class="dest-grid reveal">
     <div class="dest-card large">
-      <div class="dest-img"><div class="dest-fill f-bali"></div>
+      <div class="dest-img"><div class="dest-fill" style="background:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
         <div class="dest-overlay">
           <div class="dest-tag">Southeast Asia</div>
           <div class="dest-name">Romantic Bali</div>
@@ -372,7 +373,7 @@ footer ul li a:hover{color:var(--gold);}
       </div>
     </div>
     <div class="dest-card">
-      <div class="dest-img"><div class="dest-fill f-dubai"></div>
+      <div class="dest-img"><div class="dest-fill" style="background:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
         <div class="dest-overlay">
           <div class="dest-tag">Middle East</div>
           <div class="dest-name">Luxury Dubai Escape</div>
@@ -381,7 +382,7 @@ footer ul li a:hover{color:var(--gold);}
       </div>
     </div>
     <div class="dest-card">
-      <div class="dest-img"><div class="dest-fill f-europe"></div>
+      <div class="dest-img"><div class="dest-fill" style="background:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
         <div class="dest-overlay">
           <div class="dest-tag">International</div>
           <div class="dest-name">Europe Grand Tour</div>
@@ -390,7 +391,7 @@ footer ul li a:hover{color:var(--gold);}
       </div>
     </div>
     <div class="dest-card">
-      <div class="dest-img"><div class="dest-fill f-kashmir"></div>
+      <div class="dest-img"><div class="dest-fill" style="background:url('https://images.unsplash.com/photo-1548013146-72479768bada?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
         <div class="dest-overlay">
           <div class="dest-tag">North India</div>
           <div class="dest-name">Kashmir</div>
@@ -399,7 +400,7 @@ footer ul li a:hover{color:var(--gold);}
       </div>
     </div>
     <div class="dest-card">
-      <div class="dest-img"><div class="dest-fill f-rajasthan"></div>
+      <div class="dest-img"><div class="dest-fill" style="background:url('https://images.unsplash.com/photo-1477587458883-47145ed94245?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
         <div class="dest-overlay">
           <div class="dest-tag">North India</div>
           <div class="dest-name">Royal Rajasthan</div>
@@ -408,7 +409,7 @@ footer ul li a:hover{color:var(--gold);}
       </div>
     </div>
     <div class="dest-card">
-      <div class="dest-img"><div class="dest-fill f-maldives"></div>
+      <div class="dest-img"><div class="dest-fill" style="background:url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
         <div class="dest-overlay">
           <div class="dest-tag">Indian Ocean</div>
           <div class="dest-name">Maldives</div>
@@ -471,20 +472,111 @@ footer ul li a:hover{color:var(--gold);}
       <button class="pkg-filter" onclick="filterPkg(this,'honeymoon')">Honeymoon</button>
     </div>
   </div>
-  <div class="pkg-grid reveal">
+  <div class="pkg-grid reveal" id="pkgGrid">
+
+    <!-- DOMESTIC PACKAGES -->
     <div class="pkg-card" data-cat="domestic">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1477587458883-47145ed94245?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
       <div class="pkg-top-bar"></div>
       <div class="pkg-body">
         <div class="pkg-nights">5 Nights / 6 Days</div>
         <div class="pkg-name">Royal Rajasthan</div>
         <div class="pkg-dest">Jaipur · Jodhpur · Udaipur</div>
         <div class="pkg-div"></div>
-        <ul class="pkg-features"><li>Luxury heritage hotel stays</li><li>Private AC vehicle throughout</li><li>Expert local guide at each city</li><li>Daily breakfast & select dinners</li><li>All monument entry fees included</li></ul>
+        <ul class="pkg-features"><li>Heritage palace hotel stays</li><li>Private AC vehicle throughout</li><li>Expert local guide each city</li><li>Daily breakfast & select dinners</li><li>All monument entry fees</li></ul>
         <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">42,999</span><span class="pkg-per">/ per person</span></div>
         <a href="#contact" class="pkg-btn">Enquire Now</a>
       </div>
     </div>
+
+    <div class="pkg-card" data-cat="domestic">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">4 Nights / 5 Days</div>
+        <div class="pkg-name">Gujarat Heritage Trail</div>
+        <div class="pkg-dest">Ahmedabad · Rann of Kutch · Somnath</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features"><li>Rann Utsav festival experience</li><li>Gir National Park safari</li><li>Somnath & Dwarka temple visit</li><li>Local Gujarati cuisine trail</li><li>AC hotel stays throughout</li></ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">32,999</span><span class="pkg-per">/ per person</span></div>
+        <a href="#contact" class="pkg-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-cat="domestic">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">6 Nights / 7 Days</div>
+        <div class="pkg-name">Kashmir Paradise</div>
+        <div class="pkg-dest">Srinagar · Gulmarg · Pahalgam</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features"><li>Houseboat stay on Dal Lake</li><li>Shikara ride at sunrise</li><li>Gulmarg gondola ride</li><li>Betaab Valley excursion</li><li>All meals included</li></ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">48,999</span><span class="pkg-per">/ per person</span></div>
+        <a href="#contact" class="pkg-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-cat="domestic">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Kerala Backwaters</div>
+        <div class="pkg-dest">Munnar · Alleppey · Kovalam</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features"><li>Houseboat cruise on backwaters</li><li>Tea plantation & spice garden tour</li><li>Kathakali cultural show</li><li>Ayurvedic spa session</li><li>Beach resort stay</li></ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">38,999</span><span class="pkg-per">/ per person</span></div>
+        <a href="#contact" class="pkg-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-cat="domestic">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Himachal Adventure</div>
+        <div class="pkg-dest">Shimla · Manali · Spiti Valley</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features"><li>Snow point excursion Rohtang</li><li>Solang Valley adventure sports</li><li>Hadimba temple & old Manali</li><li>Cozy mountain resort stays</li><li>Bonfire & local cuisine evenings</li></ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">36,999</span><span class="pkg-per">/ per person</span></div>
+        <a href="#contact" class="pkg-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-cat="domestic">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">4 Nights / 5 Days</div>
+        <div class="pkg-name">Goa Sun & Sand</div>
+        <div class="pkg-dest">North Goa · South Goa · Dudhsagar</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features"><li>Beach resort with pool access</li><li>Dudhsagar waterfall trip</li><li>Old Goa churches heritage tour</li><li>Sunset cruise on Mandovi River</li><li>Water sports package included</li></ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">28,999</span><span class="pkg-per">/ per person</span></div>
+        <a href="#contact" class="pkg-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="pkg-card featured" data-cat="domestic">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1570458436416-b8fcccfe883f?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-nights">6 Nights / 7 Days</div>
+        <div class="pkg-name">Uttarakhand Spiritual Tour</div>
+        <div class="pkg-dest">Haridwar · Rishikesh · Kedarnath</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features"><li>Ganga Aarti at Har Ki Pauri</li><li>Kedarnath helicopter package</li><li>White water rafting Rishikesh</li><li>Yoga & meditation retreat</li><li>Char Dham Yatra guidance</li></ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">44,999</span><span class="pkg-per">/ per person</span></div>
+        <a href="#contact" class="pkg-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <!-- INTERNATIONAL PACKAGES -->
     <div class="pkg-card featured" data-cat="international">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
       <div class="pkg-top-bar"></div>
       <div class="pkg-body">
         <div class="pkg-badge">Most Popular</div>
@@ -492,12 +584,58 @@ footer ul li a:hover{color:var(--gold);}
         <div class="pkg-name">Luxury Dubai Escape</div>
         <div class="pkg-dest">Dubai · Abu Dhabi</div>
         <div class="pkg-div"></div>
-        <ul class="pkg-features"><li>5-star hotel accommodation</li><li>Return airfare (economy)</li><li>Desert safari experience</li><li>Burj Khalifa At-The-Top tickets</li><li>City tour & dhow cruise dinner</li><li>Visa processing assistance</li></ul>
+        <ul class="pkg-features"><li>5-star hotel accommodation</li><li>Return airfare economy class</li><li>Desert safari experience</li><li>Burj Khalifa At-The-Top tickets</li><li>City tour & dhow cruise dinner</li><li>Visa processing assistance</li></ul>
         <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">89,999</span><span class="pkg-per">/ per person</span></div>
         <a href="#contact" class="pkg-btn">Enquire Now</a>
       </div>
     </div>
+
+    <div class="pkg-card" data-cat="international">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">8 Nights / 9 Days</div>
+        <div class="pkg-name">Europe Grand Tour</div>
+        <div class="pkg-dest">Paris · Switzerland · Italy</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features"><li>Eiffel Tower & Louvre visit</li><li>Swiss Alps scenic train ride</li><li>Venice gondola experience</li><li>4-star hotels throughout</li><li>Return airfare & visa help</li></ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">1,74,999</span><span class="pkg-per">/ per person</span></div>
+        <a href="#contact" class="pkg-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="pkg-card" data-cat="international">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">7 Nights / 8 Days</div>
+        <div class="pkg-name">Bali Experience</div>
+        <div class="pkg-dest">Ubud · Seminyak · Uluwatu</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features"><li>Villa with private pool</li><li>Tegalalang rice terrace trek</li><li>Uluwatu sunset temple tour</li><li>Traditional Balinese spa</li><li>Return airfare & visa help</li></ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">94,999</span><span class="pkg-per">/ per person</span></div>
+        <a href="#contact" class="pkg-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <!-- HONEYMOON PACKAGES -->
+    <div class="pkg-card featured" data-cat="honeymoon">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-badge">Most Romantic</div>
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Maldives Dream</div>
+        <div class="pkg-dest">Male · Overwater Bungalow · Private Beach</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features"><li>Overwater villa with glass floor</li><li>Private beach candlelight dinner</li><li>Snorkelling & dolphin cruise</li><li>Couples spa & sunset sailing</li><li>Return flights & transfers</li></ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">1,54,999</span><span class="pkg-per">/ per couple</span></div>
+        <a href="#contact" class="pkg-btn">Enquire Now</a>
+      </div>
+    </div>
+
     <div class="pkg-card" data-cat="honeymoon">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
       <div class="pkg-top-bar"></div>
       <div class="pkg-body">
         <div class="pkg-nights">7 Nights / 8 Days</div>
@@ -509,6 +647,21 @@ footer ul li a:hover{color:var(--gold);}
         <a href="#contact" class="pkg-btn">Enquire Now</a>
       </div>
     </div>
+
+    <div class="pkg-card" data-cat="honeymoon">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">6 Nights / 7 Days</div>
+        <div class="pkg-name">Kashmir Honeymoon</div>
+        <div class="pkg-dest">Srinagar · Gulmarg · Pahalgam</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features"><li>Luxury houseboat on Dal Lake</li><li>Shikara ride at golden hour</li><li>Snow activities at Gulmarg</li><li>Candlelight dinner by the lake</li><li>Honeymoon welcome amenities</li></ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">62,999</span><span class="pkg-per">/ per couple</span></div>
+        <a href="#contact" class="pkg-btn">Enquire Now</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -620,8 +773,16 @@ document.addEventListener('DOMContentLoaded',()=>{
 function filterPkg(btn,cat){
   document.querySelectorAll('.pkg-filter').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.pkg-card').forEach(c=>{c.style.display=c.dataset.cat===cat?'block':'none';});
+  document.querySelectorAll('.pkg-card').forEach(c=>{
+    c.style.display=c.dataset.cat===cat?'block':'none';
+  });
 }
+// Show domestic by default on load
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.pkg-card').forEach(c=>{
+    c.style.display=c.dataset.cat==='domestic'?'block':'none';
+  });
+});
 function handleSubmit(e){
   e.preventDefault();
   const btn=document.getElementById('submitBtn');
