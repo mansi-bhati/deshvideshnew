@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>First-Time Traveler Packages — Desh Videsh Tours & Travels</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--blue-deep:#0B1F3A;--gold:#C9A84C;--gold-light:#E8D08A;--white:#FFFFFF;--cream:#FAF8F4;--beige:#F2EDE4;--muted:#8A9BB0;--ff-display:'Playfair Display',Georgia,serif;--ff-body:'Inter',sans-serif;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--blue-deep);overflow-x:hidden;font-size:15px;line-height:1.7;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--blue-deep);}::-webkit-scrollbar-thumb{background:var(--gold);}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(11,31,58,0.97);backdrop-filter:blur(16px);box-shadow:0 2px 40px rgba(0,0,0,0.3);}
+.nav-logo{display:flex;flex-direction:column;text-decoration:none;}
+.nav-logo .wordmark{font-family:var(--ff-display);font-size:1.6rem;font-weight:600;color:var(--white);}
+.nav-logo .sub{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
+.nav-back{display:flex;align-items:center;gap:0.5rem;text-decoration:none;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back svg{width:16px;height:16px;stroke:currentColor;fill:none;}
+.who-nav{background:var(--white);border-bottom:1px solid rgba(11,31,58,0.08);display:flex;overflow-x:auto;scrollbar-width:none;margin-top:64px;}
+.who-nav::-webkit-scrollbar{display:none;}
+.who-nav a{display:flex;align-items:center;gap:0.5rem;padding:1rem 1.6rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
+.who-nav a:hover{color:var(--blue-deep);}
+.who-nav a.active{color:var(--blue-deep);border-bottom-color:var(--gold);font-weight:600;}
+.hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:80px;}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,31,58,0.9) 0%,rgba(11,31,58,0.55) 60%,rgba(11,31,58,0.75) 100%);z-index:1;}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem 6vw;max-width:780px;}
+.hero-badge{display:inline-flex;align-items:center;gap:0.6rem;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);padding:0.4rem 1.1rem;border-radius:999px;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(2.4rem,5vw,4.5rem);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:1.2rem;}
+.hero-h1 em{font-style:italic;color:var(--gold-light);}
+.hero-sub{font-size:clamp(0.88rem,1.3vw,1rem);color:rgba(255,255,255,0.72);max-width:540px;margin:0 auto 2rem;font-weight:300;line-height:1.85;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:0.65rem;justify-content:center;margin-bottom:2rem;}
+.hero-pill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:0.38rem 0.9rem;border-radius:999px;font-size:0.72rem;color:rgba(255,255,255,0.75);}
+.btn-gold{padding:1rem 2.5rem;background:var(--gold);color:var(--blue-deep);font-family:var(--ff-body);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;text-decoration:none;display:inline-block;transition:background .25s,transform .2s;}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+.steps-section{background:var(--blue-deep);padding:5rem 6vw;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem;}
+@media(max-width:900px){.steps-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.steps-grid{grid-template-columns:1fr;}}
+.step-card{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.12);padding:1.8rem 1.4rem;position:relative;}
+.step-num{font-family:var(--ff-display);font-size:3rem;font-weight:700;color:rgba(201,168,76,0.15);line-height:1;margin-bottom:0.75rem;}
+.step-title{font-size:0.9rem;font-weight:600;color:var(--white);margin-bottom:0.4rem;}
+.step-desc{font-size:0.78rem;color:rgba(255,255,255,0.42);line-height:1.6;}
+.packages-section{padding:5rem 6vw;background:var(--cream);}
+.packages-header{text-align:center;margin-bottom:3.5rem;}
+.s-eye{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.s-title{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--blue-deep);margin-bottom:0.85rem;}
+.s-title em{font-style:italic;color:var(--gold);}
+.s-sub{color:var(--muted);font-weight:300;font-size:0.92rem;line-height:1.85;max-width:500px;margin:0 auto;}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+@media(max-width:900px){.pkg-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:580px){.pkg-grid{grid-template-columns:1fr;}}
+.pkg-card{background:var(--white);box-shadow:0 4px 32px rgba(11,31,58,0.08);overflow:hidden;transition:transform .3s,box-shadow .3s;}
+.pkg-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(11,31,58,0.15);}
+.pkg-img{height:210px;background-size:cover;background-position:center;position:relative;}
+.pkg-badge{position:absolute;top:1rem;left:1rem;background:var(--gold);color:var(--blue-deep);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;padding:0.28rem 0.75rem;}
+.pkg-body{padding:1.5rem 1.4rem 1.4rem;}
+.pkg-nights{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+.pkg-name{font-family:var(--ff-display);font-size:1.18rem;font-weight:700;color:var(--blue-deep);margin-bottom:0.2rem;}
+.pkg-dest{font-size:0.78rem;color:var(--muted);margin-bottom:1rem;}
+.pkg-divider{height:1px;background:rgba(11,31,58,0.07);margin-bottom:1rem;}
+.pkg-features{list-style:none;margin-bottom:1.2rem;}
+.pkg-features li{font-size:0.79rem;color:#4A5568;padding:0.28rem 0;display:flex;align-items:flex-start;gap:0.5rem;}
+.pkg-features li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+.pkg-price-row{display:flex;align-items:baseline;gap:0.2rem;margin-bottom:0.4rem;}
+.pkg-cur{font-size:1rem;font-weight:600;color:var(--blue-deep);}
+.pkg-amt{font-family:var(--ff-display);font-size:1.6rem;font-weight:700;color:var(--blue-deep);}
+.pkg-per{font-size:0.72rem;color:var(--muted);}
+.pkg-note{font-size:0.7rem;color:var(--muted);margin-bottom:1rem;}
+.pkg-btn{display:flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem;background:#25D366;color:#fff;font-size:0.76rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:background .2s;}
+.pkg-btn:hover{background:#1ebe5d;}
+.pkg-btn svg{width:18px;height:18px;fill:currentColor;}
+.cta-strip{background:var(--blue-deep);padding:4rem 6vw;text-align:center;position:relative;overflow:hidden;}
+.cta-strip::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 56px),repeating-linear-gradient(90deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 56px);}
+.cta-inner{position:relative;z-index:2;}
+.cta-strip h2{font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--white);margin-bottom:0.8rem;}
+.cta-strip h2 em{font-style:italic;color:var(--gold-light);}
+.cta-strip p{color:rgba(255,255,255,0.55);margin-bottom:2rem;font-size:0.9rem;}
+.wa-btn{display:inline-flex;align-items:center;gap:0.65rem;padding:1rem 2.5rem;background:#25D366;color:#fff;font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;}
+.wa-btn:hover{background:#1ebe5d;transform:translateY(-2px);}
+.wa-btn svg{width:22px;height:22px;fill:currentColor;}
+footer{background:#060f1e;padding:2rem 6vw;text-align:center;}
+footer p{font-size:0.75rem;color:rgba(255,255,255,0.25);}
+footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
+footer a:hover{color:var(--gold);}
+.sticky-wa{position:fixed;bottom:1.8rem;right:1.8rem;z-index:300;display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1.4rem;background:#25D366;color:#fff;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;text-decoration:none;border-radius:999px;box-shadow:0 6px 30px rgba(37,211,102,0.45);transition:transform .2s;}
+.sticky-wa:hover{background:#1ebe5d;transform:translateY(-3px);}
+.sticky-wa svg{width:20px;height:20px;fill:currentColor;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;"><span class="wordmark">Desh Videsh</span><span class="sub">Tours & Travels</span></a>
+  <a href="index.html" class="nav-back"><svg viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>Back to Home</a>
+</nav>
+<div class="who-nav">
+  <a href="family.html">👨‍👩‍👧‍👦 Families</a>
+  <a href="couples.html">💑 Couples & Honeymoon</a>
+  <a href="first-time.html" class="active">🎒 First-Time Travelers</a>
+  <a href="workationers.html">💻 Workationers</a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🎒 First-Time Traveler</div>
+    <h1 class="hero-h1">Your First Trip,<em>Done Right</em></h1>
+    <p class="hero-sub">Nervous about your first trip? Don't be. We handle everything — visas, packing lists, hotels, transfers — so you just show up and explore.</p>
+    <div class="hero-pills">
+      <div class="hero-pill">Visa guidance included</div>
+      <div class="hero-pill">Packing checklist</div>
+      <div class="hero-pill">24/7 support</div>
+      <div class="hero-pill">Beginner-friendly itineraries</div>
+    </div>
+    <a href="#packages" class="btn-gold">See Starter Packages ↓</a>
+  </div>
+</section>
+
+<section class="steps-section">
+  <div style="text-align:center;margin-bottom:1rem;">
+    <div style="font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">How it works for first-timers</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--white);margin-bottom:0.8rem;">We take care of <em style="font-style:italic;color:var(--gold-light);">everything</em></h2>
+    <p style="color:rgba(255,255,255,0.42);font-size:0.9rem;max-width:480px;margin:0 auto;">From the moment you reach out to the moment you land back home — every step is handled.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card"><div class="step-num">01</div><div class="step-title">WhatsApp Us Your Idea</div><div class="step-desc">Just tell us where you want to go, your budget, and travel dates. That's all you need to start.</div></div>
+    <div class="step-card"><div class="step-num">02</div><div class="step-title">We Plan It All</div><div class="step-desc">Hotels, flights, transfers, activities, meals — we create a full itinerary tailored just for you.</div></div>
+    <div class="step-card"><div class="step-num">03</div><div class="step-title">Visa & Docs Sorted</div><div class="step-desc">We guide you through every document — visa applications, travel insurance, everything checked.</div></div>
+    <div class="step-card"><div class="step-num">04</div><div class="step-title">Just Pack & Go!</div><div class="step-desc">You receive a packing list, trip booklet, and emergency contact — then just show up and enjoy.</div></div>
+  </div>
+</section>
+
+<section class="packages-section" id="packages">
+  <div class="packages-header">
+    <div class="s-eye">Beginner-Friendly Packages</div>
+    <h2 class="s-title">Perfect trips for <em>first-timers</em></h2>
+    <p class="s-sub">Easy itineraries, stress-free planning, zero jargon. Just amazing travel.</p>
+  </div>
+  <div class="pkg-grid">
+
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1477587458883-47145ed94245?w=700&q=80&auto=format&fit=crop') center/cover;"><div class="pkg-badge">🇮🇳 Best Starter</div></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Golden Triangle India</div>
+        <div class="pkg-dest">Delhi · Agra (Taj Mahal) · Jaipur</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Taj Mahal at sunrise — bucket list done!</li>
+          <li>Red Fort & Qutub Minar, Delhi</li>
+          <li>Amber Fort elephant ride, Jaipur</li>
+          <li>All hotels, AC car & guide included</li>
+          <li>Daily breakfast + local food trail</li>
+          <li>Packing list & trip booklet provided</li>
+        </ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">24,999</span><span class="pkg-per">/ per person</span></div>
+        <div class="pkg-note">*No passport needed. Perfect domestic first trip.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20a%20first-time%20traveler%20interested%20in%20the%20Golden%20Triangle%20package.%20Please%20help%20me%20plan%21" target="_blank" class="pkg-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Enquire on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80&auto=format&fit=crop') center/cover;"><div class="pkg-badge">✈️ First International</div></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Bali First-Timer Special</div>
+        <div class="pkg-dest">Kuta · Ubud · Seminyak</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Visa on arrival — we guide you through it</li>
+          <li>Airport pickup & drop guaranteed</li>
+          <li>All hotels pre-checked & safe</li>
+          <li>English-speaking local guide</li>
+          <li>Rice terraces, temples & beaches</li>
+          <li>Emergency contact 24/7 on WhatsApp</li>
+        </ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">52,999</span><span class="pkg-per">/ per person</span></div>
+        <div class="pkg-note">*Visa on arrival guidance + all airport transfers included.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20a%20first-time%20international%20traveler%20interested%20in%20the%20Bali%20package.%20Please%20help!" target="_blank" class="pkg-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Enquire on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=700&q=80&auto=format&fit=crop') center/cover;"><div class="pkg-badge">🌴 Easy & Relaxed</div></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">4 Nights / 5 Days</div>
+        <div class="pkg-name">Kerala Easy Escape</div>
+        <div class="pkg-dest">Munnar · Alleppey Backwaters</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Houseboat experience — truly unique</li>
+          <li>Easy pace — no rushing around</li>
+          <li>Tea gardens & elephant sanctuary</li>
+          <li>All veg / non-veg meals sorted</li>
+          <li>Fully guided — no stress, no guesswork</li>
+          <li>Private AC vehicle throughout</li>
+        </ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">29,999</span><span class="pkg-per">/ per person</span></div>
+        <div class="pkg-note">*Ideal first trip — calm, beautiful, well-organized.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20a%20first-time%20traveler%20interested%20in%20the%20Kerala%20Easy%20Escape%20package." target="_blank" class="pkg-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Enquire on WhatsApp</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-inner">
+    <h2>Not sure where to <em>start?</em></h2>
+    <p>Just tell us your budget and how many days you have. We'll suggest the perfect first trip.</p>
+    <a href="https://wa.me/919999999999?text=Hi%21%20I%27m%20planning%20my%20first%20ever%20trip%20and%20need%20help%20figuring%20out%20where%20to%20go.%20Can%20you%20help%20me%3F" target="_blank" class="wa-btn">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Help Me Plan My First Trip
+    </a>
+  </div>
+</section>
+<footer><p>&copy; 2024 Desh Videsh Tours & Travels. Founded by <a href="index.html">Sanjeev Bhati</a>. All rights reserved.</p></footer>
+<a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20a%20first-time%20traveler%20and%20need%20help%20planning%20my%20trip!" target="_blank" class="sticky-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Enquire Now</a>
+</body>
+</html>

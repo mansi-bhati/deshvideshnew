@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Honeymoon & Couples Packages — Desh Videsh Tours & Travels</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--blue-deep:#0B1F3A;--blue-mid:#163354;--blue-light:#1E4A7A;--gold:#C9A84C;--gold-light:#E8D08A;--white:#FFFFFF;--cream:#FAF8F4;--beige:#F2EDE4;--muted:#8A9BB0;--ff-display:'Playfair Display',Georgia,serif;--ff-body:'Inter',sans-serif;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--blue-deep);overflow-x:hidden;font-size:15px;line-height:1.7;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--blue-deep);}::-webkit-scrollbar-thumb{background:var(--gold);}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(11,31,58,0.97);backdrop-filter:blur(16px);box-shadow:0 2px 40px rgba(0,0,0,0.3);}
+.nav-logo{display:flex;flex-direction:column;text-decoration:none;}
+.nav-logo .wordmark{font-family:var(--ff-display);font-size:1.6rem;font-weight:600;color:var(--white);}
+.nav-logo .sub{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
+.nav-back{display:flex;align-items:center;gap:0.5rem;text-decoration:none;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back svg{width:16px;height:16px;stroke:currentColor;fill:none;}
+.who-nav{background:var(--white);border-bottom:1px solid rgba(11,31,58,0.08);padding:0;display:flex;overflow-x:auto;scrollbar-width:none;margin-top:64px;}
+.who-nav::-webkit-scrollbar{display:none;}
+.who-nav a{display:flex;align-items:center;gap:0.5rem;padding:1rem 1.6rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
+.who-nav a:hover{color:var(--blue-deep);}
+.who-nav a.active{color:var(--blue-deep);border-bottom-color:var(--gold);font-weight:600;}
+.hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:80px;}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,31,58,0.9) 0%,rgba(80,20,50,0.6) 60%,rgba(11,31,58,0.75) 100%);z-index:1;}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem 6vw;max-width:780px;}
+.hero-badge{display:inline-flex;align-items:center;gap:0.6rem;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);padding:0.4rem 1.1rem;border-radius:999px;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(2.4rem,5vw,4.5rem);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:1.2rem;}
+.hero-h1 em{font-style:italic;color:var(--gold-light);}
+.hero-sub{font-size:clamp(0.88rem,1.3vw,1rem);color:rgba(255,255,255,0.72);max-width:540px;margin:0 auto 2rem;font-weight:300;line-height:1.85;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:0.65rem;justify-content:center;margin-bottom:2rem;}
+.hero-pill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:0.38rem 0.9rem;border-radius:999px;font-size:0.72rem;color:rgba(255,255,255,0.75);}
+.btn-gold{padding:1rem 2.5rem;background:var(--gold);color:var(--blue-deep);font-family:var(--ff-body);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background .25s,transform .2s;box-shadow:0 4px 24px rgba(201,168,76,0.35);}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+.why-section{background:var(--blue-deep);padding:5rem 6vw;}
+.section-eye{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.section-title{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--white);margin-bottom:1rem;}
+.section-title em{font-style:italic;color:var(--gold-light);}
+.perks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem;}
+@media(max-width:768px){.perks-grid{grid-template-columns:1fr 1fr;}}
+.perk-card{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.12);padding:1.6rem 1.4rem;transition:background .3s;}
+.perk-card:hover{background:rgba(201,168,76,0.07);}
+.perk-icon{font-size:1.8rem;margin-bottom:0.75rem;}
+.perk-title{font-family:var(--ff-display);font-size:1rem;color:var(--white);font-weight:600;margin-bottom:0.4rem;}
+.perk-desc{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.6;}
+.packages-section{padding:5rem 6vw;background:var(--cream);}
+.packages-header{text-align:center;margin-bottom:3.5rem;}
+.s-eye{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.s-title{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--blue-deep);margin-bottom:0.85rem;}
+.s-title em{font-style:italic;color:var(--gold);}
+.s-sub{color:var(--muted);font-weight:300;font-size:0.92rem;line-height:1.85;max-width:500px;margin:0 auto;}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+@media(max-width:900px){.pkg-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:580px){.pkg-grid{grid-template-columns:1fr;}}
+.pkg-card{background:var(--white);box-shadow:0 4px 32px rgba(11,31,58,0.08);overflow:hidden;transition:transform .3s,box-shadow .3s;}
+.pkg-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(11,31,58,0.15);}
+.pkg-img{height:210px;background-size:cover;background-position:center;position:relative;}
+.pkg-badge{position:absolute;top:1rem;left:1rem;background:var(--gold);color:var(--blue-deep);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;padding:0.28rem 0.75rem;}
+.pkg-body{padding:1.5rem 1.4rem 1.4rem;}
+.pkg-nights{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+.pkg-name{font-family:var(--ff-display);font-size:1.18rem;font-weight:700;color:var(--blue-deep);margin-bottom:0.2rem;}
+.pkg-dest{font-size:0.78rem;color:var(--muted);margin-bottom:1rem;}
+.pkg-divider{height:1px;background:rgba(11,31,58,0.07);margin-bottom:1rem;}
+.pkg-features{list-style:none;margin-bottom:1.2rem;}
+.pkg-features li{font-size:0.79rem;color:#4A5568;padding:0.28rem 0;display:flex;align-items:flex-start;gap:0.5rem;}
+.pkg-features li::before{content:'♥';color:#e05c8a;flex-shrink:0;margin-top:1px;}
+.pkg-price-row{display:flex;align-items:baseline;gap:0.2rem;margin-bottom:0.4rem;}
+.pkg-cur{font-size:1rem;font-weight:600;color:var(--blue-deep);}
+.pkg-amt{font-family:var(--ff-display);font-size:1.6rem;font-weight:700;color:var(--blue-deep);}
+.pkg-per{font-size:0.72rem;color:var(--muted);}
+.pkg-note{font-size:0.7rem;color:var(--muted);margin-bottom:1rem;}
+.pkg-btn{display:flex;align-items:center;justify-content:center;gap:0.5rem;text-align:center;padding:0.85rem;background:#25D366;color:#fff;font-size:0.76rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:background .2s,transform .15s;}
+.pkg-btn:hover{background:#1ebe5d;transform:translateY(-1px);}
+.pkg-btn svg{width:18px;height:18px;fill:currentColor;flex-shrink:0;}
+.testimonials{background:var(--beige);padding:5rem 6vw;}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem;}
+@media(max-width:768px){.test-grid{grid-template-columns:1fr;}}
+.test-card{background:var(--white);padding:1.8rem 1.5rem;box-shadow:0 2px 20px rgba(11,31,58,0.06);}
+.test-stars{color:#e05c8a;font-size:0.9rem;margin-bottom:0.8rem;}
+.test-text{font-size:0.86rem;color:#4A5568;line-height:1.75;font-style:italic;margin-bottom:1.1rem;}
+.test-author{font-size:0.78rem;font-weight:600;color:var(--blue-deep);}
+.test-loc{font-size:0.72rem;color:var(--muted);}
+.cta-strip{background:var(--blue-deep);padding:4rem 6vw;text-align:center;position:relative;overflow:hidden;}
+.cta-strip::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 56px),repeating-linear-gradient(90deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 56px);}
+.cta-strip-inner{position:relative;z-index:2;}
+.cta-strip h2{font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--white);margin-bottom:0.8rem;}
+.cta-strip h2 em{font-style:italic;color:var(--gold-light);}
+.cta-strip p{color:rgba(255,255,255,0.55);margin-bottom:2rem;font-size:0.9rem;}
+.wa-btn{display:inline-flex;align-items:center;gap:0.65rem;padding:1rem 2.5rem;background:#25D366;color:#fff;font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;box-shadow:0 4px 24px rgba(37,211,102,0.35);}
+.wa-btn:hover{background:#1ebe5d;transform:translateY(-2px);}
+.wa-btn svg{width:22px;height:22px;fill:currentColor;}
+footer{background:#060f1e;padding:2rem 6vw;text-align:center;}
+footer p{font-size:0.75rem;color:rgba(255,255,255,0.25);}
+footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
+footer a:hover{color:var(--gold);}
+.sticky-wa{position:fixed;bottom:1.8rem;right:1.8rem;z-index:300;display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1.4rem;background:#25D366;color:#fff;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;text-decoration:none;border-radius:999px;box-shadow:0 6px 30px rgba(37,211,102,0.45);transition:transform .2s,background .2s;}
+.sticky-wa:hover{background:#1ebe5d;transform:translateY(-3px);}
+.sticky-wa svg{width:20px;height:20px;fill:currentColor;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;">
+    <span class="wordmark">Desh Videsh</span>
+    <span class="sub">Tours & Travels</span>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<div class="who-nav">
+  <a href="family.html">👨‍👩‍👧‍👦 Families</a>
+  <a href="couples.html" class="active">💑 Couples & Honeymoon</a>
+  <a href="first-time.html">🎒 First-Time Travelers</a>
+  <a href="workationers.html">💻 Workationers</a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">💑 Couples & Honeymoon</div>
+    <h1 class="hero-h1">Love, Romance<em>& Unforgettable Moments</em></h1>
+    <p class="hero-sub">Candlelit dinners, private villas, sunrise boat rides — we craft romantic escapes that feel personal, not packaged.</p>
+    <div class="hero-pills">
+      <div class="hero-pill">Honeymoon specials</div>
+      <div class="hero-pill">Couple spa & dining</div>
+      <div class="hero-pill">Private transfers</div>
+      <div class="hero-pill">Surprise setups available</div>
+    </div>
+    <a href="#packages" class="btn-gold">See Romantic Packages ↓</a>
+  </div>
+</section>
+
+<section class="why-section">
+  <div style="text-align:center;margin-bottom:3rem;">
+    <div class="section-eye">What makes it special</div>
+    <h2 class="section-title">Romance, <em>elevated</em></h2>
+    <p style="color:rgba(255,255,255,0.45);font-weight:300;font-size:0.92rem;line-height:1.85;max-width:480px;margin:0 auto;">Every couple has a different dream. We listen, then create it — with thoughtful details that money can't template.</p>
+  </div>
+  <div class="perks-grid">
+    <div class="perk-card"><div class="perk-icon">🌹</div><div class="perk-title">Honeymoon Room Décor</div><div class="perk-desc">Flower petal bed decoration, welcome wine, and rose-lit room setups on your special nights — all arranged in advance.</div></div>
+    <div class="perk-card"><div class="perk-icon">🍽️</div><div class="perk-title">Private Candlelit Dinners</div><div class="perk-desc">Rooftop dinners, beachside tables for two, or in-villa private dining — curated for moments you'll never forget.</div></div>
+    <div class="perk-card"><div class="perk-icon">💆‍♀️</div><div class="perk-title">Couples Spa Sessions</div><div class="perk-desc">Ayurvedic couples massages in Kerala, Bali-style spa rituals, or luxury resort spa packages — fully included or optional.</div></div>
+    <div class="perk-card"><div class="perk-icon">🛥️</div><div class="perk-title">Sunset Cruise & Boat Rides</div><div class="perk-desc">Private shikara on Dal Lake, sunset dhow in Maldives, or a romantic gondola — we put you in the moment.</div></div>
+    <div class="perk-card"><div class="perk-icon">📸</div><div class="perk-title">Photoshoot Arrangements</div><div class="perk-desc">Optional professional photography sessions at scenic spots — because you deserve stunning photos from your trip.</div></div>
+    <div class="perk-card"><div class="perk-icon">🏝️</div><div class="perk-title">Overwater & Private Villas</div><div class="perk-desc">Overwater bungalows in Maldives, private pool villas in Bali — romantic stays at surprisingly affordable prices.</div></div>
+  </div>
+</section>
+
+<section class="packages-section" id="packages">
+  <div class="packages-header">
+    <div class="s-eye">Romantic Getaways</div>
+    <h2 class="s-title">Your perfect <em>romantic escape</em></h2>
+    <p class="s-sub">From intimate hill retreats to dreamy island villas — built for two.</p>
+  </div>
+  <div class="pkg-grid">
+
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=700&q=80&auto=format&fit=crop') center/cover;">
+        <div class="pkg-badge">🏝️ Dream Destination</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Maldives Honeymoon</div>
+        <div class="pkg-dest">Malé · Overwater Villa · Private Atoll</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Overwater bungalow with glass floor</li>
+          <li>Private sunset beach dinner</li>
+          <li>Couples snorkelling & dolphin cruise</li>
+          <li>Couples spa & massage session</li>
+          <li>Honeymoon room décor & welcome cake</li>
+          <li>All meals & speedboat transfers</li>
+        </ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">1,24,999</span><span class="pkg-per">/ couple</span></div>
+        <div class="pkg-note">*Flights from major cities can be arranged separately.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Maldives%20Honeymoon%20package.%20Please%20share%20details." target="_blank" class="pkg-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80&auto=format&fit=crop') center/cover;">
+        <div class="pkg-badge">💑 Most Romantic</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">6 Nights / 7 Days</div>
+        <div class="pkg-name">Bali Romantic Escape</div>
+        <div class="pkg-dest">Ubud · Seminyak · Uluwatu</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Private pool villa for 6 nights</li>
+          <li>Sunset Uluwatu Kecak fire show</li>
+          <li>Rice terrace sunrise walk, Ubud</li>
+          <li>Couples spa & flower bath ritual</li>
+          <li>Romantic cliffside dinner</li>
+          <li>Daily breakfast + 2 special dinners</li>
+        </ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">74,999</span><span class="pkg-per">/ couple</span></div>
+        <div class="pkg-note">*Includes visa on arrival & airport transfers.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Bali%20Romantic%20Escape%20package.%20Please%20share%20details." target="_blank" class="pkg-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=700&q=80&auto=format&fit=crop') center/cover;">
+        <div class="pkg-badge">❄️ Kashmir Special</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Kashmir Honeymoon</div>
+        <div class="pkg-dest">Srinagar · Gulmarg · Pahalgam</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Premium houseboat on Dal Lake</li>
+          <li>Private shikara sunrise & sunset rides</li>
+          <li>Snow activities at Gulmarg</li>
+          <li>Romantic Pahalgam valley picnic</li>
+          <li>Candlelit dinner on the houseboat</li>
+          <li>Honeymoon room décor included</li>
+        </ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">52,999</span><span class="pkg-per">/ couple</span></div>
+        <div class="pkg-note">*All meals + AC vehicle + guide included.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Kashmir%20Honeymoon%20package.%20Please%20share%20details." target="_blank" class="pkg-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700&q=80&auto=format&fit=crop') center/cover;">
+        <div class="pkg-badge">✨ Luxury</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Dubai Luxury Couple</div>
+        <div class="pkg-dest">Downtown · Palm Jumeirah · Desert</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>5-star hotel on Palm Jumeirah</li>
+          <li>Burj Khalifa observation deck</li>
+          <li>Romantic desert dinner under stars</li>
+          <li>Dubai Creek gold souk tour</li>
+          <li>Dhow dinner cruise on the Creek</li>
+          <li>Visa on arrival + all transfers</li>
+        </ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">88,999</span><span class="pkg-per">/ couple</span></div>
+        <div class="pkg-note">*Daily breakfast + 2 special dinners included.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Dubai%20Luxury%20Couple%20package.%20Please%20share%20details." target="_blank" class="pkg-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=700&q=80&auto=format&fit=crop') center/cover;">
+        <div class="pkg-badge">🌴 Serene</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Kerala Romantic Retreat</div>
+        <div class="pkg-dest">Munnar · Alleppey · Kovalam</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Private houseboat on backwaters</li>
+          <li>Couples Ayurvedic spa package</li>
+          <li>Tea garden sunset walk in Munnar</li>
+          <li>Candlelit beach dinner in Kovalam</li>
+          <li>Kathakali cultural evening</li>
+          <li>All meals + private transfers</li>
+        </ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">48,999</span><span class="pkg-per">/ couple</span></div>
+        <div class="pkg-note">*Honeymoon room décor on request.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Kerala%20Romantic%20Retreat%20package.%20Please%20share%20details." target="_blank" class="pkg-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80&auto=format&fit=crop') center/cover;">
+        <div class="pkg-badge">🏔️ Mountain Romance</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Himachal Couples Retreat</div>
+        <div class="pkg-dest">Shimla · Manali · Solang Valley</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Boutique mountain resort stays</li>
+          <li>Snow point & Solang Valley adventure</li>
+          <li>Romantic bonfire evenings</li>
+          <li>Hadimba temple & old Manali walk</li>
+          <li>Couples photography session</li>
+          <li>Daily breakfast + cosy dinners</li>
+        </ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">44,999</span><span class="pkg-per">/ couple</span></div>
+        <div class="pkg-note">*Private AC car + all sightseeing included.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Himachal%20Couples%20Retreat%20package.%20Please%20share%20details." target="_blank" class="pkg-btn">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="testimonials">
+  <div style="text-align:center;">
+    <div class="s-eye">Love Stories</div>
+    <h2 class="s-title">What couples <em>say</em></h2>
+    <p class="s-sub">Real honeymooners, real memories.</p>
+  </div>
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="test-stars">♥ ♥ ♥ ♥ ♥</div>
+      <p class="test-text">"The Maldives package was beyond anything we imagined. The overwater villa, the private dinner on the beach — my wife couldn't stop smiling. Sanjeev ji had arranged everything flawlessly. Thank you from both of us!"</p>
+      <div class="test-author">Karan & Ananya Desai</div>
+      <div class="test-loc">Ahmedabad → Maldives · Feb 2025</div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">♥ ♥ ♥ ♥ ♥</div>
+      <p class="test-text">"Bali was our honeymoon dream. The private pool villa, the Uluwatu sunset, the flower bath spa — it was genuinely perfect. And the price was so reasonable compared to other agencies. Couldn't have asked for more."</p>
+      <div class="test-author">Riya & Dhruv Patel</div>
+      <div class="test-loc">Surat → Bali · Dec 2024</div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">♥ ♥ ♥ ♥ ♥</div>
+      <p class="test-text">"Kashmir in January felt like something out of a movie — snow everywhere, the houseboat fire crackling, and a candlelit dinner my husband had secretly arranged through Desh Videsh. I will never forget it."</p>
+      <div class="test-author">Pooja Mehta</div>
+      <div class="test-loc">Vadodara → Kashmir · Jan 2025</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <h2>Planning something <em>special for you two?</em></h2>
+    <p>Tell us your dream — we'll make it happen, within your budget, without compromise.</p>
+    <a href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20honeymoon%2Fcouple%20holiday.%20Can%20you%20help%20me%20with%20options%3F" target="_blank" class="wa-btn">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Plan My Romantic Trip
+    </a>
+  </div>
+</section>
+<footer><p>&copy; 2024 Desh Videsh Tours & Travels. Founded by <a href="index.html">Sanjeev Bhati</a>. All rights reserved.</p></footer>
+<a href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20honeymoon%20packages." target="_blank" class="sticky-wa">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Enquire Now
+</a>
+</body>
+</html>
