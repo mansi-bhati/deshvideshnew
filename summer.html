@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Summer Trips 2025 — Desh Videsh Tours & Travels</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue-deep:#0B1F3A;--blue-mid:#163354;--blue-light:#1E4A7A;
+  --gold:#C9A84C;--gold-light:#E8D08A;
+  --white:#FFFFFF;--cream:#FAF8F4;--beige:#F2EDE4;
+  --muted:#8A9BB0;
+  --ff-display:'Playfair Display',Georgia,serif;
+  --ff-body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--blue-deep);overflow-x:hidden;font-size:15px;line-height:1.7;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--blue-deep);}
+::-webkit-scrollbar-thumb{background:var(--gold);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(11,31,58,0.97);backdrop-filter:blur(16px);box-shadow:0 2px 40px rgba(0,0,0,0.3);}
+.nav-logo .wordmark{font-family:var(--ff-display);font-size:2rem;font-weight:600;color:var(--white);}
+.nav-logo .sub{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{padding:0.55rem 1.4rem;background:var(--gold);color:var(--blue-deep);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:background .2s;font-family:var(--ff-body);}
+.nav-cta:hover{background:var(--gold-light);}
+
+/* SUMMER HERO */
+.summer-hero{
+  min-height:60vh;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg, #0B1F3A 0%, #1E3A5A 30%, #C9A84C22 70%, #0B1F3A 100%);
+  padding-top:80px;
+}
+.summer-hero::before{
+  content:'';position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1800&q=85') center/cover no-repeat;
+  opacity:0.25;
+}
+.summer-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(11,31,58,0.6),rgba(11,31,58,0.85));}
+.summer-hero-content{position:relative;z-index:2;text-align:center;padding:3rem 2rem;}
+.summer-badge{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:rgba(201,168,76,0.15);border:1px solid var(--gold);
+  padding:0.4rem 1.2rem;border-radius:999px;
+  font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:1.5rem;
+  animation:fadeUp 0.8s ease both;
+}
+.sun-icon{font-size:1rem;animation:spin 6s linear infinite;}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(28px);}100%{opacity:1;transform:none;}}
+
+.summer-hero h1{
+  font-family:var(--ff-display);
+  font-size:clamp(2.8rem,6vw,5rem);
+  font-weight:700;color:var(--white);
+  line-height:1.1;margin-bottom:1rem;
+  animation:fadeUp 0.8s 0.15s ease both;
+}
+.summer-hero h1 em{font-style:italic;color:var(--gold-light);}
+.summer-hero p{
+  font-size:1.05rem;color:rgba(255,255,255,0.75);
+  max-width:560px;margin:0 auto 2rem;
+  animation:fadeUp 0.8s 0.3s ease both;
+}
+.summer-hero-meta{
+  display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;
+  margin-bottom:2.5rem;
+  animation:fadeUp 0.8s 0.45s ease both;
+}
+.summer-meta-item{text-align:center;}
+.summer-meta-num{font-family:var(--ff-display);font-size:1.8rem;font-weight:600;color:var(--gold);}
+.summer-meta-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);}
+.btn-gold{padding:1rem 2.5rem;background:var(--gold);color:var(--blue-deep);font-family:var(--ff-body);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background .25s,transform .2s;box-shadow:0 4px 24px rgba(201,168,76,0.35);}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-3px);}
+.btn-outline-white{padding:1rem 2.5rem;background:transparent;color:var(--white);font-family:var(--ff-body);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:400;border:1px solid rgba(255,255,255,0.4);cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .25s,background .25s;}
+.btn-outline-white:hover{border-color:var(--gold);background:rgba(201,168,76,0.1);}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s 0.6s ease both;}
+
+/* FILTER TABS */
+.filter-section{background:var(--blue-deep);padding:1.5rem 6vw;position:sticky;top:68px;z-index:100;border-bottom:1px solid rgba(201,168,76,0.15);}
+.filter-inner{display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;}
+.ftab{
+  padding:0.5rem 1.4rem;
+  border:1px solid rgba(201,168,76,0.25);
+  background:transparent;color:rgba(255,255,255,0.55);
+  font-family:var(--ff-body);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;
+  cursor:pointer;transition:all .2s;border-radius:2px;
+}
+.ftab:hover{color:var(--gold);border-color:var(--gold);}
+.ftab.active{background:var(--gold);color:var(--blue-deep);border-color:var(--gold);font-weight:600;}
+
+/* PACKAGES GRID */
+.packages-section{padding:4rem 6vw 6rem;}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+@media(max-width:900px){.pkg-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:580px){.pkg-grid{grid-template-columns:1fr;}}
+
+.pkg-card{
+  background:var(--white);
+  box-shadow:0 4px 24px rgba(11,31,58,0.07);
+  overflow:hidden;
+  transition:transform .3s, box-shadow .3s;
+  position:relative;
+}
+.pkg-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(11,31,58,0.16);}
+.pkg-card.featured{border:2px solid var(--gold);}
+.pkg-img{height:220px;background-size:cover;background-position:center;position:relative;overflow:hidden;}
+.pkg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(11,31,58,0.5),transparent 55%);}
+.pkg-img-tag{
+  position:absolute;top:1rem;left:1rem;z-index:2;
+  background:var(--gold);color:var(--blue-deep);
+  font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;
+  padding:0.25rem 0.75rem;
+}
+.pkg-img-price{
+  position:absolute;bottom:1rem;right:1rem;z-index:2;
+  text-align:right;
+}
+.pkg-img-price .cur{font-size:0.8rem;color:var(--gold-light);font-weight:600;}
+.pkg-img-price .amt{font-family:var(--ff-display);font-size:1.5rem;font-weight:700;color:#fff;line-height:1;}
+.pkg-img-price .per{font-size:0.62rem;color:rgba(255,255,255,0.6);display:block;}
+
+.pkg-body{padding:1.5rem;}
+.pkg-nights{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem;}
+.pkg-name{font-family:var(--ff-display);font-size:1.25rem;font-weight:600;color:var(--blue-deep);margin-bottom:0.2rem;}
+.pkg-dest{font-size:0.8rem;color:var(--muted);margin-bottom:1rem;}
+.pkg-div{height:1px;background:rgba(11,31,58,0.08);margin-bottom:1rem;}
+.pkg-features{list-style:none;display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.2rem;}
+.pkg-features li{font-size:0.8rem;color:var(--blue-deep);opacity:0.7;display:flex;align-items:flex-start;gap:0.45rem;}
+.pkg-features li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;font-size:0.75rem;margin-top:2px;}
+.pkg-badge{
+  display:inline-block;background:rgba(201,168,76,0.12);color:var(--gold);
+  font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;
+  padding:0.25rem 0.75rem;margin-bottom:0.6rem;border:1px solid rgba(201,168,76,0.3);
+}
+.pkg-btn{
+  display:block;text-align:center;padding:0.85rem;
+  background:var(--blue-deep);color:var(--white);
+  text-decoration:none;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;
+  transition:background .2s;font-family:var(--ff-body);
+}
+.pkg-btn:hover{background:var(--blue-light);}
+.pkg-card.featured .pkg-btn{background:var(--gold);color:var(--blue-deep);}
+.pkg-card.featured .pkg-btn:hover{background:var(--gold-light);}
+
+/* HIDDEN */
+.pkg-card.hidden{display:none;}
+
+/* WHY SUMMER STRIP */
+.why-strip{background:var(--blue-deep);padding:3rem 6vw;border-top:1px solid rgba(201,168,76,0.12);border-bottom:1px solid rgba(201,168,76,0.12);}
+.why-strip-inner{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;text-align:center;}
+.why-strip-item{flex:1;min-width:160px;max-width:200px;}
+.why-strip-icon{font-size:1.8rem;margin-bottom:0.5rem;}
+.why-strip-title{font-family:var(--ff-display);font-size:1rem;font-weight:600;color:var(--white);margin-bottom:0.25rem;}
+.why-strip-text{font-size:0.78rem;color:rgba(255,255,255,0.45);line-height:1.6;}
+
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,#C9A84C,#E8D08A 50%,#C9A84C);padding:4rem 6vw;text-align:center;}
+.cta-banner h2{font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--blue-deep);margin-bottom:0.75rem;}
+.cta-banner p{color:rgba(11,31,58,0.65);font-size:0.95rem;margin-bottom:2rem;}
+.btn-dark{padding:1rem 2.5rem;background:var(--blue-deep);color:var(--white);font-family:var(--ff-body);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background .25s,transform .2s;}
+.btn-dark:hover{background:var(--blue-light);transform:translateY(-3px);}
+
+/* FOOTER */
+footer{background:var(--blue-deep);padding:2rem 6vw;text-align:center;border-top:1px solid rgba(201,168,76,0.12);}
+footer p{font-size:0.75rem;color:rgba(255,255,255,0.3);}
+footer a{color:var(--gold);text-decoration:none;}
+
+/* BACK LINK */
+.back-link{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  color:rgba(255,255,255,0.55);font-size:0.75rem;
+  letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;
+  transition:color .2s;margin-bottom:2rem;
+}
+.back-link:hover{color:var(--gold);}
+
+/* SECTION HEADER */
+.section-header{text-align:center;margin-bottom:3rem;}
+.section-eye{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;justify-content:center;gap:0.65rem;margin-bottom:0.85rem;}
+.section-eye::before,.section-eye::after{content:'';display:block;width:1.75rem;height:0.5px;background:var(--gold);}
+.section-title{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:600;color:var(--blue-deep);margin-bottom:0.75rem;}
+.section-title em{font-style:italic;color:var(--gold);}
+.section-sub{color:var(--muted);font-size:0.93rem;font-weight:300;max-width:500px;margin:0 auto;}
+
+/* RESPONSIVE NAV */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .summer-hero h1{font-size:2.5rem;}
+}
+
+/* ANNOUNCEMENT BAR at top of page */
+.ann-bar{background:linear-gradient(90deg,#C9A84C,#E8D08A 50%,#C9A84C);padding:0.5rem 2rem;text-align:center;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;color:var(--blue-deep);}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann-bar">☀️ Summer 2025 Packages are Live — Special Early Bird Rates Available!</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div>
+      <div class="wordmark">Desh Videsh</div>
+      <div class="sub">Tours &amp; Travels</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#destinations">Destinations</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta">Plan My Trip</a>
+</nav>
+
+<!-- HERO -->
+<section class="summer-hero">
+  <div class="summer-hero-overlay"></div>
+  <div class="summer-hero-content">
+    <a href="index.html" class="back-link">← Back to Home</a>
+    <div class="summer-badge"><span class="sun-icon">☀️</span> Summer 2025 is Live</div>
+    <h1>Chase the <em>Summer Sun</em><br>Across the World</h1>
+    <p>From Goa's golden beaches to Bali's emerald rice terraces — our Summer 2025 collection is curated for the season of adventure.</p>
+    <div class="summer-hero-meta">
+      <div class="summer-meta-item"><div class="summer-meta-num">8+</div><div class="summer-meta-label">Destinations</div></div>
+      <div class="summer-meta-item"><div class="summer-meta-num">₹18K</div><div class="summer-meta-label">Starting From</div></div>
+      <div class="summer-meta-item"><div class="summer-meta-num">Apr–Jul</div><div class="summer-meta-label">Travel Window</div></div>
+      <div class="summer-meta-item"><div class="summer-meta-num">100%</div><div class="summer-meta-label">Customisable</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#packages" class="btn-gold">View All Summer Packages</a>
+      <a href="index.html#contact" class="btn-outline-white">Talk to an Expert</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SUMMER STRIP -->
+<div class="why-strip">
+  <div class="why-strip-inner">
+    <div class="why-strip-item">
+      <div class="why-strip-icon">🌊</div>
+      <div class="why-strip-title">Beach Season</div>
+      <div class="why-strip-text">Perfect weather for Goa, Bali & Thailand</div>
+    </div>
+    <div class="why-strip-item">
+      <div class="why-strip-icon">🏔️</div>
+      <div class="why-strip-title">Mountain Escapes</div>
+      <div class="why-strip-text">Beat the heat in Manali, Spiti & Leh</div>
+    </div>
+    <div class="why-strip-item">
+      <div class="why-strip-icon">✈️</div>
+      <div class="why-strip-title">Visa Included</div>
+      <div class="why-strip-text">We handle all international visa processing</div>
+    </div>
+    <div class="why-strip-item">
+      <div class="why-strip-icon">💰</div>
+      <div class="why-strip-title">Early Bird Deals</div>
+      <div class="why-strip-text">Book now, save up to ₹15,000 per person</div>
+    </div>
+    <div class="why-strip-item">
+      <div class="why-strip-icon">🛡️</div>
+      <div class="why-strip-title">Travel Insurance</div>
+      <div class="why-strip-text">Covered on all international summer trips</div>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER + PACKAGES -->
+<div class="filter-section" id="packages">
+  <div class="filter-inner">
+    <button class="ftab active" onclick="filterSummer(this,'all')">All Packages</button>
+    <button class="ftab" onclick="filterSummer(this,'beach')">🏖️ Beach</button>
+    <button class="ftab" onclick="filterSummer(this,'international')">✈️ International</button>
+    <button class="ftab" onclick="filterSummer(this,'domestic')">🇮🇳 Domestic</button>
+    <button class="ftab" onclick="filterSummer(this,'adventure')">🏔️ Adventure</button>
+    <button class="ftab" onclick="filterSummer(this,'honeymoon')">💑 Honeymoon</button>
+  </div>
+</div>
+
+<section class="packages-section">
+  <div class="section-header">
+    <div class="section-eye">Summer 2025</div>
+    <h2 class="section-title">Our <em>Hottest</em> Packages</h2>
+    <p class="section-sub">Handpicked for the season — each trip designed to give you the most out of summer 2025.</p>
+  </div>
+
+  <div class="pkg-grid" id="summerPkgGrid">
+
+    <!-- GOA -->
+    <div class="pkg-card featured" data-cat="beach domestic">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;">
+        <div class="pkg-img-tag">🔥 Best Seller</div>
+        <div class="pkg-img-price"><span class="cur">₹</span><span class="amt">28,999</span><span class="per">/ per person</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-badge">Summer Special</div>
+        <div class="pkg-nights">4 Nights / 5 Days</div>
+        <div class="pkg-name">Goa Sun & Vibes</div>
+        <div class="pkg-dest">North Goa · South Goa · Dudhsagar</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features">
+          <li>Beach resort with pool access</li>
+          <li>Dudhsagar waterfall trip</li>
+          <li>Old Goa heritage churches tour</li>
+          <li>Sunset cruise on Mandowi River</li>
+          <li>Water sports package included</li>
+        </ul>
+        <a href="index.html#contact" class="pkg-btn">Book Now — Summer 2025</a>
+      </div>
+    </div>
+
+    <!-- BALI -->
+    <div class="pkg-card featured" data-cat="beach international honeymoon">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;">
+        <div class="pkg-img-tag">⭐ Top Pick</div>
+        <div class="pkg-img-price"><span class="cur">₹</span><span class="amt">94,999</span><span class="per">/ per person</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-badge">Honeymoon Favourite</div>
+        <div class="pkg-nights">7 Nights / 8 Days</div>
+        <div class="pkg-name">Magical Bali</div>
+        <div class="pkg-dest">Ubud · Seminyak · Uluwatu</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features">
+          <li>Villa with private pool</li>
+          <li>Tegalalang rice terrace trek</li>
+          <li>Uluwatu sunset temple tour</li>
+          <li>Traditional Balinese spa</li>
+          <li>Return airfare & visa help</li>
+        </ul>
+        <a href="index.html#contact" class="pkg-btn">Book Now — Summer 2025</a>
+      </div>
+    </div>
+
+    <!-- THAILAND -->
+    <div class="pkg-card" data-cat="beach international">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;">
+        <div class="pkg-img-tag">🌴 New</div>
+        <div class="pkg-img-price"><span class="cur">₹</span><span class="amt">79,999</span><span class="per">/ per person</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">6 Nights / 7 Days</div>
+        <div class="pkg-name">Thailand Bliss</div>
+        <div class="pkg-dest">Bangkok · Chiang Mai · Phuket</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features">
+          <li>Grand Palace & Wat Pho tour</li>
+          <li>Phi Phi Islands speedboat trip</li>
+          <li>Thai cooking class in Chiang Mai</li>
+          <li>4-star beach resort in Phuket</li>
+          <li>Return airfare & visa on arrival</li>
+        </ul>
+        <a href="index.html#contact" class="pkg-btn">Book Now — Summer 2025</a>
+      </div>
+    </div>
+
+    <!-- VIETNAM -->
+    <div class="pkg-card" data-cat="international adventure">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;">
+        <div class="pkg-img-price"><span class="cur">₹</span><span class="amt">84,999</span><span class="per">/ per person</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">7 Nights / 8 Days</div>
+        <div class="pkg-name">Vietnam Explorer</div>
+        <div class="pkg-dest">Hanoi · Ha Long Bay · Ho Chi Minh City</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features">
+          <li>Ha Long Bay overnight cruise</li>
+          <li>Hoi An old town & lantern festival</li>
+          <li>War Remnants Museum, Saigon</li>
+          <li>Mekong Delta boat tour</li>
+          <li>Return airfare & visa on arrival</li>
+        </ul>
+        <a href="index.html#contact" class="pkg-btn">Book Now — Summer 2025</a>
+      </div>
+    </div>
+
+    <!-- MALDIVES -->
+    <div class="pkg-card featured" data-cat="beach international honeymoon">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;">
+        <div class="pkg-img-tag">💎 Luxury</div>
+        <div class="pkg-img-price"><span class="cur">₹</span><span class="amt">1,49,999</span><span class="per">/ per person</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-badge">Luxury Pick</div>
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Maldives Overwater Escape</div>
+        <div class="pkg-dest">Malé · North Malé Atoll</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features">
+          <li>Overwater villa with glass floor</li>
+          <li>All-inclusive meals & drinks</li>
+          <li>Snorkelling & underwater dining</li>
+          <li>Seaplane transfer included</li>
+          <li>Return airfare from India</li>
+        </ul>
+        <a href="index.html#contact" class="pkg-btn">Book Now — Summer 2025</a>
+      </div>
+    </div>
+
+    <!-- SINGAPORE + MALAYSIA -->
+    <div class="pkg-card" data-cat="international">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;">
+        <div class="pkg-img-price"><span class="cur">₹</span><span class="amt">1,09,999</span><span class="per">/ per person</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">6 Nights / 7 Days</div>
+        <div class="pkg-name">Singapore & Malaysia</div>
+        <div class="pkg-dest">Singapore · Kuala Lumpur · Langkawi</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features">
+          <li>Gardens by the Bay & Marina Bay Sands</li>
+          <li>Universal Studios Singapore</li>
+          <li>Petronas Towers & Batu Caves</li>
+          <li>Langkawi beach resort stay</li>
+          <li>Return airfare & visa help</li>
+        </ul>
+        <a href="index.html#contact" class="pkg-btn">Book Now — Summer 2025</a>
+      </div>
+    </div>
+
+    <!-- MANALI -->
+    <div class="pkg-card" data-cat="domestic adventure">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;">
+        <div class="pkg-img-tag">❄️ Beat the Heat</div>
+        <div class="pkg-img-price"><span class="cur">₹</span><span class="amt">36,999</span><span class="per">/ per person</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Manali Summer Escape</div>
+        <div class="pkg-dest">Shimla · Manali · Rohtang Pass</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features">
+          <li>Snow point at Rohtang Pass</li>
+          <li>Solang Valley adventure sports</li>
+          <li>Hadimba temple & old Manali walk</li>
+          <li>Cosy mountain resort stays</li>
+          <li>Bonfire & BBQ evenings</li>
+        </ul>
+        <a href="index.html#contact" class="pkg-btn">Book Now — Summer 2025</a>
+      </div>
+    </div>
+
+    <!-- SPITI VALLEY -->
+    <div class="pkg-card" data-cat="domestic adventure">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;">
+        <div class="pkg-img-tag">🗻 Offbeat</div>
+        <div class="pkg-img-price"><span class="cur">₹</span><span class="amt">42,999</span><span class="per">/ per person</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">7 Nights / 8 Days</div>
+        <div class="pkg-name">Spiti Valley Expedition</div>
+        <div class="pkg-dest">Shimla · Kaza · Key Monastery · Chandratal</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features">
+          <li>Chandratal Lake camping</li>
+          <li>Key Monastery & Kibber village</li>
+          <li>Stargazing at 4200m altitude</li>
+          <li>Pin Valley National Park trek</li>
+          <li>4WD jeep safari on mountain trails</li>
+        </ul>
+        <a href="index.html#contact" class="pkg-btn">Book Now — Summer 2025</a>
+      </div>
+    </div>
+
+    <!-- KASHMIR -->
+    <div class="pkg-card" data-cat="domestic adventure honeymoon">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=700&q=80&auto=format&fit=crop') center/cover no-repeat;">
+        <div class="pkg-img-price"><span class="cur">₹</span><span class="amt">48,999</span><span class="per">/ per person</span></div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">6 Nights / 7 Days</div>
+        <div class="pkg-name">Kashmir Paradise</div>
+        <div class="pkg-dest">Srinagar · Gulmarg · Pahalgam</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features">
+          <li>Houseboat stay on Dal Lake</li>
+          <li>Shikara ride at sunrise</li>
+          <li>Gulmarg gondola ride</li>
+          <li>Betaab Valley & Aru Valley excursion</li>
+          <li>All meals included</li>
+        </ul>
+        <a href="index.html#contact" class="pkg-btn">Book Now — Summer 2025</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Ready for Your Summer 2025 Adventure?</h2>
+  <p>Limited seats available. Book now and lock in early bird rates before they run out.</p>
+  <a href="index.html#contact" class="btn-dark">Plan My Summer Trip →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Desh Videsh Tours &amp; Travels. Founded by Sanjeev Bhati. &nbsp;|&nbsp; <a href="index.html">Back to Home</a></p>
+</footer>
+
+<script>
+function filterSummer(btn, cat) {
+  document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#summerPkgGrid .pkg-card').forEach(card => {
+    if (cat === 'all') {
+      card.classList.remove('hidden');
+    } else {
+      const cats = card.dataset.cat || '';
+      if (cats.includes(cat)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>
