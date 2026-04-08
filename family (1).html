@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Family Travel Packages — Desh Videsh Tours & Travels</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue-deep:#0B1F3A;--blue-mid:#163354;--blue-light:#1E4A7A;
+  --gold:#C9A84C;--gold-light:#E8D08A;
+  --white:#FFFFFF;--cream:#FAF8F4;--beige:#F2EDE4;
+  --muted:#8A9BB0;
+  --ff-display:'Playfair Display',Georgia,serif;
+  --ff-body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--blue-deep);overflow-x:hidden;font-size:15px;line-height:1.7;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--blue-deep);}::-webkit-scrollbar-thumb{background:var(--gold);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(11,31,58,0.97);backdrop-filter:blur(16px);box-shadow:0 2px 40px rgba(0,0,0,0.3);}
+.nav-logo{display:flex;flex-direction:column;}
+.nav-logo .wordmark{font-family:var(--ff-display);font-size:1.6rem;font-weight:600;color:var(--white);text-decoration:none;}
+.nav-logo .sub{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
+.nav-back{display:flex;align-items:center;gap:0.5rem;text-decoration:none;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color .2s;}
+.nav-back:hover{color:var(--gold);}
+.nav-back svg{width:16px;height:16px;stroke:currentColor;fill:none;}
+
+/* HERO */
+.hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:80px;}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url('https://images.unsplash.com/photo-1609220136736-443140cffec6?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,31,58,0.88) 0%,rgba(11,31,58,0.55) 60%,rgba(11,31,58,0.72) 100%);z-index:1;}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem 6vw;max-width:780px;}
+.hero-badge{display:inline-flex;align-items:center;gap:0.6rem;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);padding:0.4rem 1.1rem;border-radius:999px;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(2.4rem,5vw,4.5rem);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:1.2rem;}
+.hero-h1 em{font-style:italic;color:var(--gold-light);}
+.hero-sub{font-size:clamp(0.88rem,1.3vw,1rem);color:rgba(255,255,255,0.72);max-width:540px;margin:0 auto 2rem;font-weight:300;line-height:1.85;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:0.65rem;justify-content:center;margin-bottom:2rem;}
+.hero-pill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:0.38rem 0.9rem;border-radius:999px;font-size:0.72rem;color:rgba(255,255,255,0.75);}
+.btn-gold{padding:1rem 2.5rem;background:var(--gold);color:var(--blue-deep);font-family:var(--ff-body);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background .25s,transform .2s;box-shadow:0 4px 24px rgba(201,168,76,0.35);}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+/* WHY FAMILY */
+.why-family{background:var(--blue-deep);padding:5rem 6vw;}
+.section-eye{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.section-title{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--white);margin-bottom:1rem;}
+.section-title em{font-style:italic;color:var(--gold-light);}
+.section-sub{color:rgba(255,255,255,0.45);font-weight:300;font-size:0.92rem;line-height:1.85;max-width:500px;}
+.perks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem;}
+@media(max-width:768px){.perks-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.perks-grid{grid-template-columns:1fr;}}
+.perk-card{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.12);padding:1.6rem 1.4rem;transition:background .3s;}
+.perk-card:hover{background:rgba(201,168,76,0.07);}
+.perk-icon{font-size:1.8rem;margin-bottom:0.75rem;}
+.perk-title{font-family:var(--ff-display);font-size:1rem;color:var(--white);font-weight:600;margin-bottom:0.4rem;}
+.perk-desc{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.6;}
+
+/* PACKAGES */
+.packages-section{padding:5rem 6vw;background:var(--cream);}
+.packages-header{text-align:center;margin-bottom:3.5rem;}
+.s-eye{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+.s-title{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--blue-deep);margin-bottom:0.85rem;}
+.s-title em{font-style:italic;color:var(--gold);}
+.s-sub{color:var(--muted);font-weight:300;font-size:0.92rem;line-height:1.85;max-width:500px;margin:0 auto;}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+@media(max-width:900px){.pkg-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:580px){.pkg-grid{grid-template-columns:1fr;}}
+.pkg-card{background:var(--white);box-shadow:0 4px 32px rgba(11,31,58,0.08);overflow:hidden;transition:transform .3s,box-shadow .3s;}
+.pkg-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(11,31,58,0.15);}
+.pkg-img{height:210px;background-size:cover;background-position:center;position:relative;}
+.pkg-badge{position:absolute;top:1rem;left:1rem;background:var(--gold);color:var(--blue-deep);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;padding:0.28rem 0.75rem;}
+.pkg-body{padding:1.5rem 1.4rem 1.4rem;}
+.pkg-nights{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+.pkg-name{font-family:var(--ff-display);font-size:1.18rem;font-weight:700;color:var(--blue-deep);margin-bottom:0.2rem;}
+.pkg-dest{font-size:0.78rem;color:var(--muted);margin-bottom:1rem;}
+.pkg-divider{height:1px;background:rgba(11,31,58,0.07);margin-bottom:1rem;}
+.pkg-features{list-style:none;margin-bottom:1.2rem;}
+.pkg-features li{font-size:0.79rem;color:#4A5568;padding:0.28rem 0;display:flex;align-items:flex-start;gap:0.5rem;}
+.pkg-features li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;}
+.pkg-price-row{display:flex;align-items:baseline;gap:0.2rem;margin-bottom:1.2rem;}
+.pkg-cur{font-size:1rem;font-weight:600;color:var(--blue-deep);}
+.pkg-amt{font-family:var(--ff-display);font-size:1.6rem;font-weight:700;color:var(--blue-deep);}
+.pkg-per{font-size:0.72rem;color:var(--muted);}
+.pkg-note{font-size:0.7rem;color:var(--muted);margin-bottom:1rem;}
+.pkg-btn{display:block;text-align:center;padding:0.85rem;background:var(--gold);color:var(--blue-deep);font-size:0.76rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:background .2s,transform .15s;}
+.pkg-btn:hover{background:var(--gold-light);transform:translateY(-1px);}
+.pkg-btn.whatsapp{background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;gap:0.5rem;}
+.pkg-btn.whatsapp:hover{background:#1ebe5d;}
+.pkg-btn.whatsapp svg{width:18px;height:18px;fill:currentColor;flex-shrink:0;}
+
+/* TESTIMONIAL */
+.testimonials{background:var(--beige);padding:5rem 6vw;}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem;}
+@media(max-width:768px){.test-grid{grid-template-columns:1fr;}}
+.test-card{background:var(--white);padding:1.8rem 1.5rem;box-shadow:0 2px 20px rgba(11,31,58,0.06);}
+.test-stars{color:var(--gold);font-size:0.9rem;margin-bottom:0.8rem;}
+.test-text{font-size:0.86rem;color:#4A5568;line-height:1.75;font-style:italic;margin-bottom:1.1rem;}
+.test-author{font-size:0.78rem;font-weight:600;color:var(--blue-deep);}
+.test-loc{font-size:0.72rem;color:var(--muted);}
+
+/* CTA STRIP */
+.cta-strip{background:var(--blue-deep);padding:4rem 6vw;text-align:center;position:relative;overflow:hidden;}
+.cta-strip::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 56px),repeating-linear-gradient(90deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 56px);}
+.cta-strip-inner{position:relative;z-index:2;}
+.cta-strip h2{font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--white);margin-bottom:0.8rem;}
+.cta-strip h2 em{font-style:italic;color:var(--gold-light);}
+.cta-strip p{color:rgba(255,255,255,0.55);margin-bottom:2rem;font-size:0.9rem;}
+.wa-btn{display:inline-flex;align-items:center;gap:0.65rem;padding:1rem 2.5rem;background:#25D366;color:#fff;font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;box-shadow:0 4px 24px rgba(37,211,102,0.35);}
+.wa-btn:hover{background:#1ebe5d;transform:translateY(-2px);}
+.wa-btn svg{width:22px;height:22px;fill:currentColor;flex-shrink:0;}
+
+/* FOOTER */
+footer{background:#060f1e;padding:2rem 6vw;text-align:center;}
+footer p{font-size:0.75rem;color:rgba(255,255,255,0.25);letter-spacing:0.05em;}
+footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
+footer a:hover{color:var(--gold);}
+
+/* STICKY WA */
+.sticky-wa{position:fixed;bottom:1.8rem;right:1.8rem;z-index:300;display:flex;align-items:center;gap:0.6rem;padding:0.8rem 1.4rem;background:#25D366;color:#fff;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;text-decoration:none;border-radius:999px;box-shadow:0 6px 30px rgba(37,211,102,0.45);transition:transform .2s,background .2s;}
+.sticky-wa:hover{background:#1ebe5d;transform:translateY(-3px);}
+.sticky-wa svg{width:20px;height:20px;fill:currentColor;}
+
+/* WHO CARDS nav */
+.who-nav{background:var(--white);border-bottom:1px solid rgba(11,31,58,0.08);padding:0;display:flex;overflow-x:auto;scrollbar-width:none;}
+.who-nav::-webkit-scrollbar{display:none;}
+.who-nav a{display:flex;align-items:center;gap:0.5rem;padding:1rem 1.6rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
+.who-nav a:hover{color:var(--blue-deep);}
+.who-nav a.active{color:var(--blue-deep);border-bottom-color:var(--gold);font-weight:600;}
+
+@media(max-width:700px){
+  .pkg-grid{grid-template-columns:1fr;}
+  .perks-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;">
+    <span class="wordmark">Desh Videsh</span>
+    <span class="sub">Tours & Travels</span>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<!-- WHO NAV -->
+<div class="who-nav" style="margin-top:64px;">
+  <a href="family.html" class="active">👨‍👩‍👧‍👦 Families</a>
+  <a href="couples.html">💑 Couples & Honeymoon</a>
+  <a href="first-time.html">🎒 First-Time Travelers</a>
+  <a href="workationers.html">💻 Workationers</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">👨‍👩‍👧‍👦 Family Travel</div>
+    <h1 class="hero-h1">Memories Made<em>Together</em></h1>
+    <p class="hero-sub">Carefully crafted family holidays where kids are thrilled, parents unwind, and grandparents feel at home — all at prices that make sense.</p>
+    <div class="hero-pills">
+      <div class="hero-pill">Kid-friendly activities</div>
+      <div class="hero-pill">Family rooms & suites</div>
+      <div class="hero-pill">Safe & supervised tours</div>
+      <div class="hero-pill">All age groups</div>
+      <div class="hero-pill">Group discounts</div>
+    </div>
+    <a href="#packages" class="btn-gold">See Family Packages ↓</a>
+  </div>
+</section>
+
+<!-- WHY FAMILY -->
+<section class="why-family">
+  <div style="text-align:center;margin-bottom:3rem;">
+    <div class="section-eye">Why families love us</div>
+    <h2 class="section-title">Everything planned, <em>nothing left to chance</em></h2>
+    <p class="section-sub" style="margin:0 auto;">We know travelling with family is different. That's why every detail — from hotel room sizes to kid-friendly meal options — is thought through in advance.</p>
+  </div>
+  <div class="perks-grid">
+    <div class="perk-card">
+      <div class="perk-icon">🏨</div>
+      <div class="perk-title">Family Rooms & Suites</div>
+      <div class="perk-desc">Spacious rooms with extra beds, cribs, and interconnected layouts so the whole family stays together comfortably.</div>
+    </div>
+    <div class="perk-card">
+      <div class="perk-icon">🚌</div>
+      <div class="perk-title">Private AC Transfers</div>
+      <div class="perk-desc">Comfortable, air-conditioned vehicles sized for your group — no cramped buses, no sharing with strangers.</div>
+    </div>
+    <div class="perk-card">
+      <div class="perk-icon">🍽️</div>
+      <div class="perk-title">Veg & Kid Menus</div>
+      <div class="perk-desc">All dietary needs handled. Pure veg options, kid-friendly meals, and local cuisine experiences that even picky eaters love.</div>
+    </div>
+    <div class="perk-card">
+      <div class="perk-icon">🎢</div>
+      <div class="perk-title">Kids Activities Built-In</div>
+      <div class="perk-desc">Water parks, wildlife encounters, beach games, cultural workshops — every itinerary includes dedicated kids' experiences.</div>
+    </div>
+    <div class="perk-card">
+      <div class="perk-icon">👴</div>
+      <div class="perk-title">Senior-Friendly Options</div>
+      <div class="perk-desc">Easy walking distances, elevator-accessible hotels, and relaxed pacing so grandparents enjoy every moment too.</div>
+    </div>
+    <div class="perk-card">
+      <div class="perk-icon">📞</div>
+      <div class="perk-title">24/7 On-Trip Support</div>
+      <div class="perk-desc">Your dedicated travel manager is one WhatsApp away — always, for any need, any hour of the day.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section" id="packages">
+  <div class="packages-header">
+    <div class="s-eye">Affordable Family Packages</div>
+    <h2 class="s-title">Pick your family's <em>perfect escape</em></h2>
+    <p class="s-sub">All-inclusive prices with zero hidden charges. Group discounts available for 6+ members.</p>
+  </div>
+
+  <div class="pkg-grid">
+
+    <!-- GOA -->
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=700&q=80&auto=format&fit=crop') center/cover;position:relative;">
+        <div class="pkg-badge">🏖️ Beach Special</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">4 Nights / 5 Days</div>
+        <div class="pkg-name">Goa Family Fun</div>
+        <div class="pkg-dest">North Goa · South Goa · Old Goa</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Family beach resort with pool</li>
+          <li>Water sports & banana boat ride</li>
+          <li>Old Goa churches & spice plantation</li>
+          <li>Evening cruise on Mandovi river</li>
+          <li>Daily breakfast + 2 dinners</li>
+          <li>Private AC vehicle throughout</li>
+        </ul>
+        <div class="pkg-price-row">
+          <span class="pkg-cur">₹</span>
+          <span class="pkg-amt">28,999</span>
+          <span class="pkg-per">/ per person</span>
+        </div>
+        <div class="pkg-note">*For family of 4. Extra child (below 5) free.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Goa%20Family%20Fun%20package%20(4N%2F5D).%20Please%20share%20details." target="_blank" class="pkg-btn whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- KERALA -->
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=700&q=80&auto=format&fit=crop') center/cover;position:relative;">
+        <div class="pkg-badge">🌴 Most Popular</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Kerala Family Discovery</div>
+        <div class="pkg-dest">Munnar · Thekkady · Alleppey</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Houseboat stay for the whole family</li>
+          <li>Periyar wildlife safari & elephant park</li>
+          <li>Tea & spice plantation tour</li>
+          <li>Kathakali cultural show for kids</li>
+          <li>Cooking class — make Kerala dishes!</li>
+          <li>All meals + private transfers</li>
+        </ul>
+        <div class="pkg-price-row">
+          <span class="pkg-cur">₹</span>
+          <span class="pkg-amt">35,999</span>
+          <span class="pkg-per">/ per person</span>
+        </div>
+        <div class="pkg-note">*For family of 4. 1 child (below 8) at 50% off.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Kerala%20Family%20Discovery%20package%20(5N%2F6D).%20Please%20share%20details." target="_blank" class="pkg-btn whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- BALI -->
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80&auto=format&fit=crop') center/cover;position:relative;">
+        <div class="pkg-badge">✈️ International</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">6 Nights / 7 Days</div>
+        <div class="pkg-name">Bali Family Adventure</div>
+        <div class="pkg-dest">Ubud · Kuta · Seminyak · Nusa Dua</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Family villa with private pool</li>
+          <li>Waterbom Bali — Asia's top waterpark</li>
+          <li>Rice terrace & monkey forest trek</li>
+          <li>Traditional Kecak fire dance show</li>
+          <li>ATV quad bike ride for older kids</li>
+          <li>Daily breakfast, visa on arrival help</li>
+        </ul>
+        <div class="pkg-price-row">
+          <span class="pkg-cur">₹</span>
+          <span class="pkg-amt">64,999</span>
+          <span class="pkg-per">/ per person</span>
+        </div>
+        <div class="pkg-note">*For family of 4. Child (5–12 yrs) at 60% of adult price.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Bali%20Family%20Adventure%20package%20(6N%2F7D).%20Please%20share%20details." target="_blank" class="pkg-btn whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- KASHMIR -->
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=700&q=80&auto=format&fit=crop') center/cover;position:relative;">
+        <div class="pkg-badge">❄️ Snow Special</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Kashmir Family Paradise</div>
+        <div class="pkg-dest">Srinagar · Gulmarg · Pahalgam</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Houseboat stay on Dal Lake</li>
+          <li>Shikara ride at sunrise & sunset</li>
+          <li>Gulmarg gondola — kids love it!</li>
+          <li>Pahalgam horse riding for all</li>
+          <li>Snow activities at Gulmarg</li>
+          <li>All meals + AC vehicle throughout</li>
+        </ul>
+        <div class="pkg-price-row">
+          <span class="pkg-cur">₹</span>
+          <span class="pkg-amt">42,999</span>
+          <span class="pkg-per">/ per person</span>
+        </div>
+        <div class="pkg-note">*For family of 4. Senior citizen (60+) discount available.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Kashmir%20Family%20Paradise%20package%20(5N%2F6D).%20Please%20share%20details." target="_blank" class="pkg-btn whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- RAJASTHAN -->
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1477587458883-47145ed94245?w=700&q=80&auto=format&fit=crop') center/cover;position:relative;">
+        <div class="pkg-badge">🏰 Heritage</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">6 Nights / 7 Days</div>
+        <div class="pkg-name">Royal Rajasthan Family</div>
+        <div class="pkg-dest">Jaipur · Jodhpur · Udaipur · Jaisalmer</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Camel safari in Thar Desert</li>
+          <li>Elephant ride at Amber Fort</li>
+          <li>Puppet show & folk dance for kids</li>
+          <li>Heritage palace hotel experience</li>
+          <li>Mehrangarh fort audio-guided tour</li>
+          <li>Daily breakfast + heritage dinners</li>
+        </ul>
+        <div class="pkg-price-row">
+          <span class="pkg-cur">₹</span>
+          <span class="pkg-amt">46,999</span>
+          <span class="pkg-per">/ per person</span>
+        </div>
+        <div class="pkg-note">*For family of 4. Child (below 6) free, 6–12 at 50%.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Royal%20Rajasthan%20Family%20package%20(6N%2F7D).%20Please%20share%20details." target="_blank" class="pkg-btn whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- SINGAPORE -->
+    <div class="pkg-card">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=700&q=80&auto=format&fit=crop') center/cover;position:relative;">
+        <div class="pkg-badge">✈️ Kids Favourite</div>
+      </div>
+      <div class="pkg-body">
+        <div class="pkg-nights">5 Nights / 6 Days</div>
+        <div class="pkg-name">Singapore Family Special</div>
+        <div class="pkg-dest">Universal Studios · Sentosa · Gardens by the Bay</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Universal Studios Singapore tickets</li>
+          <li>Sentosa Island full-day pass</li>
+          <li>Gardens by the Bay — Cloud Forest</li>
+          <li>Night Safari — kids go wild!</li>
+          <li>Indian vegetarian restaurant meals</li>
+          <li>Airport transfers + visa guidance</li>
+        </ul>
+        <div class="pkg-price-row">
+          <span class="pkg-cur">₹</span>
+          <span class="pkg-amt">72,999</span>
+          <span class="pkg-per">/ per person</span>
+        </div>
+        <div class="pkg-note">*For family of 4. Child (below 3) completely free.</div>
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Singapore%20Family%20Special%20package%20(5N%2F6D).%20Please%20share%20details." target="_blank" class="pkg-btn whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Enquire on WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div style="text-align:center;">
+    <div class="s-eye">Real Family Stories</div>
+    <h2 class="s-title">What families <em>say</em></h2>
+    <p class="s-sub">Thousands of families have trusted Desh Videsh. Here's what they share.</p>
+  </div>
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"Booked the Kerala package for 4 of us — two kids and both parents-in-law. The houseboat was stunning, the pacing was perfect for everyone. No stress at all. Sanjeev ji took care of literally everything."</p>
+      <div class="test-author">Priya & Rakesh Sharma</div>
+      <div class="test-loc">Ahmedabad → Kerala · Dec 2024</div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"Bali with two teenagers — I was nervous but it turned out to be the best holiday we've ever taken. The villa with the private pool, the waterpark, the rice terraces. They're still talking about it 6 months later!"</p>
+      <div class="test-author">Meena Patel</div>
+      <div class="test-loc">Surat → Bali · Jan 2025</div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"Kashmir with my 70-year-old mother and two kids under 8. I thought it'd be chaos. But the team had thought of everything — slow pace, warm rooms, easy activities. Mummy cried happy tears. True story."</p>
+      <div class="test-author">Jigar Mehta</div>
+      <div class="test-loc">Vadodara → Kashmir · Mar 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <h2>Not sure which package <em>is right for you?</em></h2>
+    <p>Talk to Sanjeev ji directly. Tell us your family size, budget & travel dates — we'll plan it around you.</p>
+    <a href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20family%20holiday.%20Can%20you%20help%20me%20with%20options%3F" target="_blank" class="wa-btn">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat with us on WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Desh Videsh Tours & Travels. Founded by <a href="index.html">Sanjeev Bhati</a>. All rights reserved.</p>
+</footer>
+
+<!-- STICKY WA -->
+<a href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20family%20travel%20packages." target="_blank" class="sticky-wa">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Enquire Now
+</a>
+
+</body>
+</html>
