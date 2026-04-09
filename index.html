@@ -440,61 +440,6 @@ footer ul li a:hover{color:var(--gold);}
 }
 .hero-search-btn:hover{background:#E8D08A;}
 
-/* Suggestions dropdown */
-.search-suggestions{
-  position:absolute;top:calc(100% + 2px);left:0;right:0;
-  background:rgba(9,20,44,0.97);
-  border:1px solid rgba(201,168,76,0.2);
-  backdrop-filter:blur(28px);
-  -webkit-backdrop-filter:blur(28px);
-  box-shadow:0 20px 60px rgba(11,31,58,0.55);
-  z-index:999;
-  display:none;
-  max-height:340px;
-  overflow-y:auto;
-}
-.search-suggestions.open{display:block;}
-.suggestion-group-label{
-  padding:0.65rem 1.4rem 0.3rem;
-  font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:rgba(201,168,76,0.55);font-weight:500;
-  border-bottom:0.5px solid rgba(255,255,255,0.06);
-}
-.suggestion-item{
-  display:flex;align-items:center;gap:0.85rem;
-  padding:0.75rem 1.4rem;
-  cursor:pointer;
-  transition:background .15s;
-  border-bottom:0.5px solid rgba(255,255,255,0.05);
-  text-decoration:none;
-}
-.suggestion-item:hover{background:rgba(201,168,76,0.08);}
-.suggestion-item:last-child{border-bottom:none;}
-.si-icon{
-  width:32px;height:32px;border-radius:50%;
-  background:rgba(255,255,255,0.07);
-  border:1px solid rgba(255,255,255,0.1);
-  display:flex;align-items:center;
-  justify-content:center;font-size:1rem;flex-shrink:0;
-}
-.si-text{flex:1;}
-.si-dest{font-size:0.88rem;font-weight:500;color:#FFFFFF;display:block;}
-.si-tag{font-size:0.73rem;color:rgba(255,255,255,0.38);display:block;margin-top:1px;}
-.si-arrow{color:rgba(201,168,76,0.7);font-size:0.85rem;font-weight:600;}
-.search-popular{
-  padding:0.6rem 1.4rem;
-  display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;
-  border-bottom:0.5px solid rgba(255,255,255,0.06);
-}
-.search-popular-label{font-size:0.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-right:4px;}
-.pop-tag{
-  background:rgba(201,168,76,0.1);border:0.5px solid rgba(201,168,76,0.28);
-  padding:4px 12px;font-size:0.72rem;color:rgba(255,255,255,0.6);
-  cursor:pointer;transition:all .18s;font-weight:500;
-}
-.pop-tag:hover{background:rgba(201,168,76,0.25);color:#C9A84C;border-color:rgba(201,168,76,0.5);}
-.no-results{padding:1.2rem 1.4rem;font-size:0.88rem;color:rgba(255,255,255,0.4);text-align:center;}
-
 /* SUMMER ANNOUNCEMENT BAR */
 .summer-ann-bar{
   position:relative;z-index:300;overflow:hidden;
@@ -686,18 +631,6 @@ footer ul li a:hover{color:var(--gold);}
           aria-label="Search destinations"
         />
         <button class="hero-search-btn" id="heroSearchBtn">Search</button>
-      </div>
-      <!-- Dropdown -->
-      <div class="search-suggestions" id="searchSuggestions">
-        <div class="search-popular" id="popularTags">
-          <span class="search-popular-label">Popular:</span>
-          <span class="pop-tag" data-val="Bali">Bali</span>
-          <span class="pop-tag" data-val="Dubai">Dubai</span>
-          <span class="pop-tag" data-val="Kashmir">Kashmir</span>
-          <span class="pop-tag" data-val="Goa">Goa</span>
-          <span class="pop-tag" data-val="Maldives">Maldives</span>
-          <span class="pop-tag" data-val="Europe">Europe</span>
-        </div>
       </div>
     </div>
     <div class="hero-actions">
@@ -1238,7 +1171,7 @@ footer ul li a:hover{color:var(--gold);}
       <div class="contact-info">
         <div class="info-item"><div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><path d="M8 1C5.2 1 3 3.2 3 6c0 4 5 9 5 9s5-5 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg></div><div><div class="info-label">Office</div><div class="info-val">C-75 Sadul Ganj, Rotary Club, Bikaner, Rajasthan</div></div></div>
         <div class="info-item"><div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><path d="M3 2h3l1.5 3.5-2 1.2a9 9 0 004.8 4.8l1.2-2L15 11v3a1 1 0 01-1 1C5 15 1 11 1 3a1 1 0 011-1z"/></svg></div><div><div class="info-label">Phone / WhatsApp</div><div class="info-val">+91 82336 38999</div></div></div>
-        <div class="info-item"><div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><rect x="1" y="3" width="14" height="10" rx="1"/><path d="M1 4l7 5 7-5"/></svg></div><div><div class="info-label">Email</div><div class="info-val"><a href="/cdn-cgi/l/email-protection#177e797178577372647f617e7372647f63786265643974787a" style="color:inherit;text-decoration:none;"><span class="__cf_email__" data-cfemail="c1a8afa7ae81a5a4b2a9b7a8a5a4b2a9b5aeb4b3b2efa2aeac">[email&#160;protected]</span></a></div></div></div>
+        <div class="info-item"><div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><rect x="1" y="3" width="14" height="10" rx="1"/><path d="M1 4l7 5 7-5"/></svg></div><div><div class="info-label">Email</div><div class="info-val"><a href="mailto:Info@deshvideshtours.com" style="color:inherit;text-decoration:none;">Info@deshvideshtours.com</a></div></div></div>
         <div class="info-item"><div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg></div><div><div class="info-label">Hours</div><div class="info-val">Mon – Sat: 9:00 AM – 7:00 PM</div></div></div>
       </div>
     </div>
@@ -1272,7 +1205,7 @@ footer ul li a:hover{color:var(--gold);}
     <div><h5>Support</h5><ul><li><a href="#">Visa Guidance</a></li><li><a href="#">Travel Insurance</a></li><li><a href="#">FAQs</a></li><li><a href="#">Cancellation Policy</a></li></ul></div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2024 Desh Videsh Tours &amp; Travels. Founded by Sanjeev Bhati. All rights reserved. &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection#b3daddd5dcf3d7d6c0dbc5dad7d6c0dbc7dcc6c1c09dd0dcde" style="color:inherit;text-decoration:none;opacity:0.7;"><span class="__cf_email__" data-cfemail="0a63646c654a6e6f79627c636e6f79627e657f787924696567">[email&#160;protected]</span></a></p>
+    <p>&copy; 2024 Desh Videsh Tours &amp; Travels. Founded by Sanjeev Bhati. All rights reserved. &nbsp;|&nbsp; <a href="mailto:Info@deshvideshtours.com" style="color:inherit;text-decoration:none;opacity:0.7;">Info@deshvideshtours.com</a></p>
     <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
   </div>
 </footer>
@@ -1329,112 +1262,7 @@ function handleSubmit(e){
 }
 </script>
 
-<script>
-(function(){
-  var destinations = [
-    {dest:"Bali, Indonesia",tag:"International · 7 Days · Beaches & Temples",icon:"🏝️",cat:"international"},
-    {dest:"Dubai, UAE",tag:"International · 4–6 Days · Luxury & Desert",icon:"🌆",cat:"international"},
-    {dest:"Vietnam",tag:"International · 8–12 Days · Culture & Street Food",icon:"🌿",cat:"international"},
-    {dest:"Thailand",tag:"International · 7–10 Days · Islands & Temples",icon:"🛕",cat:"international"},
-    {dest:"Singapore",tag:"International · 4–5 Days · City & Culture",icon:"🌃",cat:"international"},
-    {dest:"Maldives",tag:"International · 5–7 Days · Overwater Villas",icon:"🐠",cat:"international"},
-    {dest:"Europe",tag:"International · 10–15 Days · Multi-Country Tours",icon:"🏰",cat:"international"},
-    {dest:"Sri Lanka",tag:"International · 7–9 Days · Nature & Heritage",icon:"🌴",cat:"international"},
-    {dest:"Nepal",tag:"International · 7–10 Days · Mountains & Trekking",icon:"🏔️",cat:"international"},
-    {dest:"Bhutan",tag:"International · 5–7 Days · Spiritual & Scenic",icon:"⛩️",cat:"international"},
-    {dest:"Goa",tag:"Domestic · 3–5 Days · Beaches & Nightlife",icon:"🏖️",cat:"domestic"},
-    {dest:"Kashmir",tag:"Domestic · 5–7 Days · Mountains & Valleys",icon:"❄️",cat:"domestic"},
-    {dest:"Kerala",tag:"Domestic · 5–7 Days · Backwaters & Ayurveda",icon:"🌿",cat:"domestic"},
-    {dest:"Rajasthan",tag:"Domestic · 6–8 Days · Palaces & Desert",icon:"🏯",cat:"domestic"},
-    {dest:"Himachal Pradesh",tag:"Domestic · 5–7 Days · Hills & Adventure",icon:"🏔️",cat:"domestic"},
-    {dest:"Manali",tag:"Domestic · 4–6 Days · Snow & Workation",icon:"⛷️",cat:"domestic"},
-    {dest:"Andaman Islands",tag:"Domestic · 5–7 Days · Beaches & Diving",icon:"🤿",cat:"domestic"},
-    {dest:"Coorg, Karnataka",tag:"Domestic · 3–4 Days · Coffee & Nature",icon:"☕",cat:"domestic"},
-    {dest:"Spiti Valley",tag:"Domestic · 7–9 Days · Offbeat Mountains",icon:"🗻",cat:"domestic"},
-    {dest:"Ooty & Kodaikanal",tag:"Domestic · 3–5 Days · Hill Stations",icon:"🌄",cat:"domestic"},
-    {dest:"Honeymoon in Maldives",tag:"Couple Trip · Overwater Bungalows",icon:"💑",cat:"honeymoon"},
-    {dest:"Honeymoon in Bali",tag:"Couple Trip · Romantic Villas",icon:"💑",cat:"honeymoon"},
-    {dest:"Honeymoon in Kerala",tag:"Couple Trip · Houseboat & Spa",icon:"💑",cat:"honeymoon"},
-    {dest:"Family Trip to Rajasthan",tag:"Family · 7 Days · Forts & Culture",icon:"👨‍👩‍👧‍👦",cat:"family"},
-    {dest:"Family Trip to Goa",tag:"Family · 5 Days · Beach Fun",icon:"👨‍👩‍👧‍👦",cat:"family"},
-    {dest:"Manali Workation",tag:"Workation · 5–7 Days · Mountain Office",icon:"💻",cat:"workation"},
-    {dest:"Goa Workation",tag:"Workation · 5–7 Days · Beach Office",icon:"💻",cat:"workation"},
-  ];
 
-  var input = document.getElementById('heroSearch');
-  var box = document.getElementById('searchSuggestions');
-  var btn = document.getElementById('heroSearchBtn');
-
-  function renderResults(query){
-    var q = query.trim().toLowerCase();
-    var inner = '';
-
-    if(!q){
-      // Show popular tags
-      inner += '<div class="search-popular" id="popularTags"><span class="search-popular-label">Popular:</span>';
-      ['Bali','Dubai','Kashmir','Goa','Maldives','Vietnam','Europe','Thailand'].forEach(function(t){
-        inner += '<span class="pop-tag" data-val="'+t+'">'+t+'</span>';
-      });
-      inner += '</div>';
-      box.innerHTML = inner;
-      box.classList.add('open');
-      attachPopTagListeners();
-      return;
-    }
-
-    var matches = destinations.filter(function(d){
-      return d.dest.toLowerCase().indexOf(q) !== -1 || d.tag.toLowerCase().indexOf(q) !== -1;
-    });
-
-    if(!matches.length){
-      box.innerHTML = '<div class="no-results">No results for "<strong>'+query+'</strong>" — <a href="#contact" style="color:#C9A84C;text-decoration:none;font-weight:500">Ask us on WhatsApp →</a></div>';
-      box.classList.add('open');
-      return;
-    }
-
-    // Group by category
-    var groups = {international:[],domestic:[],honeymoon:[],family:[],workation:[]};
-    var labels = {international:'International Trips',domestic:'Domestic Getaways',honeymoon:'Honeymoon',family:'Family Trips',workation:'Workations'};
-    matches.forEach(function(d){ groups[d.cat].push(d); });
-
-    Object.keys(groups).forEach(function(cat){
-      if(!groups[cat].length) return;
-      inner += '<div class="suggestion-group-label">'+labels[cat]+'</div>';
-      groups[cat].forEach(function(d){
-        inner += '<a class="suggestion-item" href="#contact">';
-        inner += '<div class="si-icon">'+d.icon+'</div>';
-        inner += '<div class="si-text"><span class="si-dest">'+d.dest+'</span><span class="si-tag">'+d.tag+'</span></div>';
-        inner += '<span class="si-arrow">→</span>';
-        inner += '</a>';
-      });
-    });
-
-    box.innerHTML = inner;
-    box.classList.add('open');
-  }
-
-  input.addEventListener('input', function(){ renderResults(this.value); });
-  input.addEventListener('focus', function(){ renderResults(this.value); });
-  input.addEventListener('blur', function(){ setTimeout(function(){ box.classList.remove('open'); }, 180); });
-
-  document.addEventListener('click', function(e){
-    if(!document.querySelector('.hero-search-wrap').contains(e.target)){
-      box.classList.remove('open');
-    }
-  });
-
-  function attachPopTagListeners(){
-    document.querySelectorAll('.pop-tag').forEach(function(tag){
-      tag.addEventListener('click', function(){
-        input.value = this.getAttribute('data-val');
-        renderResults(input.value);
-        input.focus();
-      });
-    });
-  }
-  attachPopTagListeners();
-})();
-</script>
 
 
 <script>
@@ -1567,21 +1395,16 @@ document.addEventListener("DOMContentLoaded", function() {
   if (btn && input) {
     btn.addEventListener("click", function() {
       var q = input.value.trim();
-      closeDropdown();
       openSearchModal(q || "all");
     });
     input.addEventListener("keydown", function(e) {
       if (e.key === "Enter") {
         var q = input.value.trim();
-        closeDropdown();
         openSearchModal(q || "all");
       }
     });
   }
-  function closeDropdown() {
-    var box = document.getElementById("searchSuggestions");
-    if (box) box.classList.remove("open");
-  }
+
 });
 </script>
 </body>
