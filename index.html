@@ -93,7 +93,7 @@ nav.scrolled{background:rgba(11,31,58,0.97);backdrop-filter:blur(16px);box-shado
 .particle{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(249,228,160,0.55);animation:floatUp linear infinite;}
 @keyframes floatUp{0%{transform:translateY(100vh);opacity:0;}10%{opacity:0.8;}90%{opacity:0.3;}100%{transform:translateY(-5vh);opacity:0;}}
 
-.hero-content{position:relative;z-index:10;text-align:center;padding:2rem 4vw;max-width:860px;animation:fadeUp 1.1s ease both;}
+.hero-content{position:relative;z-index:10;text-align:center;padding:2rem 4vw;max-width:860px;animation:fadeUp 1.1s ease both;overflow:visible;}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(36px);}100%{opacity:1;transform:none;}}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:0.75rem;font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;animation:fadeUp 1.1s .2s ease both;}
 .hero-eyebrow span{display:block;width:1.8rem;height:0.5px;background:var(--gold);}
@@ -385,6 +385,7 @@ footer ul li a:hover{color:var(--gold);}
   width:100%;max-width:680px;margin:0 auto 2.2rem;
   animation:fadeUp 1.1s .58s ease both;
   position:relative;
+  z-index:50;
 }
 .hero-search-box{
   display:flex;align-items:center;
@@ -598,12 +599,12 @@ footer ul li a:hover{color:var(--gold);}
 <!-- SUMMER ANNOUNCEMENT BAR -->
 <div class="summer-ann-bar" onclick="window.location='summer.html'" title="View Summer Packages" style="cursor:pointer;">
   <div class="ann-track" id="annTrack">
-    <div class="ann-item"><span class="ann-sun">&#x2600;&#xFE0F;</span> Summer Trips 2025 Are Live! <div class="ann-sep"></div></div>
+    <div class="ann-item"><span class="ann-sun">&#x2600;&#xFE0F;</span> Summer Trips 2026 Are Live! <div class="ann-sep"></div></div>
     <div class="ann-item">Goa &middot; Bali &middot; Thailand &middot; Vietnam &middot; Maldives <div class="ann-sep"></div></div>
     <div class="ann-item">Early Bird Rates &mdash; Book Now &amp; Save! <a href="summer.html" class="ann-cta" onclick="event.stopPropagation()">Book Now &rarr;</a><div class="ann-sep"></div></div>
     <div class="ann-item"><span class="ann-sun">&#x1F334;</span> International &amp; Domestic Summer Packages <div class="ann-sep"></div></div>
     <div class="ann-item">Starting from &#x20B9;18,999 &middot; All-Inclusive Options Available <div class="ann-sep"></div></div>
-    <div class="ann-item"><span class="ann-sun">&#x2600;&#xFE0F;</span> Summer Trips 2025 Are Live! <div class="ann-sep"></div></div>
+    <div class="ann-item"><span class="ann-sun">&#x2600;&#xFE0F;</span> Summer Trips 2026 Are Live! <div class="ann-sep"></div></div>
     <div class="ann-item">Goa &middot; Bali &middot; Thailand &middot; Vietnam &middot; Maldives <div class="ann-sep"></div></div>
     <div class="ann-item">Early Bird Rates &mdash; Book Now &amp; Save! <a href="summer.html" class="ann-cta" onclick="event.stopPropagation()">Book Now &rarr;</a><div class="ann-sep"></div></div>
     <div class="ann-item"><span class="ann-sun">&#x1F334;</span> International &amp; Domestic Summer Packages <div class="ann-sep"></div></div>
@@ -1321,7 +1322,13 @@ window.addEventListener('load',()=>{
 function handleSubmit(e){
   e.preventDefault();
   const btn=document.getElementById('submitBtn');
-  btn.tex
+  btn.textContent='Sent! We\'ll be in touch soon.';
+  btn.style.background='var(--gold)';
+  btn.style.color='var(--blue-deep)';
+  btn.disabled=true;
+}
+</script>
+
 <script>
 (function(){
   var destinations = [
@@ -1408,22 +1415,7 @@ function handleSubmit(e){
 
   input.addEventListener('input', function(){ renderResults(this.value); });
   input.addEventListener('focus', function(){ renderResults(this.value); });
-
-  btn.addEventListener('click', function(){
-    var q = input.value.trim();
-    if(q){ 
-      renderResults(q);
-      openSearchModal(q);
-    }
-    else { document.getElementById('contact') && document.getElementById('contact').scrollIntoView({behavior:'smooth'}); }
-  });
-
-  input.addEventListener('keydown', function(e){
-    if(e.key === 'Enter'){
-      var first = box.querySelector('.suggestion-item');
-      if(first){ window.location = first.href; }
-    }
-  });
+  input.addEventListener('blur', function(){ setTimeout(function(){ box.classList.remove('open'); }, 180); });
 
   document.addEventListener('click', function(e){
     if(!document.querySelector('.hero-search-wrap').contains(e.target)){
@@ -1474,93 +1466,121 @@ function handleSubmit(e){
     slides[current].classList.remove('active');
     document.querySelectorAll('.slide-dot')[current].classList.remove('active');
     current = (n + slides.length) % slides.length;
-    slid
+    slides[current].classList.add('active');
+    document.querySelectorAll('.slide-dot')[current].classList.add('active');
+    if(locLabel) locLabel.textContent = locations[current] || '';
+    timer = setInterval(function(){ goTo(current + 1); }, 6000);
+  }
+
+  slides[0].classList.add('active');
+  timer = setInterval(function(){ goTo(current + 1); }, 6000);
+
+})();
+</script>
 
 <script>
-// =========================================================
-// SEARCH MODAL — show real packages when user searches
-// =========================================================
+// SEARCH MODAL
 var allPackages = [
-  {name:"Royal Rajasthan",dest:"Jaipur · Jodhpur · Udaipur",nights:"5 Nights / 6 Days",price:"42,999",keywords:["rajasthan","jaipur","jodhpur","udaipur","royal","palace","desert"],img:"https://images.unsplash.com/photo-1477587458883-47145ed94245?w=500&q=80&auto=format&fit=crop"},
-  {name:"Gujarat Heritage Trail",dest:"Ahmedabad · Rann of Kutch · Somnath",nights:"4 Nights / 5 Days",price:"32,999",keywords:["gujarat","ahmedabad","rann","kutch","somnath","dwarka","gir"],img:"https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500&q=80&auto=format&fit=crop"},
-  {name:"Kashmir Paradise",dest:"Srinagar · Gulmarg · Pahalgam",nights:"6 Nights / 7 Days",price:"48,999",keywords:["kashmir","srinagar","gulmarg","pahalgam","dal lake","houseboat","snow","mountains"],img:"https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=500&q=80&auto=format&fit=crop"},
-  {name:"Kerala Backwaters",dest:"Munnar · Alleppey · Kovalam",nights:"5 Nights / 6 Days",price:"38,999",keywords:["kerala","munnar","alleppey","kovalam","backwaters","houseboat","south india","ayurveda"],img:"https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=500&q=80&auto=format&fit=crop"},
-  {name:"Himachal Adventure",dest:"Shimla · Manali · Spiti Valley",nights:"5 Nights / 6 Days",price:"36,999",keywords:["himachal","shimla","manali","spiti","rohtang","solang","snow","mountains","adventure","hill"],img:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80&auto=format&fit=crop"},
-  {name:"Manali Snow Escape",dest:"Manali · Rohtang Pass · Solang Valley",nights:"4 Nights / 5 Days",price:"28,999",keywords:["manali","rohtang","solang","snow","workation","mountains","himachal","hill"],img:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80&auto=format&fit=crop"},
-  {name:"Goa Sun & Sand",dest:"North Goa · South Goa · Dudhsagar",nights:"4 Nights / 5 Days",price:"28,999",keywords:["goa","beach","nightlife","dudhsagar","north goa","south goa","sun","sand","coastal"],img:"https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=500&q=80&auto=format&fit=crop"},
-  {name:"Uttarakhand Spiritual Tour",dest:"Haridwar · Rishikesh · Kedarnath",nights:"6 Nights / 7 Days",price:"44,999",keywords:["uttarakhand","haridwar","rishikesh","kedarnath","spiritual","char dham","yoga","rafting"],img:"https://images.unsplash.com/photo-1570458436416-b8fcccfe883f?w=500&q=80&auto=format&fit=crop"},
-  {name:"Andaman Islands",dest:"Port Blair · Havelock · Neil Island",nights:"5 Nights / 6 Days",price:"52,999",keywords:["andaman","havelock","neil","port blair","beach","diving","snorkelling","island"],img:"https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&q=80&auto=format&fit=crop"},
-  {name:"Spiti Valley Expedition",dest:"Shimla · Kaza · Key Monastery",nights:"7 Nights / 8 Days",price:"42,999",keywords:["spiti","kaza","key","chandratal","offbeat","mountains","camping","trek","adventure"],img:"https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=500&q=80&auto=format&fit=crop"},
-  {name:"Luxury Dubai Escape",dest:"Dubai · Abu Dhabi",nights:"6 Nights / 7 Days",price:"89,999",keywords:["dubai","abu dhabi","burj khalifa","desert safari","luxury","middle east","international"],img:"https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=80&auto=format&fit=crop"},
-  {name:"Europe Grand Tour",dest:"Paris · Switzerland · Italy",nights:"8 Nights / 9 Days",price:"1,74,999",keywords:["europe","paris","switzerland","italy","france","eiffel","alps","venice","international"],img:"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500&q=80&auto=format&fit=crop"},
-  {name:"Bali Experience",dest:"Ubud · Seminyak · Uluwatu",nights:"7 Nights / 8 Days",price:"94,999",keywords:["bali","ubud","seminyak","uluwatu","indonesia","villa","pool","spa","rice terrace","international"],img:"https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=80&auto=format&fit=crop"},
-  {name:"Thailand Bliss",dest:"Bangkok · Chiang Mai · Phuket",nights:"6 Nights / 7 Days",price:"79,999",keywords:["thailand","bangkok","phuket","chiang mai","phi phi","beach","temple","international"],img:"https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=500&q=80&auto=format&fit=crop"},
-  {name:"Vietnam Explorer",dest:"Hanoi · Ha Long Bay · Ho Chi Minh",nights:"7 Nights / 8 Days",price:"84,999",keywords:["vietnam","hanoi","ha long","ho chi minh","saigon","hoi an","mekong","cruise","international"],img:"https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=500&q=80&auto=format&fit=crop"},
+  {name:"Royal Rajasthan",dest:"Jaipur, Jodhpur, Udaipur",nights:"5 Nights / 6 Days",price:"42,999",keywords:["rajasthan","jaipur","jodhpur","udaipur","royal","palace","desert"],img:"https://images.unsplash.com/photo-1477587458883-47145ed94245?w=500&q=80&auto=format&fit=crop"},
+  {name:"Gujarat Heritage Trail",dest:"Ahmedabad, Rann of Kutch, Somnath",nights:"4 Nights / 5 Days",price:"32,999",keywords:["gujarat","ahmedabad","rann","kutch","somnath","dwarka","gir"],img:"https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500&q=80&auto=format&fit=crop"},
+  {name:"Kashmir Paradise",dest:"Srinagar, Gulmarg, Pahalgam",nights:"6 Nights / 7 Days",price:"48,999",keywords:["kashmir","srinagar","gulmarg","pahalgam","dal lake","houseboat","snow","mountains"],img:"https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=500&q=80&auto=format&fit=crop"},
+  {name:"Kerala Backwaters",dest:"Munnar, Alleppey, Kovalam",nights:"5 Nights / 6 Days",price:"38,999",keywords:["kerala","munnar","alleppey","kovalam","backwaters","houseboat","south india","ayurveda"],img:"https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=500&q=80&auto=format&fit=crop"},
+  {name:"Himachal Adventure",dest:"Shimla, Manali, Spiti Valley",nights:"5 Nights / 6 Days",price:"36,999",keywords:["himachal","shimla","manali","spiti","rohtang","solang","snow","mountains","adventure","hill"],img:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80&auto=format&fit=crop"},
+  {name:"Manali Snow Escape",dest:"Manali, Rohtang Pass, Solang Valley",nights:"4 Nights / 5 Days",price:"28,999",keywords:["manali","rohtang","solang","snow","workation","mountains","himachal","hill"],img:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80&auto=format&fit=crop"},
+  {name:"Goa Sun and Sand",dest:"North Goa, South Goa, Dudhsagar",nights:"4 Nights / 5 Days",price:"28,999",keywords:["goa","beach","nightlife","dudhsagar","north goa","south goa","sun","sand","coastal"],img:"https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=500&q=80&auto=format&fit=crop"},
+  {name:"Uttarakhand Spiritual Tour",dest:"Haridwar, Rishikesh, Kedarnath",nights:"6 Nights / 7 Days",price:"44,999",keywords:["uttarakhand","haridwar","rishikesh","kedarnath","spiritual","char dham","yoga","rafting"],img:"https://images.unsplash.com/photo-1570458436416-b8fcccfe883f?w=500&q=80&auto=format&fit=crop"},
+  {name:"Andaman Islands",dest:"Port Blair, Havelock, Neil Island",nights:"5 Nights / 6 Days",price:"52,999",keywords:["andaman","havelock","neil","port blair","beach","diving","snorkelling","island"],img:"https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&q=80&auto=format&fit=crop"},
+  {name:"Spiti Valley Expedition",dest:"Shimla, Kaza, Key Monastery",nights:"7 Nights / 8 Days",price:"42,999",keywords:["spiti","kaza","key","chandratal","offbeat","mountains","camping","trek","adventure"],img:"https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=500&q=80&auto=format&fit=crop"},
+  {name:"Luxury Dubai Escape",dest:"Dubai, Abu Dhabi",nights:"6 Nights / 7 Days",price:"89,999",keywords:["dubai","abu dhabi","burj khalifa","desert safari","luxury","middle east","international"],img:"https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=80&auto=format&fit=crop"},
+  {name:"Europe Grand Tour",dest:"Paris, Switzerland, Italy",nights:"8 Nights / 9 Days",price:"1,74,999",keywords:["europe","paris","switzerland","italy","france","eiffel","alps","venice","international"],img:"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500&q=80&auto=format&fit=crop"},
+  {name:"Bali Experience",dest:"Ubud, Seminyak, Uluwatu",nights:"7 Nights / 8 Days",price:"94,999",keywords:["bali","ubud","seminyak","uluwatu","indonesia","villa","pool","spa","rice terrace","international"],img:"https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=80&auto=format&fit=crop"},
+  {name:"Thailand Bliss",dest:"Bangkok, Chiang Mai, Phuket",nights:"6 Nights / 7 Days",price:"79,999",keywords:["thailand","bangkok","phuket","chiang mai","phi phi","beach","temple","international"],img:"https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=500&q=80&auto=format&fit=crop"},
+  {name:"Vietnam Explorer",dest:"Hanoi, Ha Long Bay, Ho Chi Minh",nights:"7 Nights / 8 Days",price:"84,999",keywords:["vietnam","hanoi","ha long","ho chi minh","saigon","hoi an","mekong","cruise","international"],img:"https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=500&q=80&auto=format&fit=crop"},
   {name:"Maldives Overwater Escape",dest:"North Male Atoll",nights:"5 Nights / 6 Days",price:"1,49,999",keywords:["maldives","overwater","villa","beach","luxury","snorkelling","honeymoon","indian ocean"],img:"https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=500&q=80&auto=format&fit=crop"},
-  {name:"Singapore & Malaysia",dest:"Singapore · Kuala Lumpur · Langkawi",nights:"6 Nights / 7 Days",price:"1,09,999",keywords:["singapore","malaysia","kuala lumpur","langkawi","universal studios","petronas","international"],img:"https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=500&q=80&auto=format&fit=crop"},
-  {name:"Sri Lanka Discovery",dest:"Colombo · Kandy · Ella · Mirissa",nights:"6 Nights / 7 Days",price:"64,999",keywords:["sri lanka","colombo","kandy","ella","mirissa","beach","tea","nature","international"],img:"https://images.unsplash.com/photo-1576485375217-d6a95e34d043?w=500&q=80&auto=format&fit=crop"},
-  {name:"Romantic Honeymoon Bali",dest:"Seminyak · Ubud · Nusa Dua",nights:"6 Nights / 7 Days",price:"1,09,999",keywords:["honeymoon","bali","romantic","couple","villa","spa","international","seminyak"],img:"https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=80&auto=format&fit=crop"},
-  {name:"Kerala Honeymoon",dest:"Munnar · Alleppey · Kovalam",nights:"5 Nights / 6 Days",price:"44,999",keywords:["honeymoon","kerala","couple","romantic","houseboat","backwaters","ayurveda"],img:"https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=500&q=80&auto=format&fit=crop"},
-  {name:"Nepal & Everest Base Camp",dest:"Kathmandu · Pokhara · EBC Trek",nights:"9 Nights / 10 Days",price:"72,999",keywords:["nepal","kathmandu","pokhara","everest","base camp","trek","mountains","himalayas","international"],img:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=80&auto=format&fit=crop"},
-  {name:"Bhutan Spiritual Journey",dest:"Thimphu · Paro · Punakha",nights:"5 Nights / 6 Days",price:"68,999",keywords:["bhutan","thimphu","paro","punakha","tiger nest","spiritual","dzong","international"],img:"https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=500&q=80&auto=format&fit=crop"},
+  {name:"Singapore and Malaysia",dest:"Singapore, Kuala Lumpur, Langkawi",nights:"6 Nights / 7 Days",price:"1,09,999",keywords:["singapore","malaysia","kuala lumpur","langkawi","universal studios","petronas","international"],img:"https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=500&q=80&auto=format&fit=crop"},
+  {name:"Sri Lanka Discovery",dest:"Colombo, Kandy, Ella, Mirissa",nights:"6 Nights / 7 Days",price:"64,999",keywords:["sri lanka","colombo","kandy","ella","mirissa","beach","tea","nature","international"],img:"https://images.unsplash.com/photo-1576485375217-d6a95e34d043?w=500&q=80&auto=format&fit=crop"},
+  {name:"Romantic Honeymoon Bali",dest:"Seminyak, Ubud, Nusa Dua",nights:"6 Nights / 7 Days",price:"1,09,999",keywords:["honeymoon","bali","romantic","couple","villa","spa","international","seminyak"],img:"https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&q=80&auto=format&fit=crop"},
+  {name:"Kerala Honeymoon",dest:"Munnar, Alleppey, Kovalam",nights:"5 Nights / 6 Days",price:"44,999",keywords:["honeymoon","kerala","couple","romantic","houseboat","backwaters","ayurveda"],img:"https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=500&q=80&auto=format&fit=crop"},
+  {name:"Nepal and Everest Base Camp",dest:"Kathmandu, Pokhara, EBC Trek",nights:"9 Nights / 10 Days",price:"72,999",keywords:["nepal","kathmandu","pokhara","everest","base camp","trek","mountains","himalayas","international"],img:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=80&auto=format&fit=crop"},
+  {name:"Bhutan Spiritual Journey",dest:"Thimphu, Paro, Punakha",nights:"5 Nights / 6 Days",price:"68,999",keywords:["bhutan","thimphu","paro","punakha","tiger nest","spiritual","dzong","international"],img:"https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=500&q=80&auto=format&fit=crop"}
 ];
 
 function openSearchModal(query) {
-  var q = query.trim().toLowerCase();
-  var matches = allPackages.filter(function(p) {
-    var combined = (p.name + ' ' + p.dest + ' ' + p.keywords.join(' ')).toLowerCase();
-    // Check if any word of query matches
-    var words = q.split(/\s+/);
-    return words.some(function(w){ return w.length > 1 && combined.indexOf(w) !== -1; });
-  });
+  var q = (query || "").trim().toLowerCase();
+  var matches;
+  if (q === "all" || q === "") {
+    matches = allPackages;
+  } else {
+    matches = allPackages.filter(function(p) {
+      var combined = (p.name + " " + p.dest + " " + p.keywords.join(" ")).toLowerCase();
+      var words = q.split(/\s+/);
+      return words.some(function(w) { return w.length > 1 && combined.indexOf(w) !== -1; });
+    });
+  }
 
-  var grid = document.getElementById('searchPkgGrid');
-  document.getElementById('searchModalQuery').textContent = '"' + query + '"';
+  var grid = document.getElementById("searchPkgGrid");
+  var lbl = document.getElementById("searchModalQuery");
+  if (lbl) lbl.textContent = (query === "all" || !query.trim()) ? "All Destinations" : '"' + query + '"';
 
   if (!matches.length) {
-    grid.innerHTML = '<div class="search-no-match"><h3>No exact packages found</h3><p>We may have custom packages for "' + query + '". Drop us a message and we'll curate one just for you!</p><a href="#contact" class="pkg-btn" onclick="closeSearchModal()" style="display:inline-block;padding:0.85rem 2rem;background:#0B1F3A;color:#fff;text-decoration:none;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;">Enquire on WhatsApp &#x2192;</a></div>';
+    grid.innerHTML = "<div class='search-no-match'><h3>No exact packages found</h3><p>We may have custom packages for this destination. Drop us a message!</p><a href='#contact' class='pkg-btn' onclick='closeSearchModal()' style='display:inline-block;padding:0.85rem 2rem;background:#0B1F3A;color:#fff;text-decoration:none;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;'>Enquire on WhatsApp</a></div>";
   } else {
-    var html = '';
+    var html = "";
     matches.slice(0, 9).forEach(function(p) {
-      html += '<div class="spkg-card">';
-      html += '<div class="spkg-img" style="background:url('' + p.img + '') center/cover no-repeat;">';
-      html += '<div class="spkg-img-overlay"></div>';
-      html += '<div class="spkg-img-name">' + p.name + '</div>';
-      html += '</div>';
-      html += '<div class="spkg-body">';
-      html += '<div class="spkg-nights">' + p.nights + '</div>';
-      html += '<div class="spkg-dest">' + p.dest + '</div>';
-      html += '<div class="spkg-price">&#x20B9;' + p.price + ' <span>/ per person</span></div>';
-      html += '<a href="#contact" class="spkg-btn" onclick="closeSearchModal()">Enquire Now &#x2192;</a>';
-      html += '</div></div>';
+      html += "<div class='spkg-card'>";
+      html += "<div class='spkg-img' style='background-image:url(" + p.img + ");background-size:cover;background-position:center;'>";
+      html += "<div class='spkg-img-overlay'></div>";
+      html += "<div class='spkg-img-name'>" + p.name + "</div>";
+      html += "</div>";
+      html += "<div class='spkg-body'>";
+      html += "<div class='spkg-nights'>" + p.nights + "</div>";
+      html += "<div class='spkg-dest'>" + p.dest + "</div>";
+      html += "<div class='spkg-price'>&#x20B9;" + p.price + " <span>/ per person</span></div>";
+      html += "<a href='#contact' class='spkg-btn' onclick='closeSearchModal()'>Enquire Now &rarr;</a>";
+      html += "</div></div>";
     });
     grid.innerHTML = html;
   }
 
-  document.getElementById('searchModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  var modal = document.getElementById("searchModal");
+  if (modal) {
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
 }
 
 function closeSearchModal() {
-  document.getElementById('searchModal').classList.remove('open');
-  document.body.style.overflow = '';
+  var modal = document.getElementById("searchModal");
+  if (modal) modal.classList.remove("open");
+  document.body.style.overflow = "";
 }
 
-// Close modal when clicking overlay background
-document.getElementById('searchModal').addEventListener('click', function(e) {
-  if (e.target === this) closeSearchModal();
-});
-
-// Also trigger modal on Enter key in search
-document.addEventListener('DOMContentLoaded', function() {
-  var heroInput = document.getElementById('heroSearch');
-  if (heroInput) {
-    heroInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        var q = this.value.trim();
-        if (q) openSearchModal(q);
+document.addEventListener("DOMContentLoaded", function() {
+  var modal = document.getElementById("searchModal");
+  if (modal) {
+    modal.addEventListener("click", function(e) {
+      if (e.target === this) closeSearchModal();
+    });
+  }
+  var btn = document.getElementById("heroSearchBtn");
+  var input = document.getElementById("heroSearch");
+  if (btn && input) {
+    btn.addEventListener("click", function() {
+      var q = input.value.trim();
+      closeDropdown();
+      openSearchModal(q || "all");
+    });
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        var q = input.value.trim();
+        closeDropdown();
+        openSearchModal(q || "all");
       }
     });
+  }
+  function closeDropdown() {
+    var box = document.getElementById("searchSuggestions");
+    if (box) box.classList.remove("open");
   }
 });
 </script>
