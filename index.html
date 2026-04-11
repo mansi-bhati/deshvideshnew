@@ -368,16 +368,180 @@ footer ul li a:hover{color:var(--gold);}
 .reveal-l{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease;}
 .reveal-r{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease;}
 
-/* RESPONSIVE */
+/* ══ HAMBURGER ══ */
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:300;flex-shrink:0;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--gold);border-radius:1px;transition:all .3s;}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+
+/* ══ MOBILE FULLSCREEN MENU ══ */
+.mobile-nav-overlay{display:none;position:fixed;inset:0;z-index:260;background:rgba(11,31,58,0.99);backdrop-filter:blur(12px);flex-direction:column;align-items:center;justify-content:center;gap:0;}
+.mobile-nav-overlay.open{display:flex;}
+.mobile-nav-close{position:absolute;top:1.4rem;right:5vw;background:none;border:none;color:rgba(255,255,255,0.5);font-size:1.8rem;cursor:pointer;line-height:1;padding:4px;}
+.mobile-nav-close:hover{color:var(--gold);}
+.mobile-nav-links{list-style:none;text-align:center;width:100%;}
+.mobile-nav-links li{border-bottom:1px solid rgba(255,255,255,0.05);}
+.mobile-nav-links a{display:block;font-family:var(--ff-display);font-size:1.55rem;font-weight:600;color:rgba(255,255,255,0.85);text-decoration:none;padding:1.1rem 2rem;transition:color .2s;}
+.mobile-nav-links a:hover{color:var(--gold);}
+.mobile-nav-cta{margin-top:2rem;padding:0.9rem 2.5rem;background:var(--gold);color:var(--blue-deep);font-family:var(--ff-body);font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;text-decoration:none;display:inline-block;}
+.mobile-nav-contact{margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.35);text-align:center;}
+.mobile-nav-contact a{color:var(--gold);text-decoration:none;}
+
+/* ══ TABLET 960px ══ */
 @media(max-width:960px){
+  /* NAV */
+  .nav-links{display:none;}
+  .nav-cta{display:none;}
+  .nav-hamburger{display:flex;}
+
+  /* HERO */
+  .hero-stats{flex-wrap:wrap;}
+  .h-stat{min-width:50%;}
+
+  /* GRIDS → 2 col */
   .dest-grid{grid-template-columns:1fr 1fr;}
   .dest-card.large{grid-column:span 2;grid-row:span 1;}
   .why-grid{grid-template-columns:1fr 1fr;}
+  .who-grid{grid-template-columns:1fr 1fr;}
+  .pkg-grid{grid-template-columns:1fr 1fr;}
+  .testi-grid{grid-template-columns:1fr 1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:2.5rem;}
+  .process-steps::before{display:none;}
+
+  /* SINGLE COL */
   .founder-inner,.contact-inner{grid-template-columns:1fr;gap:3rem;}
-  .pkg-grid,.testi-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
-  .nav-links{display:none;}
   .form-row{grid-template-columns:1fr;}
+
+  /* SEARCH */
+  .hero-search-wrap{max-width:96%;}
+}
+
+/* ══ MOBILE 600px ══ */
+@media(max-width:600px){
+  /* NAV */
+  nav{padding:0.7rem 4vw;}
+  nav.scrolled{padding:0.6rem 4vw;}
+
+  /* HERO */
+  .hero{min-height:100svh;}
+  .hero-content{padding:1.5rem 5vw;max-width:100%;}
+  .hero-h1{font-size:clamp(2rem,9vw,3rem);line-height:1.1;}
+  .hero-h1 em{display:inline;}
+  .hero-sub{font-size:0.9rem;margin-bottom:1.8rem;}
+  .hero-actions{flex-direction:column;align-items:center;gap:0.7rem;}
+  .btn-gold,.btn-outline{width:100%;max-width:300px;text-align:center;padding:0.9rem 1.5rem;}
+  .hero-stats{flex-wrap:wrap;}
+  .h-stat{min-width:50%;padding:1rem 0.5rem;}
+  .h-num{font-size:1.4rem;}
+  .h-label{font-size:0.52rem;}
+  .hero-slide-dots{bottom:88px;}
+  .scroll-hint{display:none;}
+  .hero-location-label{display:none;}
+
+  /* SEARCH BAR */
+  .hero-search-wrap{max-width:100%;margin-bottom:1.5rem;}
+  .hero-search-box{flex-direction:column;border-radius:0;}
+  .hero-search-input{width:100%;border-right:none !important;border-bottom:1px solid rgba(201,168,76,0.25);font-size:0.9rem;padding:0.85rem 1rem;}
+  .hero-search-btn{width:100%;border-radius:0;padding:0.85rem;font-size:0.75rem;}
+  .hero-pills{flex-wrap:wrap;gap:0.4rem;}
+  .hero-pill{font-size:0.65rem;padding:0.25rem 0.65rem;}
+
+  /* SECTIONS */
+  section{padding:3.5rem 5vw;}
+  .trust{padding:0.9rem 5vw;flex-direction:column;gap:0.6rem;text-align:center;}
+  .trust-badges{justify-content:center;gap:1rem;}
+
+  /* MARQUEE */
+  .marquee-item{font-size:0.65rem;padding:0.75rem 1.2rem;}
+
+  /* WHO SECTION */
+  .who-section{padding:3.5rem 5vw;}
+  .who-grid{grid-template-columns:1fr 1fr;gap:0.8rem;}
+  .who-card{min-height:220px;}
+  .who-name{font-size:1rem;}
+  .who-pill{font-size:0.58rem;padding:0.22rem 0.6rem;}
+
+  /* DESTINATIONS */
+  .dest-grid{grid-template-columns:1fr;}
+  .dest-card.large{grid-column:span 1;grid-row:span 1;min-height:260px;}
+  .dest-name{font-size:1.15rem;}
+  .dest-card.large .dest-name{font-size:1.4rem;}
+
+  /* PACKAGES */
+  .pkg-grid{grid-template-columns:1fr;}
+  .pkg-header{flex-direction:column;align-items:flex-start;gap:1rem;margin-bottom:1.8rem;}
+  .pkg-filters{flex-wrap:wrap;}
+  .pkg-filter{padding:0.45rem 0.9rem;font-size:0.65rem;}
+  .pkg-body{padding:1.2rem;}
+  .pkg-name{font-size:1.2rem;}
+  .pkg-amt{font-size:1.75rem;}
+  .pkg-features li{font-size:0.78rem;}
+
+  /* WHY */
+  .why-grid{grid-template-columns:1fr;}
+  .why-card{padding:1.4rem 1.2rem;}
+
+  /* PROCESS */
+  .process-section{padding:3.5rem 5vw;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;}
+  .process-steps::before{display:none;}
+  .process-num{width:50px;height:50px;font-size:1.1rem;}
+  .process-step h3{font-size:0.95rem;}
+  .process-step p{font-size:0.78rem;}
+
+  /* FOUNDER */
+  .founder-inner{grid-template-columns:1fr;gap:2rem;}
+  .founder-frame{padding-top:65%;max-width:100%;}
+  .founder-quote{font-size:1.15rem;padding-left:1rem;}
+
+  /* TESTIMONIALS */
+  .testi-grid{grid-template-columns:1fr;}
+  .testi-card{padding:1.4rem;}
+  .testi-text{font-size:0.9rem;}
+
+  /* WHATSAPP SECTION */
+  .wa-section{padding:3.5rem 5vw;}
+  .wa-steps{flex-direction:column;align-items:center;gap:1rem;}
+  .btn-whatsapp{padding:0.9rem 1.8rem;font-size:0.78rem;}
+
+  /* CTA BANNER */
+  .cta-banner{padding:4rem 5vw;}
+  .cta-actions{flex-direction:column;align-items:center;}
+  .cta-actions .btn-gold,.cta-actions .btn-outline{width:100%;max-width:300px;text-align:center;}
+
+  /* CONTACT */
+  .contact-inner{grid-template-columns:1fr;gap:2rem;}
+  .form-row{grid-template-columns:1fr;}
+  .form-submit{width:100%;text-align:center;}
+
+  /* FOOTER */
+  footer{padding:3rem 5vw 1.5rem;}
+  .footer-top{grid-template-columns:1fr;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;}
+  .footer-bottom{flex-direction:column;text-align:center;gap:0.75rem;}
+  .footer-legal{justify-content:center;}
+
+  /* WA FLOAT */
+  .wa-float{bottom:1.2rem;right:1.2rem;width:48px;height:48px;}
+
+  /* STICKY CTA */
+  .sticky-cta{width:90%;left:5%;transform:translateY(20px);padding:0.6rem 1rem;}
+  .sticky-cta.show{transform:translateY(0);}
+  .sticky-cta span{font-size:0.7rem;}
+
+  /* SUMMER ANNOUNCEMENT */
+  .summer-ann-bar{font-size:0.65rem;}
+  .ann-item{padding:0.6rem 1rem;}
+}
+
+/* ══ VERY SMALL 380px ══ */
+@media(max-width:380px){
+  .hero-h1{font-size:1.85rem;}
+  .who-grid{grid-template-columns:1fr;}
+  .who-card{min-height:200px;}
+  .process-steps{grid-template-columns:1fr;}
+  .pkg-amt{font-size:1.5rem;}
 }
 
 /* ── HERO SEARCH BAR ── */
@@ -439,6 +603,61 @@ footer ul li a:hover{color:var(--gold);}
   white-space:nowrap;
 }
 .hero-search-btn:hover{background:#E8D08A;}
+
+/* Suggestions dropdown */
+.search-suggestions{
+  position:absolute;top:calc(100% + 2px);left:0;right:0;
+  background:rgba(9,20,44,0.97);
+  border:1px solid rgba(201,168,76,0.2);
+  backdrop-filter:blur(28px);
+  -webkit-backdrop-filter:blur(28px);
+  box-shadow:0 20px 60px rgba(11,31,58,0.55);
+  z-index:999;
+  display:none;
+  max-height:340px;
+  overflow-y:auto;
+}
+.search-suggestions.open{display:block;}
+.suggestion-group-label{
+  padding:0.65rem 1.4rem 0.3rem;
+  font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(201,168,76,0.55);font-weight:500;
+  border-bottom:0.5px solid rgba(255,255,255,0.06);
+}
+.suggestion-item{
+  display:flex;align-items:center;gap:0.85rem;
+  padding:0.75rem 1.4rem;
+  cursor:pointer;
+  transition:background .15s;
+  border-bottom:0.5px solid rgba(255,255,255,0.05);
+  text-decoration:none;
+}
+.suggestion-item:hover{background:rgba(201,168,76,0.08);}
+.suggestion-item:last-child{border-bottom:none;}
+.si-icon{
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;
+  justify-content:center;font-size:1rem;flex-shrink:0;
+}
+.si-text{flex:1;}
+.si-dest{font-size:0.88rem;font-weight:500;color:#FFFFFF;display:block;}
+.si-tag{font-size:0.73rem;color:rgba(255,255,255,0.38);display:block;margin-top:1px;}
+.si-arrow{color:rgba(201,168,76,0.7);font-size:0.85rem;font-weight:600;}
+.search-popular{
+  padding:0.6rem 1.4rem;
+  display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;
+  border-bottom:0.5px solid rgba(255,255,255,0.06);
+}
+.search-popular-label{font-size:0.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-right:4px;}
+.pop-tag{
+  background:rgba(201,168,76,0.1);border:0.5px solid rgba(201,168,76,0.28);
+  padding:4px 12px;font-size:0.72rem;color:rgba(255,255,255,0.6);
+  cursor:pointer;transition:all .18s;font-weight:500;
+}
+.pop-tag:hover{background:rgba(201,168,76,0.25);color:#C9A84C;border-color:rgba(201,168,76,0.5);}
+.no-results{padding:1.2rem 1.4rem;font-size:0.88rem;color:rgba(255,255,255,0.4);text-align:center;}
 
 /* SUMMER ANNOUNCEMENT BAR */
 .summer-ann-bar{
@@ -593,6 +812,9 @@ footer ul li a:hover{color:var(--gold);}
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Plan My Trip</a>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -631,6 +853,18 @@ footer ul li a:hover{color:var(--gold);}
           aria-label="Search destinations"
         />
         <button class="hero-search-btn" id="heroSearchBtn">Search</button>
+      </div>
+      <!-- Dropdown -->
+      <div class="search-suggestions" id="searchSuggestions">
+        <div class="search-popular" id="popularTags">
+          <span class="search-popular-label">Popular:</span>
+          <span class="pop-tag" data-val="Bali">Bali</span>
+          <span class="pop-tag" data-val="Dubai">Dubai</span>
+          <span class="pop-tag" data-val="Kashmir">Kashmir</span>
+          <span class="pop-tag" data-val="Goa">Goa</span>
+          <span class="pop-tag" data-val="Maldives">Maldives</span>
+          <span class="pop-tag" data-val="Europe">Europe</span>
+        </div>
       </div>
     </div>
     <div class="hero-actions">
@@ -879,6 +1113,28 @@ footer ul li a:hover{color:var(--gold);}
   <div class="pkg-grid reveal" id="pkgGrid">
 
     <!-- DOMESTIC PACKAGES -->
+
+    <!-- SIKKIM FEATURED CARD -->
+    <div class="pkg-card featured" data-cat="domestic" style="grid-column:span 1;">
+      <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
+      <div class="pkg-top-bar"></div>
+      <div class="pkg-body">
+        <div class="pkg-nights">9 Nights / 10 Days</div>
+        <div class="pkg-name">Sikkim Splendor Dreams</div>
+        <div class="pkg-dest">Gangtok · Lachung · Pelling · Darjeeling</div>
+        <div class="pkg-div"></div>
+        <ul class="pkg-features">
+          <li>Yumthang Valley &amp; Zero Point excursion</li>
+          <li>Tshangu Lake &amp; Baba Mandir</li>
+          <li>Tiger Hills sunrise over Kangchenjunga</li>
+          <li>9 Breakfasts + 9 Dinners included</li>
+          <li>Non-AC Innova Crysta transfers</li>
+        </ul>
+        <div class="pkg-price-row"><span class="pkg-cur">₹</span><span class="pkg-amt">85,999</span><span class="pkg-per">onwards / per person</span></div>
+        <a href="sikkim-tour-package.html" class="pkg-btn">View Details →</a>
+      </div>
+    </div>
+
     <div class="pkg-card" data-cat="domestic">
       <div class="pkg-img" style="background:url('https://images.unsplash.com/photo-1477587458883-47145ed94245?w=600&q=80&auto=format&fit=crop') center/cover no-repeat;"></div>
       <div class="pkg-top-bar"></div>
@@ -1171,7 +1427,7 @@ footer ul li a:hover{color:var(--gold);}
       <div class="contact-info">
         <div class="info-item"><div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><path d="M8 1C5.2 1 3 3.2 3 6c0 4 5 9 5 9s5-5 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg></div><div><div class="info-label">Office</div><div class="info-val">C-75 Sadul Ganj, Rotary Club, Bikaner, Rajasthan</div></div></div>
         <div class="info-item"><div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><path d="M3 2h3l1.5 3.5-2 1.2a9 9 0 004.8 4.8l1.2-2L15 11v3a1 1 0 01-1 1C5 15 1 11 1 3a1 1 0 011-1z"/></svg></div><div><div class="info-label">Phone / WhatsApp</div><div class="info-val">+91 82336 38999</div></div></div>
-        <div class="info-item"><div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><rect x="1" y="3" width="14" height="10" rx="1"/><path d="M1 4l7 5 7-5"/></svg></div><div><div class="info-label">Email</div><div class="info-val"><a href="mailto:Info@deshvideshtours.com" style="color:inherit;text-decoration:none;">Info@deshvideshtours.com</a></div></div></div>
+        <div class="info-item"><div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><rect x="1" y="3" width="14" height="10" rx="1"/><path d="M1 4l7 5 7-5"/></svg></div><div><div class="info-label">Email</div><div class="info-val"><a href="/cdn-cgi/l/email-protection#177e797178577372647f617e7372647f63786265643974787a" style="color:inherit;text-decoration:none;"><span class="__cf_email__" data-cfemail="c1a8afa7ae81a5a4b2a9b7a8a5a4b2a9b5aeb4b3b2efa2aeac">[email&#160;protected]</span></a></div></div></div>
         <div class="info-item"><div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg></div><div><div class="info-label">Hours</div><div class="info-val">Mon – Sat: 9:00 AM – 7:00 PM</div></div></div>
       </div>
     </div>
@@ -1205,7 +1461,7 @@ footer ul li a:hover{color:var(--gold);}
     <div><h5>Support</h5><ul><li><a href="#">Visa Guidance</a></li><li><a href="#">Travel Insurance</a></li><li><a href="#">FAQs</a></li><li><a href="#">Cancellation Policy</a></li></ul></div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2024 Desh Videsh Tours &amp; Travels. Founded by Sanjeev Bhati. All rights reserved. &nbsp;|&nbsp; <a href="mailto:Info@deshvideshtours.com" style="color:inherit;text-decoration:none;opacity:0.7;">Info@deshvideshtours.com</a></p>
+    <p>&copy; 2024 Desh Videsh Tours &amp; Travels. Founded by Sanjeev Bhati. All rights reserved. &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection#b3daddd5dcf3d7d6c0dbc5dad7d6c0dbc7dcc6c1c09dd0dcde" style="color:inherit;text-decoration:none;opacity:0.7;"><span class="__cf_email__" data-cfemail="0a63646c654a6e6f79627c636e6f79627e657f787924696567">[email&#160;protected]</span></a></p>
     <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
   </div>
 </footer>
@@ -1262,7 +1518,112 @@ function handleSubmit(e){
 }
 </script>
 
+<script>
+(function(){
+  var destinations = [
+    {dest:"Bali, Indonesia",tag:"International · 7 Days · Beaches & Temples",icon:"🏝️",cat:"international"},
+    {dest:"Dubai, UAE",tag:"International · 4–6 Days · Luxury & Desert",icon:"🌆",cat:"international"},
+    {dest:"Vietnam",tag:"International · 8–12 Days · Culture & Street Food",icon:"🌿",cat:"international"},
+    {dest:"Thailand",tag:"International · 7–10 Days · Islands & Temples",icon:"🛕",cat:"international"},
+    {dest:"Singapore",tag:"International · 4–5 Days · City & Culture",icon:"🌃",cat:"international"},
+    {dest:"Maldives",tag:"International · 5–7 Days · Overwater Villas",icon:"🐠",cat:"international"},
+    {dest:"Europe",tag:"International · 10–15 Days · Multi-Country Tours",icon:"🏰",cat:"international"},
+    {dest:"Sri Lanka",tag:"International · 7–9 Days · Nature & Heritage",icon:"🌴",cat:"international"},
+    {dest:"Nepal",tag:"International · 7–10 Days · Mountains & Trekking",icon:"🏔️",cat:"international"},
+    {dest:"Bhutan",tag:"International · 5–7 Days · Spiritual & Scenic",icon:"⛩️",cat:"international"},
+    {dest:"Goa",tag:"Domestic · 3–5 Days · Beaches & Nightlife",icon:"🏖️",cat:"domestic"},
+    {dest:"Kashmir",tag:"Domestic · 5–7 Days · Mountains & Valleys",icon:"❄️",cat:"domestic"},
+    {dest:"Kerala",tag:"Domestic · 5–7 Days · Backwaters & Ayurveda",icon:"🌿",cat:"domestic"},
+    {dest:"Rajasthan",tag:"Domestic · 6–8 Days · Palaces & Desert",icon:"🏯",cat:"domestic"},
+    {dest:"Himachal Pradesh",tag:"Domestic · 5–7 Days · Hills & Adventure",icon:"🏔️",cat:"domestic"},
+    {dest:"Manali",tag:"Domestic · 4–6 Days · Snow & Workation",icon:"⛷️",cat:"domestic"},
+    {dest:"Andaman Islands",tag:"Domestic · 5–7 Days · Beaches & Diving",icon:"🤿",cat:"domestic"},
+    {dest:"Coorg, Karnataka",tag:"Domestic · 3–4 Days · Coffee & Nature",icon:"☕",cat:"domestic"},
+    {dest:"Spiti Valley",tag:"Domestic · 7–9 Days · Offbeat Mountains",icon:"🗻",cat:"domestic"},
+    {dest:"Ooty & Kodaikanal",tag:"Domestic · 3–5 Days · Hill Stations",icon:"🌄",cat:"domestic"},
+    {dest:"Honeymoon in Maldives",tag:"Couple Trip · Overwater Bungalows",icon:"💑",cat:"honeymoon"},
+    {dest:"Honeymoon in Bali",tag:"Couple Trip · Romantic Villas",icon:"💑",cat:"honeymoon"},
+    {dest:"Honeymoon in Kerala",tag:"Couple Trip · Houseboat & Spa",icon:"💑",cat:"honeymoon"},
+    {dest:"Family Trip to Rajasthan",tag:"Family · 7 Days · Forts & Culture",icon:"👨‍👩‍👧‍👦",cat:"family"},
+    {dest:"Family Trip to Goa",tag:"Family · 5 Days · Beach Fun",icon:"👨‍👩‍👧‍👦",cat:"family"},
+    {dest:"Manali Workation",tag:"Workation · 5–7 Days · Mountain Office",icon:"💻",cat:"workation"},
+    {dest:"Goa Workation",tag:"Workation · 5–7 Days · Beach Office",icon:"💻",cat:"workation"},
+  ];
 
+  var input = document.getElementById('heroSearch');
+  var box = document.getElementById('searchSuggestions');
+  var btn = document.getElementById('heroSearchBtn');
+
+  function renderResults(query){
+    var q = query.trim().toLowerCase();
+    var inner = '';
+
+    if(!q){
+      // Show popular tags
+      inner += '<div class="search-popular" id="popularTags"><span class="search-popular-label">Popular:</span>';
+      ['Bali','Dubai','Kashmir','Goa','Maldives','Vietnam','Europe','Thailand'].forEach(function(t){
+        inner += '<span class="pop-tag" data-val="'+t+'">'+t+'</span>';
+      });
+      inner += '</div>';
+      box.innerHTML = inner;
+      box.classList.add('open');
+      attachPopTagListeners();
+      return;
+    }
+
+    var matches = destinations.filter(function(d){
+      return d.dest.toLowerCase().indexOf(q) !== -1 || d.tag.toLowerCase().indexOf(q) !== -1;
+    });
+
+    if(!matches.length){
+      box.innerHTML = '<div class="no-results">No results for "<strong>'+query+'</strong>" — <a href="#contact" style="color:#C9A84C;text-decoration:none;font-weight:500">Ask us on WhatsApp →</a></div>';
+      box.classList.add('open');
+      return;
+    }
+
+    // Group by category
+    var groups = {international:[],domestic:[],honeymoon:[],family:[],workation:[]};
+    var labels = {international:'International Trips',domestic:'Domestic Getaways',honeymoon:'Honeymoon',family:'Family Trips',workation:'Workations'};
+    matches.forEach(function(d){ groups[d.cat].push(d); });
+
+    Object.keys(groups).forEach(function(cat){
+      if(!groups[cat].length) return;
+      inner += '<div class="suggestion-group-label">'+labels[cat]+'</div>';
+      groups[cat].forEach(function(d){
+        inner += '<a class="suggestion-item" href="#contact">';
+        inner += '<div class="si-icon">'+d.icon+'</div>';
+        inner += '<div class="si-text"><span class="si-dest">'+d.dest+'</span><span class="si-tag">'+d.tag+'</span></div>';
+        inner += '<span class="si-arrow">→</span>';
+        inner += '</a>';
+      });
+    });
+
+    box.innerHTML = inner;
+    box.classList.add('open');
+  }
+
+  input.addEventListener('input', function(){ renderResults(this.value); });
+  input.addEventListener('focus', function(){ renderResults(this.value); });
+  input.addEventListener('blur', function(){ setTimeout(function(){ box.classList.remove('open'); }, 180); });
+
+  document.addEventListener('click', function(e){
+    if(!document.querySelector('.hero-search-wrap').contains(e.target)){
+      box.classList.remove('open');
+    }
+  });
+
+  function attachPopTagListeners(){
+    document.querySelectorAll('.pop-tag').forEach(function(tag){
+      tag.addEventListener('click', function(){
+        input.value = this.getAttribute('data-val');
+        renderResults(input.value);
+        input.focus();
+      });
+    });
+  }
+  attachPopTagListeners();
+})();
+</script>
 
 
 <script>
@@ -1309,6 +1670,7 @@ function handleSubmit(e){
 <script>
 // SEARCH MODAL
 var allPackages = [
+  {name:"Sikkim Splendor Dreams",dest:"Gangtok, Lachung, Pelling, Darjeeling",nights:"9 Nights / 10 Days",price:"85,999",keywords:["sikkim","gangtok","lachung","pelling","darjeeling","yumthang","zero point","tshangu","baba mandir","nathula","tiger hills","kangchenjunga","northeast","north east","himalaya","mountains"],img:"https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=500&q=80&auto=format&fit=crop",link:"sikkim-tour-package.html"},
   {name:"Royal Rajasthan",dest:"Jaipur, Jodhpur, Udaipur",nights:"5 Nights / 6 Days",price:"42,999",keywords:["rajasthan","jaipur","jodhpur","udaipur","royal","palace","desert"],img:"https://images.unsplash.com/photo-1477587458883-47145ed94245?w=500&q=80&auto=format&fit=crop"},
   {name:"Gujarat Heritage Trail",dest:"Ahmedabad, Rann of Kutch, Somnath",nights:"4 Nights / 5 Days",price:"32,999",keywords:["gujarat","ahmedabad","rann","kutch","somnath","dwarka","gir"],img:"https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500&q=80&auto=format&fit=crop"},
   {name:"Kashmir Paradise",dest:"Srinagar, Gulmarg, Pahalgam",nights:"6 Nights / 7 Days",price:"48,999",keywords:["kashmir","srinagar","gulmarg","pahalgam","dal lake","houseboat","snow","mountains"],img:"https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=500&q=80&auto=format&fit=crop"},
@@ -1364,7 +1726,10 @@ function openSearchModal(query) {
       html += "<div class='spkg-nights'>" + p.nights + "</div>";
       html += "<div class='spkg-dest'>" + p.dest + "</div>";
       html += "<div class='spkg-price'>&#x20B9;" + p.price + " <span>/ per person</span></div>";
-      html += "<a href='#contact' class='spkg-btn' onclick='closeSearchModal()'>Enquire Now &rarr;</a>";
+      var btnLink = p.link ? p.link : '#contact';
+      var btnClick = p.link ? "" : "onclick='closeSearchModal()'";
+      var btnText = p.link ? "View Details &rarr;" : "Enquire Now &rarr;";
+      html += "<a href='" + btnLink + "' class='spkg-btn' " + btnClick + ">" + btnText + "</a>";
       html += "</div></div>";
     });
     grid.innerHTML = html;
@@ -1395,17 +1760,37 @@ document.addEventListener("DOMContentLoaded", function() {
   if (btn && input) {
     btn.addEventListener("click", function() {
       var q = input.value.trim();
+      closeDropdown();
       openSearchModal(q || "all");
     });
     input.addEventListener("keydown", function(e) {
       if (e.key === "Enter") {
         var q = input.value.trim();
+        closeDropdown();
         openSearchModal(q || "all");
       }
     });
   }
-
+  function closeDropdown() {
+    var box = document.getElementById("searchSuggestions");
+    if (box) box.classList.remove("open");
+  }
 });
+
+function toggleMobileNav(){
+  var overlay=document.getElementById('mobileNavOverlay');
+  var btn=document.getElementById('navHamburger');
+  overlay.classList.toggle('open');
+  btn.classList.toggle('open');
+  document.body.style.overflow=overlay.classList.contains('open')?'hidden':'';
+}
+function closeMobileNav(){
+  document.getElementById('mobileNavOverlay').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.body.style.overflow='';
+}
+// Close mobile nav on resize to desktop
+window.addEventListener('resize',function(){if(window.innerWidth>960)closeMobileNav();});
 </script>
 </body>
 </html>
