@@ -5,6 +5,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Sikkim Splendor Dreams | 9 Nights / 10 Days — Desh Videsh Tours & Travels</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("rGm6ayR1xyYVIOKKl");</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -842,34 +844,37 @@ footer a{color:var(--gold);text-decoration:none;}
         <div class="booking-price"><sub>₹</sub> 85,999 <small>/ per person</small></div>
       </div>
       <div class="booking-card-body">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" placeholder="Your full name"/>
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="your@email.com"/>
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+91 XXXXX XXXXX"/>
-        </div>
-        <div class="form-group">
-          <label>Travel Date</label>
-          <input type="date"/>
-        </div>
-        <div class="form-group">
-          <label>Number of Travelers</label>
-          <select>
-            <option>2 Adults</option>
-            <option>3 Adults</option>
-            <option>4 Adults</option>
-            <option>4 Adults + 1 Child</option>
-            <option>Custom Group</option>
-          </select>
-        </div>
-        <button class="btn-primary">Send Inquiry →</button>
-        <button class="btn-secondary">📞 Call for Best Price</button>
+        <form id="sikkimBookingForm" onsubmit="handleSikkimSubmit(event)" novalidate>
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="sk_name" placeholder="Your full name"/>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="sk_email" placeholder="your@email.com"/>
+          </div>
+          <div class="form-group">
+            <label>Phone / WhatsApp *</label>
+            <input type="tel" id="sk_phone" placeholder="+91 XXXXX XXXXX"/>
+          </div>
+          <div class="form-group">
+            <label>Preferred Travel Date</label>
+            <input type="date" id="sk_date"/>
+          </div>
+          <div class="form-group">
+            <label>Number of Travelers</label>
+            <select id="sk_travelers">
+              <option value="2 Adults">2 Adults</option>
+              <option value="3 Adults">3 Adults</option>
+              <option value="4 Adults">4 Adults</option>
+              <option value="4 Adults + 1 Child">4 Adults + 1 Child</option>
+              <option value="Custom Group">Custom Group</option>
+            </select>
+          </div>
+          <div id="skFormError" style="display:none;color:#c0392b;font-size:0.78rem;margin-bottom:0.7rem;padding:0.55rem 0.85rem;background:#fdf0ee;border-left:3px solid #c0392b;"></div>
+          <button type="submit" class="btn-primary" id="skSubmitBtn">Send Inquiry →</button>
+        </form>
+        <button class="btn-secondary" onclick="window.location.href='tel:+918233638999'">📞 Call for Best Price</button>
       </div>
     </div>
 
@@ -941,6 +946,80 @@ function switchTab(id, btn) {
   var pane = document.getElementById('tab-' + id);
   if (pane) pane.classList.add('active');
   if (btn) btn.classList.add('active');
+}
+
+function handleSikkimSubmit(e) {
+  e.preventDefault();
+  var btn = document.getElementById('skSubmitBtn');
+  var errBox = document.getElementById('skFormError');
+
+  var name = document.getElementById('sk_name').value.trim();
+  var email = document.getElementById('sk_email').value.trim();
+  var phone = document.getElementById('sk_phone').value.trim();
+  var date = document.getElementById('sk_date').value || 'Not specified';
+  var travelers = document.getElementById('sk_travelers').value;
+
+  // Validate
+  if (!name) {
+    errBox.textContent = 'Please enter your full name.';
+    errBox.style.display = 'block';
+    document.getElementById('sk_name').focus();
+    return;
+  }
+  if (!email || email.indexOf('@') === -1) {
+    errBox.textContent = 'Please enter a valid email address.';
+    errBox.style.display = 'block';
+    document.getElementById('sk_email').focus();
+    return;
+  }
+  if (!phone) {
+    errBox.textContent = 'Please enter your phone / WhatsApp number.';
+    errBox.style.display = 'block';
+    document.getElementById('sk_phone').focus();
+    return;
+  }
+  errBox.style.display = 'none';
+
+  // Loading state
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+
+  // Send via EmailJS
+  emailjs.send('service_7va2gdo', 'template_148u9sb', {
+    from_name: name,
+    reply_to: email,
+    email: email,
+    phone: phone,
+    destination: 'Sikkim Splendor Dreams — 9N/10D',
+    travel_date: date,
+    budget: travelers,
+    message: 'Booking enquiry for Sikkim Splendor Dreams tour (9 Nights / 10 Days). Travel Date: ' + date + '. Travelers: ' + travelers
+  }).then(function() {
+    btn.textContent = '✅ Sent! We will call you shortly.';
+    btn.style.background = '#22a85a';
+    btn.style.color = 'white';
+    btn.style.opacity = '1';
+    document.getElementById('sikkimBookingForm').reset();
+
+    // Open WhatsApp with pre-filled message after 1.5s
+    setTimeout(function() {
+      var waMsg = 'Hi%21+I+just+enquired+about+Sikkim+Splendor+Dreams+Tour+%289N%2F10D%29+on+your+website%21%0A%0A'
+        + '*Name%3A*+' + encodeURIComponent(name) + '%0A'
+        + '*Phone%3A*+' + encodeURIComponent(phone) + '%0A'
+        + '*Travel+Date%3A*+' + encodeURIComponent(date) + '%0A'
+        + '*Travellers%3A*+' + encodeURIComponent(travelers);
+      window.open('https://api.whatsapp.com/send?phone=918233638999&text=' + waMsg, '_blank');
+    }, 1500);
+
+  }, function(error) {
+    btn.textContent = 'Send Inquiry →';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    errBox.textContent = 'Something went wrong. Please WhatsApp or call us directly.';
+    errBox.style.display = 'block';
+    console.error('EmailJS error:', error);
+  });
 }
 </script>
 </body>
