@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Desh Videsh Tours & Travels — Travel the World Without Overpaying</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("rGm6ayR1xyYVIOKKl");</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -1432,17 +1434,56 @@ footer ul li a:hover{color:var(--gold);}
       </div>
     </div>
     <div>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)" novalidate>
         <div class="form-row">
-          <div class="form-field"><label>First Name</label><input type="text" placeholder="Aarav"/></div>
-          <div class="form-field"><label>Last Name</label><input type="text" placeholder="Sharma"/></div>
+          <div class="form-field">
+            <label for="cf_firstname">First Name *</label>
+            <input type="text" id="cf_firstname" name="from_name" placeholder="Aarav" required/>
+          </div>
+          <div class="form-field">
+            <label for="cf_lastname">Last Name</label>
+            <input type="text" id="cf_lastname" name="last_name" placeholder="Sharma"/>
+          </div>
         </div>
-        <div class="form-field"><label>Phone / WhatsApp</label><input type="tel" placeholder="+91 00000 00000"/></div>
+        <div class="form-field">
+          <label for="cf_email">Email Address *</label>
+          <input type="email" id="cf_email" name="reply_to" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-field">
+          <label for="cf_phone">Phone / WhatsApp *</label>
+          <input type="tel" id="cf_phone" name="phone" placeholder="+91 00000 00000" required/>
+        </div>
         <div class="form-row">
-          <div class="form-field"><label>Destination Interest</label><select><option value="">Select destination</option><option>Romantic Bali</option><option>Luxury Dubai Escape</option><option>Europe Grand Tour</option><option>Kashmir</option><option>Royal Rajasthan</option><option>Maldives</option><option>Other</option></select></div>
-          <div class="form-field"><label>No. of Travellers</label><select><option value="">Select</option><option>1 – 2</option><option>3 – 5</option><option>6 – 10</option><option>10+</option></select></div>
+          <div class="form-field">
+            <label for="cf_dest">Destination Interest</label>
+            <select id="cf_dest" name="destination">
+              <option value="">Select destination</option>
+              <option>Sikkim Splendor Dreams</option>
+              <option>Romantic Bali</option>
+              <option>Luxury Dubai Escape</option>
+              <option>Europe Grand Tour</option>
+              <option>Kashmir</option>
+              <option>Royal Rajasthan</option>
+              <option>Maldives</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cf_travelers">No. of Travellers</label>
+            <select id="cf_travelers" name="travelers">
+              <option value="">Select</option>
+              <option>1 – 2</option>
+              <option>3 – 5</option>
+              <option>6 – 10</option>
+              <option>10+</option>
+            </select>
+          </div>
         </div>
-        <div class="form-field"><label>Tell us about your dream trip</label><textarea rows="4" placeholder="Budget, dates, special requests..."></textarea></div>
+        <div class="form-field">
+          <label for="cf_msg">Tell us about your dream trip</label>
+          <textarea id="cf_msg" name="message" rows="4" placeholder="Budget, dates, special requests..."></textarea>
+        </div>
+        <div id="formError" style="display:none;color:#c0392b;font-size:0.82rem;margin-bottom:0.5rem;padding:0.6rem 0.9rem;background:#fdf0ee;border-left:3px solid #c0392b;"></div>
         <button type="submit" class="form-submit" id="submitBtn">Send Enquiry →</button>
       </form>
     </div>
@@ -1510,11 +1551,76 @@ window.addEventListener('load',()=>{
 });
 function handleSubmit(e){
   e.preventDefault();
-  const btn=document.getElementById('submitBtn');
-  btn.textContent='Sent! We\'ll be in touch soon.';
-  btn.style.background='var(--gold)';
-  btn.style.color='var(--blue-deep)';
+  var btn = document.getElementById('submitBtn');
+  var errBox = document.getElementById('formError');
+  var form = document.getElementById('contactForm');
+
+  var firstName = document.getElementById('cf_firstname').value.trim();
+  var email = document.getElementById('cf_email').value.trim();
+  var phone = document.getElementById('cf_phone').value.trim();
+
+  if(!firstName){
+    errBox.textContent='Please enter your first name.';
+    errBox.style.display='block';
+    document.getElementById('cf_firstname').focus();
+    return;
+  }
+  if(!email || email.indexOf('@')===-1){
+    errBox.textContent='Please enter a valid email address.';
+    errBox.style.display='block';
+    document.getElementById('cf_email').focus();
+    return;
+  }
+  if(!phone){
+    errBox.textContent='Please enter your phone / WhatsApp number.';
+    errBox.style.display='block';
+    document.getElementById('cf_phone').focus();
+    return;
+  }
+  errBox.style.display='none';
+
+  var lastName = document.getElementById('cf_lastname').value.trim();
+  var destination = document.getElementById('cf_dest').value || 'Not specified';
+  var travelers = document.getElementById('cf_travelers').value || 'Not specified';
+  var message = document.getElementById('cf_msg').value.trim() || 'No message';
+  var fullName = firstName + (lastName ? ' ' + lastName : '');
+
+  btn.textContent='Sending...';
   btn.disabled=true;
+  btn.style.opacity='0.7';
+
+  emailjs.send('service_7va2gdo','template_148u9sb',{
+    from_name: fullName,
+    reply_to: email,
+    email: email,
+    phone: phone,
+    destination: destination,
+    travel_date: 'Not specified',
+    budget: travelers + ' travellers',
+    message: message
+  }).then(function(){
+    btn.textContent='Sent! We will call you shortly.';
+    btn.style.background='#22a85a';
+    btn.style.color='white';
+    btn.style.opacity='1';
+    form.reset();
+    setTimeout(function(){
+      var waMsg='Hi%21+I+just+submitted+an+enquiry+on+your+website%21%0A%0A'
+        +'*Name%3A*+'+encodeURIComponent(fullName)+'%0A'
+        +'*Phone%3A*+'+encodeURIComponent(phone)+'%0A'
+        +'*Destination%3A*+'+encodeURIComponent(destination)+'%0A'
+        +'*Travellers%3A*+'+encodeURIComponent(travelers)+'%0A'
+        +'*Message%3A*+'+encodeURIComponent(message);
+      window.open('https://api.whatsapp.com/send?phone=918233638999&text='+waMsg,'_blank');
+    },1500);
+  },function(error){
+    btn.textContent='Send Enquiry';
+    btn.disabled=false;
+    btn.style.opacity='1';
+    errBox.textContent='Something went wrong. Please WhatsApp or call us directly.';
+    errBox.style.display='block';
+    console.error('EmailJS error:',error);
+  });
 }
 </script>
 
