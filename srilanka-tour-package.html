@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sri Lanka Discovery — 6 Nights / 7 Days | Desh Videsh Tours & Travels</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("rGm6ayR1xyYVIOKKl");</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue-deep:#0B1F3A;--blue-mid:#163354;--blue-light:#1E4A7A;
+  --gold:#C9A84C;--gold-light:#E8D08A;
+  --white:#FFFFFF;--cream:#FAF8F4;--beige:#F2EDE4;
+  --muted:#8A9BB0;
+  --ff-display:'Playfair Display',Georgia,serif;
+  --ff-body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--blue-deep);overflow-x:hidden;font-size:15px;line-height:1.7;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--blue-deep);}
+::-webkit-scrollbar-thumb{background:var(--gold);}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:transparent;transition:background .4s,padding .3s;}
+nav.scrolled{background:rgba(11,31,58,0.97);backdrop-filter:blur(16px);box-shadow:0 2px 40px rgba(0,0,0,0.3);padding:0.75rem 5vw;}
+.nav-logo{display:flex;align-items:center;gap:0.65rem;text-decoration:none;}
+.nav-logo .wordmark{font-family:var(--ff-display);font-size:2.2rem;font-weight:600;color:var(--white);}
+.nav-logo .sub{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-top:3px;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{padding:0.55rem 1.4rem;background:var(--gold);color:var(--blue-deep);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:background .2s,transform .15s;}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-hamburger span{display:block;width:24px;height:1.5px;background:#fff;transition:all .3s;}
+@media(max-width:960px){
+  .nav-links,.nav-cta{display:none;}
+  .nav-hamburger{display:flex;}
+}
+
+/* Mobile Nav Overlay */
+.mobile-nav-overlay{position:fixed;inset:0;z-index:300;background:rgba(11,31,58,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .4s cubic-bezier(.77,0,.175,1);}
+.mobile-nav-overlay.open{transform:none;}
+.mobile-nav-overlay a{font-family:var(--ff-display);font-size:2rem;color:#fff;text-decoration:none;letter-spacing:0.04em;transition:color .2s;}
+.mobile-nav-overlay a:hover{color:var(--gold);}
+.mobile-nav-close{position:absolute;top:1.5rem;right:5vw;background:none;border:none;cursor:pointer;color:#fff;font-size:2rem;line-height:1;}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;}
+.hero-slides{position:absolute;inset:0;z-index:0;}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease-in-out;}
+.hero-slide.active{opacity:1;animation:kenBurns 9s ease-out forwards;}
+@keyframes kenBurns{0%{transform:scale(1.08);}100%{transform:scale(1);}}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(11,31,58,.45) 0%,rgba(11,31,58,.05) 30%,rgba(11,31,58,.05) 55%,rgba(11,31,58,.88) 100%),
+  linear-gradient(90deg,rgba(11,31,58,.28) 0%,transparent 60%);}
+.hero-content{position:relative;z-index:10;width:100%;padding:0 6vw 5rem;}
+.hero-breadcrumb{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.2rem;}
+.hero-breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none;}
+.hero-breadcrumb a:hover{color:var(--gold);}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.hero-eyebrow span{display:block;width:1.6rem;height:0.5px;background:var(--gold);}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(3rem,6vw,5.5rem);font-weight:700;line-height:1.06;color:var(--white);margin-bottom:1.2rem;}
+.hero-h1 em{font-style:italic;color:var(--gold-light);}
+.hero-meta{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.hero-badge{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:rgba(255,255,255,0.65);}
+.hero-badge svg{flex-shrink:0;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-gold{padding:1rem 2.5rem;background:var(--gold);color:var(--blue-deep);font-family:var(--ff-body);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background .25s,transform .2s;box-shadow:0 4px 24px rgba(201,168,76,0.35);}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-3px);}
+.btn-outline{padding:1rem 2.5rem;background:transparent;color:var(--white);font-family:var(--ff-body);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:400;border:1px solid rgba(255,255,255,0.4);cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .25s,background .25s,transform .2s;}
+.btn-outline:hover{border-color:var(--gold);background:rgba(201,168,76,0.1);transform:translateY(-3px);}
+.hero-price-tag{position:absolute;top:50%;right:6vw;transform:translateY(-50%);z-index:10;background:rgba(11,31,58,0.85);backdrop-filter:blur(16px);border:1px solid rgba(201,168,76,0.3);padding:2rem 2.2rem;text-align:center;}
+.price-label{font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+.price-amount{font-family:var(--ff-display);font-size:2.8rem;font-weight:700;color:var(--white);line-height:1;}
+.price-sub{font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:0.35rem;}
+.price-divider{width:40px;height:0.5px;background:var(--gold);margin:1rem auto;}
+.price-nights{font-size:0.78rem;color:rgba(255,255,255,0.6);letter-spacing:0.06em;}
+.slide-dots{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:11;display:flex;gap:8px;}
+.slide-dot{width:20px;height:2px;background:rgba(255,255,255,.28);cursor:pointer;transition:all .3s;}
+.slide-dot.active{background:var(--gold);width:36px;}
+
+/* ── TRUST BAR ── */
+.trust{background:var(--blue-deep);padding:1.2rem 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-bottom:1px solid rgba(201,168,76,0.12);}
+.trust p{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
+.trust-badges{display:flex;gap:2rem;flex-wrap:wrap;}
+.t-badge{font-size:0.73rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:0.45rem;}
+.t-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+/* ── OVERVIEW ── */
+.overview{background:var(--cream);padding:6rem 6vw;}
+.overview-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start;}
+.s-eye{font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.85rem;display:flex;align-items:center;gap:0.65rem;}
+.s-eye::before{content:'';display:block;width:1.75rem;height:0.5px;background:var(--gold);}
+.s-title{font-family:var(--ff-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:600;line-height:1.15;color:var(--blue-deep);margin-bottom:1rem;}
+.s-title em{font-style:italic;color:var(--gold);}
+.s-sub{color:var(--muted);max-width:520px;font-weight:300;line-height:1.9;font-size:0.95rem;margin-bottom:2rem;}
+.highlights-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+.highlight-pill{display:flex;align-items:center;gap:0.6rem;padding:0.75rem 1rem;border:1px solid rgba(201,168,76,0.18);background:rgba(255,255,255,0.6);font-size:0.8rem;color:var(--blue-deep);font-weight:500;}
+.highlight-pill svg{flex-shrink:0;color:var(--gold);}
+.overview-card{background:var(--blue-deep);padding:2.4rem;position:sticky;top:100px;}
+.overview-card-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:600;color:var(--white);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(201,168,76,0.15);}
+.oc-row{display:flex;justify-content:space-between;align-items:center;padding:0.8rem 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.83rem;}
+.oc-label{color:rgba(255,255,255,0.42);font-weight:300;}
+.oc-val{color:var(--white);font-weight:500;text-align:right;}
+.oc-price-row{padding:1.2rem 0;display:flex;justify-content:space-between;align-items:center;}
+.oc-price-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+.oc-price{font-family:var(--ff-display);font-size:2.2rem;font-weight:700;color:var(--white);}
+.oc-price span{font-size:0.75rem;color:rgba(255,255,255,0.4);font-family:var(--ff-body);font-weight:300;}
+.oc-btns{display:flex;flex-direction:column;gap:0.75rem;margin-top:1.4rem;}
+.oc-btn-wa{display:flex;align-items:center;justify-content:center;gap:0.6rem;padding:0.95rem;background:#25D366;color:#000;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:background .2s;}
+.oc-btn-wa:hover{background:#1ebe5d;}
+.oc-btn-enq{display:block;text-align:center;padding:0.95rem;background:transparent;border:1px solid rgba(201,168,76,0.35);color:var(--gold);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;text-decoration:none;transition:border-color .2s,background .2s;}
+.oc-btn-enq:hover{border-color:var(--gold);background:rgba(201,168,76,0.08);}
+
+/* ── CITIES ── */
+.cities{background:var(--blue-deep);padding:6rem 6vw;position:relative;overflow:hidden;}
+.cities-pat{position:absolute;inset:0;opacity:0.03;background-image:repeating-linear-gradient(0deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 56px),repeating-linear-gradient(90deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 56px);}
+.cities-inner{position:relative;z-index:2;}
+.cities-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.city-card{position:relative;overflow:hidden;min-height:320px;cursor:pointer;}
+.city-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.25,.46,.45,.94);}
+.city-card:hover .city-img{transform:scale(1.07);}
+.city-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,31,58,0.95) 0%,rgba(11,31,58,0.3) 55%,transparent 100%);transition:background .35s;}
+.city-card:hover .city-overlay{background:linear-gradient(to top,rgba(11,31,58,0.98) 0%,rgba(11,31,58,0.5) 65%,rgba(11,31,58,0.1) 100%);}
+.city-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.8rem;}
+.city-nights{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+.city-name{font-family:var(--ff-display);font-size:1.6rem;font-weight:600;color:#fff;margin-bottom:0.5rem;}
+.city-sights{list-style:none;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;}
+.city-card:hover .city-sights{opacity:1;transform:none;}
+.city-sights li{font-size:0.78rem;color:rgba(255,255,255,0.65);padding:0.2rem 0;display:flex;align-items:center;gap:0.5rem;}
+.city-sights li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+/* ── ITINERARY ── */
+.itinerary{background:var(--cream);padding:6rem 6vw;}
+.itin-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;}
+.itin-days{display:flex;flex-direction:column;gap:0;}
+.itin-day{display:flex;gap:1.5rem;position:relative;}
+.itin-day::before{content:'';position:absolute;left:19px;top:44px;bottom:0;width:1px;background:rgba(201,168,76,0.15);}
+.itin-day:last-child::before{display:none;}
+.itin-num-wrap{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:0;}
+.itin-num{width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--blue-deep);font-family:var(--ff-display);font-size:0.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.itin-body{padding-bottom:2.5rem;flex:1;}
+.itin-day-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;}
+.itin-day-title{font-family:var(--ff-display);font-size:1.15rem;font-weight:600;color:var(--blue-deep);margin-bottom:0.6rem;}
+.itin-day-desc{font-size:0.85rem;color:var(--muted);line-height:1.85;}
+.itin-activities{list-style:none;margin-top:0.75rem;display:flex;flex-direction:column;gap:0.3rem;}
+.itin-activities li{font-size:0.8rem;color:var(--blue-deep);display:flex;align-items:center;gap:0.5rem;font-weight:500;}
+.itin-activities li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.itin-gallery{display:flex;flex-direction:column;gap:0.8rem;position:sticky;top:100px;}
+.itin-gallery-main{width:100%;height:320px;object-fit:cover;display:block;}
+.itin-gallery-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;}
+.itin-gallery-row img{width:100%;height:180px;object-fit:cover;display:block;}
+.itin-gallery-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);}
+
+/* ── INCLUSIONS / EXCLUSIONS ── */
+.inc-exc{background:var(--beige);padding:6rem 6vw;}
+.inc-exc-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+.ie-card{padding:2.5rem;}
+.ie-card.inc{background:var(--blue-deep);}
+.ie-card.exc{background:rgba(11,31,58,0.05);border:1px solid rgba(11,31,58,0.1);}
+.ie-title{font-family:var(--ff-display);font-size:1.3rem;font-weight:600;margin-bottom:1.4rem;padding-bottom:1rem;display:flex;align-items:center;gap:0.6rem;}
+.ie-card.inc .ie-title{color:var(--white);border-bottom:1px solid rgba(201,168,76,0.15);}
+.ie-card.exc .ie-title{color:var(--blue-deep);border-bottom:1px solid rgba(11,31,58,0.1);}
+.ie-list{list-style:none;display:flex;flex-direction:column;gap:0.75rem;}
+.ie-list li{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.83rem;line-height:1.6;}
+.ie-card.inc .ie-list li{color:rgba(255,255,255,0.82);}
+.ie-card.exc .ie-list li{color:var(--muted);}
+.ie-item{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.83rem;line-height:1.6;}
+.ie-card.inc .ie-item{color:rgba(255,255,255,0.82);}
+.ie-card.exc .ie-item{color:var(--muted);}
+.ie-check{width:20px;height:20px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.ie-card.inc .ie-check{background:rgba(201,168,76,0.18);border:1px solid rgba(201,168,76,0.25);}
+.ie-card.exc .ie-check{background:rgba(200,50,50,0.1);border:1px solid rgba(200,50,50,0.2);}
+
+/* ── GALLERY ── */
+.gallery{background:var(--blue-deep);padding:6rem 6vw;}
+.gallery-inner{position:relative;z-index:2;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:0.6rem;margin-top:3rem;}
+.gallery-item{overflow:hidden;position:relative;cursor:pointer;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.25,.46,.45,.94);}
+.gallery-item:hover img{transform:scale(1.06);}
+.gallery-item:nth-child(1){grid-column:span 2;height:360px;}
+.gallery-item:nth-child(2){height:360px;}
+.gallery-item:nth-child(3){height:240px;}
+.gallery-item:nth-child(4){height:240px;}
+.gallery-item:nth-child(5){height:240px;}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:0.9rem 1rem;background:linear-gradient(transparent,rgba(11,31,58,0.85));font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.7);opacity:0;transition:opacity .3s;}
+.gallery-item:hover .gallery-caption{opacity:1;}
+
+/* ── WHY US ── */
+.why{background:var(--cream);padding:6rem 6vw;}
+.why-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0;}
+.why-card{padding:1.8rem 1.5rem;border:1px solid rgba(201,168,76,0.12);background:rgba(255,255,255,0.7);transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+.why-card:hover::before{transform:scaleX(1);}
+.why-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-4px);box-shadow:0 16px 40px rgba(11,31,58,0.1);}
+.why-num{font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:rgba(201,168,76,0.12);line-height:1;margin-bottom:0.5rem;}
+.why-icon{width:36px;height:36px;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:0.8rem;}
+.why-card h3{font-family:var(--ff-display);font-size:1rem;font-weight:600;color:var(--blue-deep);margin-bottom:0.35rem;}
+.why-card p{font-size:0.8rem;color:var(--muted);font-weight:300;line-height:1.75;}
+.why-image{position:relative;}
+.why-img-main{width:100%;height:480px;object-fit:cover;display:block;}
+.why-img-badge{position:absolute;bottom:1.5rem;right:-1.5rem;background:var(--gold);padding:1.2rem 1.5rem;text-align:center;}
+.why-img-badge strong{display:block;font-family:var(--ff-display);font-size:2rem;color:var(--blue-deep);}
+.why-img-badge span{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(11,31,58,0.65);}
+
+/* ── POLICIES ── */
+.policies{background:var(--blue-deep);padding:6rem 6vw;position:relative;overflow:hidden;}
+.policies-pat{position:absolute;inset:0;opacity:0.03;background-image:repeating-linear-gradient(0deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 56px),repeating-linear-gradient(90deg,#C9A84C 0,#C9A84C 1px,transparent 0,transparent 56px);}
+.policies-inner{position:relative;z-index:2;}
+.policies-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.pol-card{padding:2rem 1.75rem;border:1px solid rgba(201,168,76,0.1);background:rgba(255,255,255,0.02);transition:border-color .3s,background .3s;}
+.pol-card:hover{border-color:rgba(201,168,76,0.25);background:rgba(255,255,255,0.04);}
+.pol-icon{width:42px;height:42px;border:1px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.pol-title{font-family:var(--ff-display);font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:0.75rem;}
+.pol-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.pol-list li{font-size:0.8rem;color:rgba(255,255,255,0.45);font-weight:300;line-height:1.65;display:flex;align-items:flex-start;gap:0.5rem;}
+.pol-list li::before{content:'·';color:var(--gold);flex-shrink:0;}
+
+/* ── WA CTA ── */
+.wa-cta{background:#0E1B2E;padding:6rem 6vw;position:relative;overflow:hidden;}
+.wa-blob1{position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:rgba(37,211,102,0.06);}
+.wa-blob2{position:absolute;bottom:-100px;left:-60px;width:260px;height:260px;border-radius:50%;background:rgba(201,168,76,0.05);}
+.wa-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;text-align:center;}
+.wa-icon{width:70px;height:70px;border-radius:50%;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;}
+.wa-title{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:1rem;}
+.wa-sub{color:rgba(255,255,255,0.5);font-size:1rem;font-weight:300;line-height:1.8;margin-bottom:2.5rem;}
+.wa-steps{display:flex;justify-content:center;gap:2.5rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+.wa-step{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;color:rgba(255,255,255,0.6);}
+.wa-step-num{width:24px;height:24px;border-radius:50%;background:#25D366;color:#000;font-size:0.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.btn-whatsapp{display:inline-flex;align-items:center;gap:0.75rem;padding:1.1rem 2.8rem;background:#25D366;color:#000;font-family:var(--ff-body);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;border:none;cursor:pointer;text-decoration:none;border-radius:999px;transition:background .25s,transform .2s;box-shadow:0 8px 32px rgba(37,211,102,0.3);}
+.btn-whatsapp:hover{background:#1ebe5d;transform:translateY(-3px);}
+.wa-note{font-size:0.75rem;color:rgba(255,255,255,0.28);margin-top:1.2rem;letter-spacing:0.05em;}
+
+/* ── CONTACT ── */
+.contact{background:var(--blue-deep);padding:6rem 6vw;}
+.contact-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem;margin-top:2.5rem;}
+.info-item{display:flex;align-items:flex-start;gap:1rem;}
+.info-icon{width:38px;height:38px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.info-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem;}
+.info-val{font-size:0.9rem;color:rgba(255,255,255,0.75);}
+.contact-form{display:flex;flex-direction:column;gap:1.1rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
+.form-field{display:flex;flex-direction:column;gap:0.4rem;}
+.form-field label{font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+.form-field input,.form-field select,.form-field textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.12);padding:0.85rem 1rem;font-family:var(--ff-body);font-size:0.88rem;color:var(--white);outline:none;transition:border-color .2s;-webkit-appearance:none;}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:rgba(201,168,76,0.45);}
+.form-field input::placeholder,.form-field textarea::placeholder{color:rgba(255,255,255,0.2);}
+.form-field select option{background:#163354;color:#fff;}
+.form-field textarea{resize:vertical;min-height:110px;}
+.form-submit{padding:1rem 2rem;background:var(--gold);color:var(--blue-deep);font-family:var(--ff-body);font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;border:none;cursor:pointer;transition:background .25s,transform .2s;align-self:flex-start;}
+.form-submit:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+/* ── FOOTER ── */
+footer{background:#070F1C;padding:4rem 6vw 2rem;}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(201,168,76,0.08);}
+.footer-brand .wordmark{font-family:var(--ff-display);font-size:2rem;font-weight:600;color:var(--white);}
+.footer-brand .sub{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-top:2px;margin-bottom:1rem;}
+.footer-brand p{font-size:0.82rem;color:rgba(255,255,255,0.3);line-height:1.75;max-width:280px;}
+.footer-col h4{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.7rem;}
+.footer-col ul li a{font-size:0.83rem;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s;}
+.footer-col ul li a:hover{color:var(--gold);}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;}
+.footer-bottom p{font-size:0.72rem;color:rgba(255,255,255,0.2);}
+.footer-legal{display:flex;gap:1.5rem;}
+.footer-legal a{font-size:0.72rem;color:rgba(255,255,255,0.2);text-decoration:none;}
+
+/* ── WA FLOAT ── */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:100;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);text-decoration:none;transition:transform .2s;}
+.wa-float:hover{transform:scale(1.1);}
+
+/* ── STICKY ENQUIRE ── */
+.sticky-enq{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(20px);z-index:99;background:var(--blue-deep);border:1px solid rgba(201,168,76,0.25);backdrop-filter:blur(16px);padding:0.7rem 2rem;display:flex;align-items:center;gap:1.5rem;box-shadow:0 8px 40px rgba(11,31,58,0.5);opacity:0;transition:opacity .4s,transform .4s;pointer-events:none;}
+.sticky-enq.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:all;}
+.sticky-enq span{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+.sticky-enq strong{color:var(--gold);font-family:var(--ff-display);font-size:1.1rem;}
+.sticky-enq a{padding:0.55rem 1.4rem;background:var(--gold);color:var(--blue-deep);font-size:0.73rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;text-decoration:none;white-space:nowrap;}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:none;}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-price-tag{display:none;}
+  .overview-inner,.itin-inner,.why-inner,.contact-inner,.inc-exc-inner{grid-template-columns:1fr;}
+  .cities-grid,.policies-grid{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .gallery-item:nth-child(1){grid-column:span 2;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .why-img-badge{right:0;}
+}
+@media(max-width:600px){
+  .hero-content{padding:0 5vw 4rem;}
+  .hero-h1{font-size:2.4rem;}
+  .cities-grid,.policies-grid,.gallery-grid,.highlights-grid,.why-cards,.form-row{grid-template-columns:1fr;}
+  .gallery-item:nth-child(1){grid-column:span 1;height:240px;}
+  .footer-top{grid-template-columns:1fr;}
+  .itin-inner{grid-template-columns:1fr;}
+  .itin-gallery{display:none;}
+  .wa-steps{flex-direction:column;align-items:center;gap:1rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <div>
+      <div class="wordmark">Desh Videsh</div>
+      <div class="sub">Tours &amp; Travels</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#destinations">Destinations</a></li>
+    <li><a href="index.html#packages">Packages</a></li>
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Enquire Now</a>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="index.html#destinations" onclick="closeMobileNav()">Destinations</a>
+  <a href="index.html#packages" onclick="closeMobileNav()">Packages</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1576485375217-d6a95e34d043?w=1800&q=90&auto=format&fit=crop')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1800&q=90&auto=format&fit=crop')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=1800&q=90&auto=format&fit=crop')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1540202404-a2f29016b523?w=1800&q=90&auto=format&fit=crop')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="slide-dots" id="slideDots"></div>
+
+  <!-- Floating price tag -->
+  <div class="hero-price-tag">
+    <div class="price-label">Starting From</div>
+    <div class="price-amount">₹88,000</div>
+    <div class="price-sub">per person</div>
+    <div class="price-divider"></div>
+    <div class="price-nights">6 Nights / 7 Days</div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#packages">Packages</a> &nbsp;/&nbsp; Sri Lanka Discovery</div>
+    <div class="hero-eyebrow"><span></span> Indian Ocean Escape <span></span></div>
+    <h1 class="hero-h1">Sri Lanka<br><em>Discovery</em></h1>
+    <div class="hero-meta">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+        6 Nights / 7 Days
+      </div>
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M8 1C5.2 1 3 3.2 3 6c0 4 5 9 5 9s5-5 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>
+        Colombo · Kandy · Bentota
+      </div>
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M2 6h12M6 2v4M10 2v4M2 10h12v3a1 1 0 01-1 1H3a1 1 0 01-1-1v-3z"/></svg>
+        Fixed Departure · Summer Special
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-gold">Book This Package →</a>
+      <a href="#itinerary" class="btn-outline">View Itinerary</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <p>Trusted across India</p>
+  <div class="trust-badges">
+    <div class="t-badge"><div class="t-dot"></div>IATA Affiliated</div>
+    <div class="t-badge"><div class="t-dot"></div>Visa Assistance Included</div>
+    <div class="t-badge"><div class="t-dot"></div>6 Breakfasts + 6 Dinners Included</div>
+    <div class="t-badge"><div class="t-dot"></div>24/7 On-Trip Support</div>
+    <div class="t-badge"><div class="t-dot"></div>Zero Hidden Charges</div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="overview" id="overview">
+  <div class="overview-inner">
+    <div class="reveal">
+      <div class="s-eye">Package Overview</div>
+      <h2 class="s-title">The Pearl of the<br><em>Indian Ocean</em></h2>
+      <p class="s-sub">Sri Lanka is a land that rewrites your idea of beauty — lush tea estates blanketing misty highlands, ancient temples that have stood for centuries, turquoise beaches curving into infinity, and wildlife that roams free. This 6-night journey takes you from the cultural heartland of Kandy through the golden sands of Bentota to the vibrant pulse of Colombo.</p>
+      <p class="s-sub">Crafted by Desh Videsh for the discerning traveller who expects luxury without compromise and memories without a price tag.</p>
+      <div class="highlights-grid">
+        <div class="highlight-pill"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M8 1C5.2 1 3 3.2 3 6c0 4 5 9 5 9s5-5 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg>3 Cities, 7 Days</div>
+        <div class="highlight-pill"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.2l-3.7 2.1.7-4.1L2 5.3l4.2-.7z"/></svg>Luxury Hotels</div>
+        <div class="highlight-pill"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M2 4h12v9a1 1 0 01-1 1H3a1 1 0 01-1-1V4z"/><path d="M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1"/></svg>6 Breakfasts + 6 Dinners</div>
+        <div class="highlight-pill"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>Airport Transfers</div>
+        <div class="highlight-pill"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M3 8l3.5 3.5 7-7"/></svg>All Sightseeing Included</div>
+        <div class="highlight-pill"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M1 8s2-5 7-5 7 5 7 5-2 5-7 5-7-5-7-5z"/><circle cx="8" cy="8" r="2"/></svg>Elephant Orphanage Visit</div>
+        <div class="highlight-pill"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M4 2h8l2 4-5 5H5L1 6z"/></svg>River Boat Safari</div>
+        <div class="highlight-pill"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M8 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 3v3l2 2"/></svg>Water Sports</div>
+      </div>
+    </div>
+
+    <!-- Sticky card -->
+    <div class="reveal">
+      <div class="overview-card">
+        <div class="overview-card-title">Sri Lanka Discovery — Package Details</div>
+        <div class="oc-row"><span class="oc-label">Duration</span><span class="oc-val">6 Nights / 7 Days</span></div>
+        <div class="oc-row"><span class="oc-label">Cities</span><span class="oc-val">Colombo · Kandy · Bentota</span></div>
+        <div class="oc-row"><span class="oc-label">Meals</span><span class="oc-val">6 Breakfasts + 6 Dinners</span></div>
+        <div class="oc-row"><span class="oc-label">Departure</span><span class="oc-val">Fixed Departure · Summer Special</span></div>
+        <div class="oc-row"><span class="oc-label">Ideal For</span><span class="oc-val">Couples, Families, Groups</span></div>
+        <div class="oc-row"><span class="oc-label">Accommodation</span><span class="oc-val">Deluxe Hotels</span></div>
+        <div class="oc-price-row">
+          <span class="oc-price-label">Package Price</span>
+          <div><div class="oc-price">₹88,000<span> / per person</span></div></div>
+        </div>
+        <div class="oc-btns">
+          <a href="https://wa.me/918233638999?text=Hi!%20I%27m%20interested%20in%20the%20Sri%20Lanka%20Discovery%20package%20%E2%82%B988%2C000.%20Please%20share%20more%20details." class="oc-btn-wa" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 36 36" fill="none"><path d="M18 3C9.716 3 3 9.716 3 18c0 2.637.693 5.113 1.904 7.256L3 33l7.986-1.873A14.925 14.925 0 0018 33c8.284 0 15-6.716 15-15S26.284 3 18 3z" fill="white"/><path d="M26.016 21.563c-.394-.197-2.328-1.148-2.689-1.28-.362-.13-.625-.197-.888.197-.263.394-1.02 1.28-1.25 1.543-.23.263-.46.296-.854.099-.394-.197-1.664-.614-3.17-1.959-1.17-1.046-1.96-2.338-2.19-2.732-.23-.394-.024-.608.172-.804.177-.177.394-.46.591-.69.197-.23.263-.394.394-.657.131-.263.066-.493-.033-.69-.099-.197-.888-2.14-1.217-2.929-.32-.768-.645-.664-.888-.676-.23-.012-.493-.015-.756-.015-.263 0-.69.098-1.053.493-.362.394-1.38 1.348-1.38 3.287 0 1.939 1.414 3.813 1.611 4.076.197.263 2.782 4.248 6.739 5.957.942.407 1.676.65 2.248.832.945.301 1.804.258 2.484.157.758-.113 2.328-.952 2.658-1.872.328-.92.328-1.709.23-1.872-.098-.164-.362-.263-.756-.46z" fill="#25D366"/></svg>
+            Enquire on WhatsApp
+          </a>
+          <a href="#contact" class="oc-btn-enq">Send an Enquiry Form</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITIES / HIGHLIGHTS -->
+<section class="cities">
+  <div class="cities-pat"></div>
+  <div class="cities-inner">
+    <div class="s-eye" style="color:var(--gold);">Where You'll Go</div>
+    <h2 class="s-title" style="color:var(--white);">Three cities,<br><em>one unforgettable</em> journey</h2>
+    <div class="cities-grid reveal">
+      <!-- KANDY -->
+      <div class="city-card">
+        <div class="city-img" style="background-image:url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=700&q=80&auto=format&fit=crop')"></div>
+        <div class="city-overlay"></div>
+        <div class="city-body">
+          <div class="city-nights">2 Nights</div>
+          <div class="city-name">Kandy</div>
+          <ul class="city-sights">
+            <li>Pinnawala Elephant Orphanage</li>
+            <li>Temple of the Sacred Tooth Relic</li>
+            <li>Peradeniya Botanical Garden</li>
+            <li>Gem Museum Visit</li>
+            <li>Kandy Cultural Show</li>
+            <li>Upper Lake Drive</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BENTOTA -->
+      <div class="city-card">
+        <div class="city-img" style="background-image:url('https://images.unsplash.com/photo-1540202404-a2f29016b523?w=700&q=80&auto=format&fit=crop')"></div>
+        <div class="city-overlay"></div>
+        <div class="city-body">
+          <div class="city-nights">3 Nights</div>
+          <div class="city-name">Bentota</div>
+          <ul class="city-sights">
+            <li>Bentota Spice Garden & Turtle Hatchery</li>
+            <li>River Boat Safari</li>
+            <li>Thrilling Water Sports</li>
+            <li>Ambalangoda Mask Painting</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- COLOMBO -->
+      <div class="city-card">
+        <div class="city-img" style="background-image:url('https://images.unsplash.com/photo-1576485375217-d6a95e34d043?w=700&q=80&auto=format&fit=crop')"></div>
+        <div class="city-overlay"></div>
+        <div class="city-body">
+          <div class="city-nights">1 Night</div>
+          <div class="city-name">Colombo</div>
+          <ul class="city-sights">
+            <li>Colombo Lotus Tower</li>
+            <li>Full City Tour</li>
+            <li>Gangarama Temple</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="itinerary" id="itinerary">
+  <div class="itin-inner">
+    <div>
+      <div class="s-eye">Day-by-Day</div>
+      <h2 class="s-title">Your <em>itinerary</em></h2>
+      <p style="color:var(--muted);font-size:0.9rem;font-weight:300;line-height:1.8;margin-bottom:3rem;max-width:420px;">A thoughtfully paced journey through Sri Lanka's most iconic landscapes and cultural wonders.</p>
+
+      <div class="itin-days">
+        <div class="itin-day">
+          <div class="itin-num-wrap"><div class="itin-num">1</div></div>
+          <div class="itin-body">
+            <div class="itin-day-label">Day 1</div>
+            <div class="itin-day-title">Arrival in Colombo — Begin the Journey</div>
+            <div class="itin-day-desc">Your Desh Videsh representative meets you at Bandaranaike International Airport with a warm welcome. Transfer to your hotel in Colombo for a comfortable check-in. Evening at leisure — stroll along the Galle Face promenade and soak in the ocean breeze. Dinner at hotel.</div>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-num-wrap"><div class="itin-num">2</div></div>
+          <div class="itin-body">
+            <div class="itin-day-label">Day 2</div>
+            <div class="itin-day-title">Colombo City Tour + Transfer to Kandy</div>
+            <div class="itin-day-desc">After breakfast, explore Colombo's most iconic landmarks before heading to the Cultural Capital — Kandy.</div>
+            <ul class="itin-activities">
+              <li>Colombo Lotus Tower — Sri Lanka's tallest tower</li>
+              <li>Gangarama Temple — a serene spiritual experience</li>
+              <li>Scenic drive to Kandy through lush highlands</li>
+              <li>Check-in to Kandy hotel · Dinner included</li>
+            </ul>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-num-wrap"><div class="itin-num">3</div></div>
+          <div class="itin-body">
+            <div class="itin-day-label">Day 3</div>
+            <div class="itin-day-title">Kandy — Elephants, Temples & Gardens</div>
+            <div class="itin-day-desc">A full day immersed in Kandy's breathtaking nature and rich culture.</div>
+            <ul class="itin-activities">
+              <li>Pinnawala Elephant Orphanage — watch giants roam free</li>
+              <li>Peradeniya Royal Botanical Garden</li>
+              <li>Gem Museum Visit</li>
+              <li>Temple of the Sacred Tooth Relic (Sri Dalada Maligawa)</li>
+              <li>Traditional Cultural Show in the evening</li>
+            </ul>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-num-wrap"><div class="itin-num">4</div></div>
+          <div class="itin-body">
+            <div class="itin-day-label">Day 4</div>
+            <div class="itin-day-title">Kandy Upper Lake + Transfer to Bentota</div>
+            <div class="itin-day-desc">After breakfast, enjoy a picturesque drive around Kandy's Upper Lake before your journey south to the golden coast of Bentota — Sri Lanka's premier beach resort destination.</div>
+            <ul class="itin-activities">
+              <li>Kandy Upper Lake Drive — misty & magnificent</li>
+              <li>Afternoon transfer to Bentota</li>
+              <li>Check-in to beachfront hotel · Dinner included</li>
+            </ul>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-num-wrap"><div class="itin-num">5</div></div>
+          <div class="itin-body">
+            <div class="itin-day-label">Day 5</div>
+            <div class="itin-day-title">Bentota — Safari, Spices & the Sea</div>
+            <div class="itin-day-desc">An action-packed day along Sri Lanka's glittering southwestern coast.</div>
+            <ul class="itin-activities">
+              <li>Bentota Spice Garden & Turtle Hatchery</li>
+              <li>Thrilling River Boat Safari on Bentota River</li>
+              <li>Ambalangoda Mask Painting Workshop</li>
+              <li>Free evening on the beach</li>
+            </ul>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-num-wrap"><div class="itin-num">6</div></div>
+          <div class="itin-body">
+            <div class="itin-day-label">Day 6</div>
+            <div class="itin-day-title">Bentota — Water Sports & Leisure</div>
+            <div class="itin-day-desc">Your day to unwind and thrill in equal measure. The turquoise waters of Bentota are yours to explore.</div>
+            <ul class="itin-activities">
+              <li>Water Sports: Jet Ski, Banana Boat, Snorkelling</li>
+              <li>Leisurely beach afternoon</li>
+              <li>Sunset dinner by the ocean</li>
+            </ul>
+          </div>
+        </div>
+        <div class="itin-day">
+          <div class="itin-num-wrap"><div class="itin-num">7</div></div>
+          <div class="itin-body">
+            <div class="itin-day-label">Day 7</div>
+            <div class="itin-day-title">Departure — Until Next Time, Sri Lanka</div>
+            <div class="itin-day-desc">After a leisurely breakfast, transfer to Colombo Airport for your return flight. Carry home nothing but golden memories — Sri Lanka has a way of staying with you long after you've left.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery sticky -->
+    <div class="itin-gallery">
+      <img class="itin-gallery-main" src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=700&q=80&auto=format&fit=crop" alt="Kandy Lake Sri Lanka"/>
+      <p class="itin-gallery-label">Kandy Lake, Sri Lanka</p>
+      <div class="itin-gallery-row">
+        <img src="https://images.unsplash.com/photo-1540202404-a2f29016b523?w=400&q=80&auto=format&fit=crop" alt="Bentota Beach"/>
+        <img src="https://images.unsplash.com/photo-1576485375217-d6a95e34d043?w=400&q=80&auto=format&fit=crop" alt="Colombo Sri Lanka"/>
+      </div>
+      <img class="itin-gallery-main" src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=700&q=80&auto=format&fit=crop" alt="Sri Lanka Elephants"/>
+      <p class="itin-gallery-label">Pinnawala Elephant Orphanage</p>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUSIONS / EXCLUSIONS -->
+<section class="inc-exc">
+  <div style="text-align:center;margin-bottom:3rem;">
+    <div class="s-eye" style="justify-content:center;">What's Covered</div>
+    <h2 class="s-title" style="text-align:center;">Inclusions &amp; <em>Exclusions</em></h2>
+  </div>
+  <div class="inc-exc-inner reveal">
+    <div class="ie-card inc">
+      <div class="ie-title">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M3 8l3.5 3.5 7-7"/></svg>
+        What's Included
+      </div>
+      <ul class="ie-list">
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 8l3.5 3.5 7-7"/></svg></div>Accommodation in well-appointed hotels (Twin Sharing Basis)</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 8l3.5 3.5 7-7"/></svg></div>6 Breakfasts + 6 Dinners as per itinerary</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 8l3.5 3.5 7-7"/></svg></div>All airport transfers and inter-city transportation</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 8l3.5 3.5 7-7"/></svg></div>Sightseeing as per itinerary with AC vehicle</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 8l3.5 3.5 7-7"/></svg></div>Pinnawala Elephant Orphanage entry</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 8l3.5 3.5 7-7"/></svg></div>Temple of Sacred Tooth Relic entry</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 8l3.5 3.5 7-7"/></svg></div>Peradeniya Botanical Garden entry</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 8l3.5 3.5 7-7"/></svg></div>River Boat Safari in Bentota</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 8l3.5 3.5 7-7"/></svg></div>Kandy Cultural Show</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M3 8l3.5 3.5 7-7"/></svg></div>24/7 Desh Videsh travel support</li>
+      </ul>
+    </div>
+    <div class="ie-card exc">
+      <div class="ie-title">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="#8A9BB0" stroke-width="1.5"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        Not Included
+      </div>
+      <ul class="ie-list">
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#c0392b" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg></div>International / domestic airfare</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#c0392b" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg></div>Sri Lanka tourist visa fee (ETA)</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#c0392b" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg></div>Travel insurance</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#c0392b" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg></div>Personal expenses, tips, laundry</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#c0392b" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg></div>Lunches (unless specified)</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#c0392b" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg></div>Optional water sports charges</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#c0392b" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg></div>2% TCS (as per Govt. norms from April 2026)</li>
+        <li><div class="ie-check"><svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="#c0392b" stroke-width="2"><path d="M4 4l8 8M12 4l-8 8"/></svg></div>Any items not mentioned in inclusions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-inner reveal">
+    <div style="text-align:center;margin-bottom:0;">
+      <div class="s-eye" style="color:var(--gold);justify-content:center;">Visual Journey</div>
+      <h2 class="s-title" style="color:var(--white);text-align:center;">A glimpse of <em>Sri Lanka</em></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1000&q=85&auto=format&fit=crop" alt="Kandy Sri Lanka"/><div class="gallery-caption">Kandy Lake</div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=600&q=85&auto=format&fit=crop" alt="Elephant Orphanage"/><div class="gallery-caption">Pinnawala Elephant Orphanage</div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540202404-a2f29016b523?w=600&q=85&auto=format&fit=crop" alt="Bentota Beach"/><div class="gallery-caption">Bentota Coastline</div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1576485375217-d6a95e34d043?w=600&q=85&auto=format&fit=crop" alt="Colombo Sri Lanka"/><div class="gallery-caption">Colombo City</div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1612548403247-aa5083a7e9f4?w=600&q=85&auto=format&fit=crop" alt="Tea Plantation"/><div class="gallery-caption">Highland Tea Estates</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BOOK WITH US -->
+<section class="why">
+  <div class="why-inner">
+    <div>
+      <div class="s-eye">Why Desh Videsh</div>
+      <h2 class="s-title">Journeys built on <em>trust</em><br>& experience</h2>
+      <p style="color:var(--muted);font-size:0.92rem;font-weight:300;line-height:1.85;margin-bottom:2.5rem;max-width:420px;">We don't just book holidays. We craft experiences — tailored to your pace, taste, and budget. Sri Lanka deserves more than a generic tour, and we deliver exactly that.</p>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <div class="why-icon"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.4"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.2l-3.7 2.1.7-4.1L2 5.3l4.2-.7z"/></svg></div>
+          <h3>Founder-Led Excellence</h3>
+          <p>Every journey carries the personal commitment of Mr. Sanjeev Bhati — ex-founder of Sahara Education.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <div class="why-icon"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.4"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg></div>
+          <h3>24/7 On-Trip Support</h3>
+          <p>Your dedicated travel manager is one call away — whether you're in Kandy or Bentota.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <div class="why-icon"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.4"><path d="M3 8l3.5 3.5 7-7"/></svg></div>
+          <h3>Zero Hidden Charges</h3>
+          <p>Everything itemised upfront. No surprise fees at any point in your journey.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <div class="why-icon"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.4"><path d="M8 1C5.2 1 3 3.2 3 6c0 4 5 9 5 9s5-5 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg></div>
+          <h3>Local Sri Lanka Expertise</h3>
+          <p>Handpicked partners on the ground ensure authentic, insider experiences at every stop.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-image reveal">
+      <img class="why-img-main" src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=700&q=80&auto=format&fit=crop" alt="Sri Lanka Beauty"/>
+      <div class="why-img-badge">
+        <strong>2,400+</strong>
+        <span>Happy Travellers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POLICIES -->
+<section class="policies">
+  <div class="policies-pat"></div>
+  <div class="policies-inner">
+    <div style="text-align:center;margin-bottom:0;">
+      <div class="s-eye" style="color:var(--gold);justify-content:center;">Important Information</div>
+      <h2 class="s-title" style="color:var(--white);text-align:center;">Booking <em>Policies</em></h2>
+    </div>
+    <div class="policies-grid reveal">
+      <div class="pol-card">
+        <div class="pol-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.4"><rect x="1" y="3" width="14" height="10" rx="1"/><path d="M1 7h14"/></svg></div>
+        <div class="pol-title">Payment Policy</div>
+        <ul class="pol-list">
+          <li>Initial deposit of ₹20,000 per person to confirm booking</li>
+          <li>100% payment required at least 30 days before departure</li>
+          <li>Payments accepted via bank transfer, UPI, or card</li>
+        </ul>
+      </div>
+      <div class="pol-card">
+        <div class="pol-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.4"><path d="M4 4l8 8M12 4l-8 8"/></svg></div>
+        <div class="pol-title">Cancellation Policy</div>
+        <ul class="pol-list">
+          <li>45+ days before departure — ₹10,000 per person</li>
+          <li>45–30 days — 25% of tour cost</li>
+          <li>30–15 days — 50% of tour cost</li>
+          <li>15–7 days or No Show — 100% of tour cost</li>
+        </ul>
+      </div>
+      <div class="pol-card">
+        <div class="pol-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="#C9A84C" stroke-width="1.4"><circle cx="8" cy="8" r="6"/><path d="M8 5v4M8 11v1"/></svg></div>
+        <div class="pol-title">Important Notes</div>
+        <ul class="pol-list">
+          <li>Rates are dynamic and subject to hotel availability</li>
+          <li>Check-in 2:00 PM · Check-out 11:00 AM</li>
+          <li>No refund for unutilised services</li>
+          <li>2% TCS applicable on international packages (Govt. rule)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHATSAPP CTA -->
+<section class="wa-cta">
+  <div class="wa-blob1"></div>
+  <div class="wa-blob2"></div>
+  <div class="wa-inner">
+    <div class="wa-icon">
+      <svg viewBox="0 0 36 36" width="36" height="36" fill="none"><path d="M18 3C9.716 3 3 9.716 3 18c0 2.637.693 5.113 1.904 7.256L3 33l7.986-1.873A14.925 14.925 0 0018 33c8.284 0 15-6.716 15-15S26.284 3 18 3z" fill="#25D366"/><path d="M26.016 21.563c-.394-.197-2.328-1.148-2.689-1.28-.362-.13-.625-.197-.888.197-.263.394-1.02 1.28-1.25 1.543-.23.263-.46.296-.854.099-.394-.197-1.664-.614-3.17-1.959-1.17-1.046-1.96-2.338-2.19-2.732-.23-.394-.024-.608.172-.804.177-.177.394-.46.591-.69.197-.23.263-.394.394-.657.131-.263.066-.493-.033-.69-.099-.197-.888-2.14-1.217-2.929-.32-.768-.645-.664-.888-.676-.23-.012-.493-.015-.756-.015-.263 0-.69.098-1.053.493-.362.394-1.38 1.348-1.38 3.287 0 1.939 1.414 3.813 1.611 4.076.197.263 2.782 4.248 6.739 5.957.942.407 1.676.65 2.248.832.945.301 1.804.258 2.484.157.758-.113 2.328-.952 2.658-1.872.328-.92.328-1.709.23-1.872-.098-.164-.362-.263-.756-.46z" fill="white"/></svg>
+    </div>
+    <h2 class="wa-title">Ready to experience<br>Sri Lanka?</h2>
+    <p class="wa-sub">Drop us a message with your travel dates and number of travellers — our Sri Lanka specialist will get back to you within the hour.</p>
+    <div class="wa-steps">
+      <div class="wa-step"><div class="wa-step-num">1</div>Message your dates</div>
+      <div class="wa-step"><div class="wa-step-num">2</div>Get a custom quote</div>
+      <div class="wa-step"><div class="wa-step-num">3</div>Confirm & travel</div>
+    </div>
+    <a href="https://wa.me/918233638999?text=Hi!%20I%27m%20interested%20in%20the%20Sri%20Lanka%20Discovery%20package%20(6N%2F7D%20%E2%82%B988%2C000).%20Please%20share%20available%20dates." class="btn-whatsapp" target="_blank">
+      <svg width="22" height="22" viewBox="0 0 36 36" fill="none"><path d="M18 3C9.716 3 3 9.716 3 18c0 2.637.693 5.113 1.904 7.256L3 33l7.986-1.873A14.925 14.925 0 0018 33c8.284 0 15-6.716 15-15S26.284 3 18 3z" fill="white"/><path d="M26.016 21.563c-.394-.197-2.328-1.148-2.689-1.28-.362-.13-.625-.197-.888.197-.263.394-1.02 1.28-1.25 1.543-.23.263-.46.296-.854.099-.394-.197-1.664-.614-3.17-1.959-1.17-1.046-1.96-2.338-2.19-2.732-.23-.394-.024-.608.172-.804.177-.177.394-.46.591-.69.197-.23.263-.394.394-.657.131-.263.066-.493-.033-.69-.099-.197-.888-2.14-1.217-2.929-.32-.768-.645-.664-.888-.676-.23-.012-.493-.015-.756-.015-.263 0-.69.098-1.053.493-.362.394-1.38 1.348-1.38 3.287 0 1.939 1.414 3.813 1.611 4.076.197.263 2.782 4.248 6.739 5.957.942.407 1.676.65 2.248.832.945.301 1.804.258 2.484.157.758-.113 2.328-.952 2.658-1.872.328-.92.328-1.709.23-1.872-.098-.164-.362-.263-.756-.46z" fill="#25D366"/></svg>
+      Chat on WhatsApp Now
+    </a>
+    <p class="wa-note">Replies within 30 minutes · Available 9am – 11pm IST</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="s-eye" style="color:var(--gold);">Get in Touch</div>
+      <h2 class="s-title" style="color:var(--white);">Book your <em>Sri Lanka</em><br>journey today</h2>
+      <p style="color:rgba(255,255,255,0.42);font-size:0.9rem;font-weight:300;line-height:1.85;max-width:380px;margin-top:0.5rem;">Fill out the form and our Sri Lanka travel specialist will contact you within 2 hours with all details and available departure dates.</p>
+      <div class="contact-info">
+        <div class="info-item">
+          <div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><path d="M8 1C5.2 1 3 3.2 3 6c0 4 5 9 5 9s5-5 5-9c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/></svg></div>
+          <div><div class="info-label">Office</div><div class="info-val">C-75 Sadul Ganj, Rotary Club, Bikaner, Rajasthan</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><path d="M3 2h3l1.5 3.5-2 1.2a9 9 0 004.8 4.8l1.2-2L15 11v3a1 1 0 01-1 1C5 15 1 11 1 3a1 1 0 011-1z"/></svg></div>
+          <div><div class="info-label">Phone / WhatsApp</div><div class="info-val">+91 82336 38999</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><rect x="1" y="3" width="14" height="10" rx="1"/><path d="M1 4l7 5 7-5"/></svg></div>
+          <div><div class="info-label">Email</div><div class="info-val"><a href="mailto:info@deshvideshtours.com" style="color:inherit;text-decoration:none;">info@deshvideshtours.com</a></div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg></div>
+          <div><div class="info-label">Hours</div><div class="info-val">Mon – Sat: 9:00 AM – 7:00 PM</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf_firstname">First Name *</label>
+            <input type="text" id="cf_firstname" name="from_name" placeholder="Aarav" required/>
+          </div>
+          <div class="form-field">
+            <label for="cf_lastname">Last Name</label>
+            <input type="text" id="cf_lastname" name="last_name" placeholder="Sharma"/>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf_email">Email Address *</label>
+          <input type="email" id="cf_email" name="reply_to" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-field">
+          <label for="cf_phone">Phone / WhatsApp *</label>
+          <input type="tel" id="cf_phone" name="phone" placeholder="+91 00000 00000" required/>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf_date">Preferred Travel Date</label>
+            <input type="text" id="cf_date" name="travel_date" placeholder="e.g. June 2025"/>
+          </div>
+          <div class="form-field">
+            <label for="cf_travelers">No. of Travellers</label>
+            <select id="cf_travelers" name="travelers">
+              <option value="">Select</option>
+              <option>1 – 2</option>
+              <option>3 – 5</option>
+              <option>6 – 10</option>
+              <option>10+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf_msg">Tell us about your Sri Lanka trip</label>
+          <textarea id="cf_msg" name="message" rows="4" placeholder="Special requests, honeymoon, anniversary, family trip..."></textarea>
+        </div>
+        <div id="formError" style="display:none;color:#c0392b;font-size:0.82rem;margin-bottom:0.5rem;padding:0.6rem 0.9rem;background:rgba(192,57,43,0.08);border-left:3px solid #c0392b;"></div>
+        <button type="submit" class="form-submit" id="submitBtn">Send Enquiry →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="wordmark">Desh Videsh</div>
+      <div class="sub">Tours &amp; Travels</div>
+      <p>Premium travel experiences crafted for the discerning Indian traveller. From local escapes to international adventures — we turn dreams into memories.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#destinations">Destinations</a></li>
+        <li><a href="index.html#packages">Packages</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>International</h4>
+      <ul>
+        <li><a href="srilanka-tour-package.html">Sri Lanka</a></li>
+        <li><a href="index.html#packages">Bali</a></li>
+        <li><a href="index.html#packages">Dubai</a></li>
+        <li><a href="index.html#packages">Maldives</a></li>
+        <li><a href="index.html#packages">Thailand</a></li>
+        <li><a href="index.html#packages">Europe</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Desh Videsh Tours &amp; Travels. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/918233638999?text=Hi!%20I%27m%20interested%20in%20the%20Sri%20Lanka%20Discovery%20package." class="wa-float" target="_blank" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 36 36" fill="none"><path d="M18 3C9.716 3 3 9.716 3 18c0 2.637.693 5.113 1.904 7.256L3 33l7.986-1.873A14.925 14.925 0 0018 33c8.284 0 15-6.716 15-15S26.284 3 18 3z" fill="white"/><path d="M26.016 21.563c-.394-.197-2.328-1.148-2.689-1.28-.362-.13-.625-.197-.888.197-.263.394-1.02 1.28-1.25 1.543-.23.263-.46.296-.854.099-.394-.197-1.664-.614-3.17-1.959-1.17-1.046-1.96-2.338-2.19-2.732-.23-.394-.024-.608.172-.804.177-.177.394-.46.591-.69.197-.23.263-.394.394-.657.131-.263.066-.493-.033-.69-.099-.197-.888-2.14-1.217-2.929-.32-.768-.645-.664-.888-.676-.23-.012-.493-.015-.756-.015-.263 0-.69.098-1.053.493-.362.394-1.38 1.348-1.38 3.287 0 1.939 1.414 3.813 1.611 4.076.197.263 2.782 4.248 6.739 5.957.942.407 1.676.65 2.248.832.945.301 1.804.258 2.484.157.758-.113 2.328-.952 2.658-1.872.328-.92.328-1.709.23-1.872-.098-.164-.362-.263-.756-.46z" fill="#25D366"/></svg>
+</a>
+
+<!-- STICKY ENQUIRE BAR -->
+<div class="sticky-enq" id="stickyEnq">
+  <span>Sri Lanka Discovery &nbsp;·&nbsp; <strong>₹88,000</strong> / person</span>
+  <a href="#contact">Enquire Now →</a>
+</div>
+
+<script>
+// NAV SCROLL
+const nav = document.getElementById('nav');
+const stickyEnq = document.getElementById('stickyEnq');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  stickyEnq.classList.toggle('show', window.scrollY > 600);
+});
+
+// MOBILE NAV
+function toggleMobileNav() {
+  document.getElementById('mobileNavOverlay').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mobileNavOverlay').classList.contains('open') ? 'hidden' : '';
+}
+function closeMobileNav() {
+  document.getElementById('mobileNavOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+window.addEventListener('resize', () => { if (window.innerWidth > 960) closeMobileNav(); });
+
+// HERO SLIDESHOW
+(function(){
+  var slides = document.querySelectorAll('.hero-slide');
+  var dotsWrap = document.getElementById('slideDots');
+  var current = 0;
+  var timer;
+  slides.forEach(function(_, i){
+    var d = document.createElement('div');
+    d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', function(){ goTo(i); });
+    dotsWrap.appendChild(d);
+  });
+  function goTo(n){
+    clearInterval(timer);
+    slides[current].classList.remove('active');
+    document.querySelectorAll('.slide-dot')[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    document.querySelectorAll('.slide-dot')[current].classList.add('active');
+    timer = setInterval(function(){ goTo(current + 1); }, 6000);
+  }
+  timer = setInterval(function(){ goTo(current + 1); }, 6000);
+})();
+
+// REVEAL ON SCROLL
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// CONTACT FORM — EmailJS: service_7va2gdo | template_148u9sb | key: rGm6ayR1xyYVIOKKl
+function handleSubmit(e){
+  e.preventDefault();
+  var btn    = document.getElementById('submitBtn');
+  var errBox = document.getElementById('formError');
+  var form   = document.getElementById('contactForm');
+
+  var firstName  = document.getElementById('cf_firstname').value.trim();
+  var lastName   = document.getElementById('cf_lastname').value.trim();
+  var email      = document.getElementById('cf_email').value.trim();
+  var phone      = document.getElementById('cf_phone').value.trim();
+  var travelDate = document.getElementById('cf_date').value.trim() || 'Not specified';
+  var travelers  = document.getElementById('cf_travelers').value  || 'Not specified';
+  var message    = document.getElementById('cf_msg').value.trim() || 'No message';
+  var fullName   = firstName + (lastName ? ' ' + lastName : '');
+
+  // Validation
+  if(!firstName){
+    errBox.textContent = 'Please enter your first name.';
+    errBox.style.display = 'block';
+    document.getElementById('cf_firstname').focus();
+    return;
+  }
+  if(!email || email.indexOf('@') === -1){
+    errBox.textContent = 'Please enter a valid email address.';
+    errBox.style.display = 'block';
+    document.getElementById('cf_email').focus();
+    return;
+  }
+  if(!phone){
+    errBox.textContent = 'Please enter your phone / WhatsApp number.';
+    errBox.style.display = 'block';
+    document.getElementById('cf_phone').focus();
+    return;
+  }
+  errBox.style.display = 'none';
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+
+  // Send via EmailJS — same service/template used on main site
+  emailjs.send('service_7va2gdo', 'template_148u9sb', {
+    from_name:    fullName,
+    reply_to:     email,
+    email:        email,
+    phone:        phone,
+    destination:  'Sri Lanka Discovery — 6N/7D | ₹88,000 per person',
+    travel_date:  travelDate,
+    budget:       travelers + ' travellers',
+    message:      message
+  }).then(function(){
+    btn.textContent  = 'Sent! We'll call you shortly ✓';
+    btn.style.background = '#22a85a';
+    btn.style.color  = '#fff';
+    btn.style.opacity = '1';
+    form.reset();
+
+    // Auto-open WhatsApp 1.5s later so user sees the success message first
+    setTimeout(function(){
+      var waText =
+        'Hi! I just submitted an enquiry on your Sri Lanka page 🌴\n\n' +
+        '*Package:* Sri Lanka Discovery — 6N/7D ₹88,000\n' +
+        '*Name:* ' + fullName + '\n' +
+        '*Phone:* ' + phone + '\n' +
+        '*Travel Date:* ' + travelDate + '\n' +
+        '*Travellers:* ' + travelers + '\n' +
+        '*Message:* ' + message;
+      window.open(
+        'https://api.whatsapp.com/send?phone=918233638999&text=' + encodeURIComponent(waText),
+        '_blank'
+      );
+    }, 1500);
+
+  }, function(error){
+    console.error('EmailJS error:', error);
+    btn.textContent  = 'Send Enquiry →';
+    btn.disabled     = false;
+    btn.style.opacity = '1';
+    errBox.textContent = 'Something went wrong. Please WhatsApp or call us directly at +91 82336 38999.';
+    errBox.style.display = 'block';
+  });
+}
+</script>
+</body>
+</html>
