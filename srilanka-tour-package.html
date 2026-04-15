@@ -130,7 +130,7 @@ nav.scrolled{background:rgba(11,31,58,0.97);backdrop-filter:blur(16px);box-shado
 .city-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.8rem;}
 .city-nights{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
 .city-name{font-family:var(--ff-display);font-size:1.6rem;font-weight:600;color:#fff;margin-bottom:0.5rem;}
-.city-sights{list-style:none;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;}
+.city-sights{list-style:none;opacity:1;transform:none;transition:opacity .3s,transform .3s;}
 .city-card:hover .city-sights{opacity:1;transform:none;}
 .city-sights li{font-size:0.78rem;color:rgba(255,255,255,0.65);padding:0.2rem 0;display:flex;align-items:center;gap:0.5rem;}
 .city-sights li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;}
@@ -286,7 +286,7 @@ footer{background:#070F1C;padding:4rem 6vw 2rem;}
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:none;}}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.reveal{opacity:1;transform:none;}
 .reveal.visible{opacity:1;transform:none;}
 
 /* ── RESPONSIVE ── */
@@ -402,7 +402,7 @@ footer{background:#070F1C;padding:4rem 6vw 2rem;}
 <!-- OVERVIEW -->
 <section class="overview" id="overview">
   <div class="overview-inner">
-    <div class="reveal">
+    <div >
       <div class="s-eye">Package Overview</div>
       <h2 class="s-title">The Pearl of the<br><em>Indian Ocean</em></h2>
       <p class="s-sub">Sri Lanka is a land that rewrites your idea of beauty — lush tea estates blanketing misty highlands, ancient temples that have stood for centuries, turquoise beaches curving into infinity, and wildlife that roams free. This 6-night journey takes you from the cultural heartland of Kandy through the golden sands of Bentota to the vibrant pulse of Colombo.</p>
@@ -420,7 +420,7 @@ footer{background:#070F1C;padding:4rem 6vw 2rem;}
     </div>
 
     <!-- Sticky card -->
-    <div class="reveal">
+    <div >
       <div class="overview-card">
         <div class="overview-card-title">Sri Lanka Discovery — Package Details</div>
         <div class="oc-row"><span class="oc-label">Duration</span><span class="oc-val">6 Nights / 7 Days</span></div>
@@ -788,7 +788,7 @@ footer{background:#070F1C;padding:4rem 6vw 2rem;}
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
-    <div class="reveal">
+    <div >
       <div class="s-eye" style="color:var(--gold);">Get in Touch</div>
       <h2 class="s-title" style="color:var(--white);">Book your <em>Sri Lanka</em><br>journey today</h2>
       <p style="color:rgba(255,255,255,0.42);font-size:0.9rem;font-weight:300;line-height:1.85;max-width:380px;margin-top:0.5rem;">Fill out the form and our Sri Lanka travel specialist will contact you within 2 hours with all details and available departure dates.</p>
@@ -811,7 +811,7 @@ footer{background:#070F1C;padding:4rem 6vw 2rem;}
         </div>
       </div>
     </div>
-    <div class="reveal">
+    <div >
       <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)" novalidate>
         <div class="form-row">
           <div class="form-field">
@@ -951,11 +951,8 @@ window.addEventListener('resize', () => { if (window.innerWidth > 960) closeMobi
   timer = setInterval(function(){ goTo(current + 1); }, 6000);
 })();
 
-// REVEAL ON SCROLL
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+// Scroll reveal — safely added without hiding content
+document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 
 // CONTACT FORM — EmailJS: service_7va2gdo | template_148u9sb | key: rGm6ayR1xyYVIOKKl
 function handleSubmit(e){
