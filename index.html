@@ -2,6 +2,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -334,8 +335,7 @@ footer ul li a:hover{color:var(--gold);}
 .pop-tag{background:rgba(201,168,76,0.1);border:0.5px solid rgba(201,168,76,0.28);padding:4px 12px;font-size:0.72rem;color:rgba(255,255,255,0.6);cursor:pointer;transition:all .18s;font-weight:500;}
 .pop-tag:hover{background:rgba(201,168,76,0.25);color:#C9A84C;border-color:rgba(201,168,76,0.5);}
 .no-results{padding:1.2rem 1.4rem;font-size:0.88rem;color:rgba(255,255,255,0.4);text-align:center;}
-.summer-ann-bar{position:relative;z-index:300;overflow:hidden;background:linear-gradient(90deg,#C9A84C 0%,#E8D08A 30%,#C9A84C 60%,#E8D08A 80%,#C9A84C 100%);background-size:200% 100%;animation:annShimmer 4s linear infinite;padding:0;cursor:pointer;}
-@keyframes annShimmer{0%{background-position:0% 0;}100%{background-position:200% 0;}}
+.summer-ann-bar{position:fixed;top:0;left:0;right:0;z-index:300;overflow:hidden;background:linear-gradient(90deg,#C9A84C 0%,#E8D08A 30%,#C9A84C 60%,#E8D08A 80%,#C9A84C 100%);background-size:200% 100%;animation:annShimmer 4s linear infinite;padding:0;cursor:pointer;}@keyframes annShimmer{0%{background-position:0% 0;}100%{background-position:200% 0;}}
 .ann-track{display:flex;width:max-content;animation:annScroll 18s linear infinite;padding:0.55rem 0;}
 .ann-track:hover{animation-play-state:paused;}
 @keyframes annScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
